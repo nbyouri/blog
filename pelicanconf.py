@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Youri Mouton & Calum Macrae'
-SITENAME = u'Save OS X!'
+SITENAME = u'Unix Tips and Hacks'
 SITEURL = ''
 
 TIMEZONE = 'Europe/Paris'
@@ -25,7 +25,7 @@ SOCIAL = (('Youri\'s twitter', 'https://twitter.com/YouriMouton'),
           ('Youri\'s last.fm', 'http://www.last.fm/user/Beastie_'),
 	      ('Calums\'s github', 'https://github.com/phyrne'),
           ('The Unix Forum', 'http://unixhub.net'),
-          ('Our pkgin repo', 'http://saveosx/org/packages'))
+          ('Our pkgin repo', 'http://saveosx.org/packages'))
 
 DEFAULT_PAGINATION = 10
 
