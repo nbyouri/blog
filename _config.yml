@@ -1,0 +1,15 @@
+markdown: rdiscount
+pygments: true
+permalink: /posts/:title
+rdiscount:
+  extensions: [smart]
+title : Unix Tips and Hacks
+production_url : http://saveosx.org
+description: "A blog by Youri Mouton and Calum Macrae"
+disqus_shortname: saveosx
+analytics: UA-44722172-1
+author :
+  name : Youri Mouton
+  github : yrmt
+  twitter : YouriMouton
+  email: youri.mout0@gmail.com

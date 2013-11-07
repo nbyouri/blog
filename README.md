@@ -1,4 +1,0 @@
-Blog
-====
-
-saveosx.org blog
