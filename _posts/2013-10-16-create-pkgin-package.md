@@ -28,11 +28,11 @@ Create a build-info file.
 
 Create a comment file.
 
-pkg_info ncurses, copy the comment content.
+The comment file should contain a few words about the package.
 
 Create a description file.
 
-same but for description
+same but a much longer description with homepage for description
 
 Copy the files provided by a package.
 
