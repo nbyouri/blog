@@ -3,7 +3,7 @@ layout: post
 title: Using pkgin on Mac OS X
 ---
 
-#Getting started with pkgin on Mac OS X
+##Getting started with pkgin on Mac OS X
 
 Pkgsrc is a framework for building third-party software originally developped for NetBSD but
  also runs on FreeBSD, OpenBSD, illumos/SmartOS, Linux, Minix and many other Unix likes including Mac OS X. 
