@@ -36,11 +36,11 @@ You might want to add this to your shell configuration.
 
 ## Using pkgin:
 
-Searching for a package       
+Search for a package       
 
 `$ pkgin search tmux`      
 
-Installing a package       
+Install a package       
 
 `$ sudo pkgin in tmux`      
 
@@ -54,11 +54,6 @@ List installed packages
 
 ## Example:
 
-We're going to install 2bwm from the saveosx.org repo.     
-It's the only available package at the moment anyway.    
-
 ![img](http://paste.unixhub.net/index.php/Za2/)
-
-There, we installed 2bwm and it's dependencies in seconds!
 
 # Read the pkgin man page!     
