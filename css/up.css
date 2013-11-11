@@ -26,3 +26,7 @@
 h2:before {
     content: '> ';
 }
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.25!important;
+    font-weight: 300!important;
+}
