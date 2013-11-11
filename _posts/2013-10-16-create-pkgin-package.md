@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create pkgin packages on Mac OS X.
+title: Create pkgin packages on Mac OS X
 tags: [osx]
 ---
 
