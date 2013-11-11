@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using pkgin on Mac OS X
+author: Youri Mouton
 ---
 
 ##Getting started with pkgin on Mac OS X
