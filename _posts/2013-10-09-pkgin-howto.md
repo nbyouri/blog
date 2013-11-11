@@ -20,45 +20,45 @@ You can look at the repo [here](http://saveosx.org/packages).
 
 This installer was made for Maverick, it won't work on Mountain Lion or previous Mac OS X releases. yet.
 
-> [Download](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.pkg) the installer needed to install pkgsrc and pkgin (34m)
+[Download](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.pkg) the installer needed to install pkgsrc and pkgin (34m)
 
 ## Getting ready:     
 
-> Update pkgin with the new repositories information     
+Update pkgin with the new repositories information     
 
 `$ sudo pkgin -y update`
 
-> Add /usr/pkg/bin and /usr/pkg/sbin to your $PATH       
+Add /usr/pkg/bin and /usr/pkg/sbin to your $PATH       
 
 `$ PATH=/usr/pkg/bin:/usr/pkg/sbin:$PATH`     
 
-> You might want to add this to your shell configuration.
+You might want to add this to your shell configuration.
 
 ## Using pkgin:
 
-> Searching for a package       
+Searching for a package       
 
 `$ pkgin search tmux`      
 
-> Installing a package       
+Installing a package       
 
 `$ sudo pkgin in tmux`      
 
-> List available packages     
+List available packages     
 
 `$ pkgin avail`      
 
-> List installed packages      
+List installed packages      
 
 `$ pkgin list`      
 
 ## Example:
 
-> We're going to install 2bwm from the saveosx.org repo.     
-> It's the only available package at the moment anyway.    
+We're going to install 2bwm from the saveosx.org repo.     
+It's the only available package at the moment anyway.    
 
 ![img](http://paste.unixhub.net/index.php/Za2/)
 
-> There, we installed 2bwm and it's dependencies in seconds!
+There, we installed 2bwm and it's dependencies in seconds!
 
 # Read the pkgin man page!     
