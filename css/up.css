@@ -41,3 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 h4 {
     border-bottom: 1px solid #e6e6e6!important;
 }
+code {
+    background-color: #e6e6e6!important;
+    border-radius: 3px!important;
+}
