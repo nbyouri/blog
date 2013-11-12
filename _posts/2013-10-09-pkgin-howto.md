@@ -29,9 +29,13 @@ Update pkgin with the new repositories information
 
 `$ sudo pkgin -y update`
 
-Add /usr/pkg/bin and /usr/pkg/sbin to your $PATH       
+Add /usr/pkg/bin and /usr/pkg/sbin to your $PATH   
 
 `$ PATH=/usr/pkg/bin:/usr/pkg/sbin:$PATH`     
+
+Add /usr/pkg/man to your $MANPATH    
+
+`$ MANPATH=/usr/pkg/man:$MANPATH`    
 
 You might want to add this to your shell configuration.
 
