@@ -48,3 +48,6 @@ code {
 ul.listing li {
     border-bottom: #e6e6e6 1px solid!important;
 }
+#footer section.meta a {
+    color: #222!important;
+}
