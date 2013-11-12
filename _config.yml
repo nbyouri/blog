@@ -4,6 +4,7 @@ permalink: /posts/:title
 rdiscount:
   extensions: [smart]
 title : Unix Tips and Hacks
+pygments: true
 production_url : http://saveosx.org
 description: "A blog by Youri Mouton and Calum Macrae"
 disqus_shortname: saveosx
