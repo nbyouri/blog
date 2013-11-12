@@ -1,6 +1,6 @@
 markdown: rdiscount
 pygments: true
-#permalink: /posts/:title
+permalink: :title
 rdiscount:
   extensions: [smart]
 title : Unix Tips and Hacks
