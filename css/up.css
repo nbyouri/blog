@@ -38,3 +38,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 25px;
     padding-right: 10px;
 }
+h4 {
+    border-bottom: 1px solid #e6e6e6!important;
+}
