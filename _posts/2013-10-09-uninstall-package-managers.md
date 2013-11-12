@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Uninstalling package managers on Mac OS X
-tags: [osx]
+author: Youri Mouton
 ---
 
 This can be a pain sometimes when you want to start over or if you're 
@@ -9,11 +9,11 @@ just tired of your package manager's complexity and if it's just broken.
 
 ## MacPorts:
 
-> Uninstall the installed ports      
+Uninstall the installed ports      
 
 `$ sudo port -fp uninstall installed`          
 
-> Then delete all the files     
+Then delete all the files     
 
 `sudo rm -rf   \  `
 
@@ -40,7 +40,7 @@ just tired of your package manager's complexity and if it's just broken.
 
 ## Homebrew
 
->Delete all the files     
+Delete all the files     
 
 `$ cd /usr/local`         
 
@@ -56,4 +56,3 @@ just tired of your package manager's complexity and if it's just broken.
 
 `$ rm -rf ~/Library/Caches/Homebrew`     
 
-Install a good package manager! Like [pkgin](http://saveosx.org/pkgsrc-osx.html) :) 
