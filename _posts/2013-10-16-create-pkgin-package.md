@@ -1,8 +1,8 @@
-####--
+---
 layout: post
 title: Create pkgin packages on Mac OS X
 author: Youri Mouton
-####--
+---
 
 # Create a package! 
   
