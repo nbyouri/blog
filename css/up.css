@@ -45,3 +45,6 @@ code {
     background-color: #e6e6e6!important;
     border-radius: 3px!important;
 }
+ul.listing li {
+    border-bottom: #6e6e6e 1px solid!important;
+}
