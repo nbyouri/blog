@@ -8,7 +8,7 @@ author: Youri Mouton
   
 Here we'll take ncurses as an example:
 
-##If the package is available on pkgsrc:
+If the package is available on pkgsrc:
 Get the package from the pkgsrc/packages directory.
 
 Otherwise, here's how to make it manually:
