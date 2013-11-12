@@ -14,27 +14,27 @@ Get the package from the pkgsrc/packages directory.
 Otherwise, here's how to make it manually:
 
 
-Create the work directory.            
+- Create the work directory.            
 
 `mkdir -p pkgsrc/devel/ncurses`          
 
 `cd pkgsrc/devel/ncurses`             
 
-Create a build-info file.
+- Create a build-info file.
 
 `pkg_info -X pkg_install \`              
 `| egrep '^(MACHINE_ARCH|OPSYS|OS_VERSION|PKGTOOLS_VERSION)' >build-info`            
 
 
-Create a comment file.
+- Create a comment file.
 
 The comment file should contain a few words about the package.
 
-Create a description file.
+- Create a description file.
 
 same but a much longer description with homepage for description
 
-Copy the files provided by a package.
+- Copy the files provided by a package.
 
 `mkdir files; cd files`                 
 
@@ -45,7 +45,7 @@ If you're repackaging something from pkgsrc, you can use this command to get all
 `pkg_info -L ncurses |awk '/^\//{gsub(/\/usr\/pkg\//, "");print "rsync -Ra ", $1, " ."}' | zsh`            
 
 
-Create the contents file.
+- Create the contents file.
 
 Put the right prefix first
 `echo "@cwd /usr/pkg" > contents`             
@@ -62,7 +62,7 @@ Add a listing of the files to be installed in the prefix:
 
 
 
-Create the package.
+- Create the package.
 
 `pkg_create -B build-info -c comment -d description -f contents -I /usr/pkg -p files -U ncurses-5.9nb2.tgz`                          
 
