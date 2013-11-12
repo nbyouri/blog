@@ -59,35 +59,3 @@ List installed packages
 
 # Read the pkgin man page!     
 
-{% highlight pascal %}
-program array2;
-
-(* 
-Encoder 1 tableau de 10 entiers, 
-afficher min/max et son indice.
-*)
-
-uses crt;
-
-var nb : array[1..10] of integer;
-    min, max, i : integer;
-
-begin
-    for i := 1 to 10 do
-    begin
-        write('Entrer la valeur ', i, ' du tableau : ');
-        readln(nb[i]);
-    end;
-
-    max := nb[1];
-    min := nb[1];
-
-    for i := 1 to 10 do begin
-        if nb[i] > max then max := nb[i];  
-        if nb[i] < min then min := nb[i];
-    end;
-
-    writeln('max is: ',max:5);
-    writeln('min is: ',min:5);
-end.
-{% endhighlight %}
