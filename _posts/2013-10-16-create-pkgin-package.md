@@ -48,12 +48,15 @@ If you're repackaging something from pkgsrc, you can use this command to get all
 #### Create the contents file.
 
 Put the right prefix first:    
+
 `echo "@cwd /usr/pkg" > contents`             
 
 Then the name-version of the package:      
+
 `echo "@name ncurses-5.9nb2" >> contents`                
 
 You can add dependencies here like this, in example(not needed for ncurses):     
+
 `echo "@pkgdep libevent>=2.0.10" >> contents`      
 
 Add a listing of the files to be installed in the prefix:
