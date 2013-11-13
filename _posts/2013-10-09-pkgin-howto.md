@@ -17,13 +17,13 @@ We made a saveosx.org repository because we want to bring new packages that aren
 other pkgin repos for Mac OS X like rxvt-unicode, cmus, ranger, ... 
 You can look at the repo [here](http://saveosx.org/packages).
 
-## Installing the required files for running pkgin:
+#### Installing the required files for running pkgin:
 
 This installer was made for Maverick, it won't work on Mountain Lion or previous Mac OS X releases. yet.
 
 [Download](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.pkg) the installer needed to install pkgsrc and pkgin (34m)
 
-## Getting ready:     
+#### Getting ready:     
 
 Update pkgin with the new repositories information     
 
@@ -39,7 +39,7 @@ Add /usr/pkg/man to your $MANPATH
 
 You might want to add this to your shell configuration.
 
-## Using pkgin:
+#### Using pkgin:
 
 Search for a package       
 
@@ -57,9 +57,9 @@ List installed packages
 
 `$ pkgin list`      
 
-## Example:
+#### Example:
 
 ![img](http://paste.unixhub.net/index.php/Za2/)
 
-# Read the pkgin man page!     
+### Read the pkgin man page!     
 
