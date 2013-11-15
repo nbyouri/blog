@@ -60,3 +60,7 @@ a:hover {
 article, .contents {
     padding-top: 1px!imporant;
 }
+h1 {
+    border-bottom: #e6e6e6 1px solid!important;
+    padding-bottom: 3px!important;
+}
