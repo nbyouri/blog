@@ -4,8 +4,6 @@ title: Create pkgin packages on Mac OS X
 author: Youri Mouton
 ---
 
-## Create a package! 
-  
 Here we'll take ncurses as an example:
 
 If the package is available on pkgsrc:
