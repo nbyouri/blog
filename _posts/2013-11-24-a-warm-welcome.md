@@ -18,7 +18,7 @@ In my personal opinion, having a monopoly like Apple pay their developers to bui
 ####How?
 We've mostly been working away quietly on this project without much exposure to the community, and throughout this time, the project has been shaped and molded into two main components; a collective of hacks pulled together in scripts and our beefy package repo.
 
-###The hacks
+####The hacks
 The hacks we've implemented achieve a number of things. The end result will be a system with a seemless X11 implementation (still capable of running the usual Aqua applications), Git and the excellent pkgsrc, with its related tools installed and set up with our package repo.
 
 #### X11
@@ -49,9 +49,10 @@ All the binaries available on our repo are 64bit too, [see for yourself!](http:/
 
 Here's the repo capacity at the time of writing (22 November 2013):
 
-    Packages available: 7462
-    Total size of packages: 7.85GB
-    
+{% hightlight %}
+Packages available: 7462
+Total size of packages: 7.85GB
+{% highlight %}
 And it's still growing daily!
  
 We have a bunch of notable packages in our repo, including:
