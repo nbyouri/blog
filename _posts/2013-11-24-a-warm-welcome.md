@@ -49,10 +49,10 @@ All the binaries available on our repo are 64bit too, [see for yourself!](http:/
 
 Here's the repo capacity at the time of writing (22 November 2013):
 
-{% hightlight %}
+{% highlight sh %}
 Packages available: 7462
 Total size of packages: 7.85GB
-{% highlight %}
+{% endhighlight %}
 And it's still growing daily!
  
 We have a bunch of notable packages in our repo, including:
