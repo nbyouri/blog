@@ -72,7 +72,7 @@ And that's just to name a a very tiny few. Many of our packages aren't available
 We're also improving and adding features to pkgsrc/pkgin as we go and are commiting the code upstream to contribute back.
 
 For instance, a handy stats screen:
-{<2>}![pkgin stats](http://paste.unixhub.net/index.php/aRZ)
+![pkgin stats](http://paste.unixhub.net/index.php/aRZ)
 
 ####Okay, so how can I get all this implemented on my system?
 Setup scripts for the project are being hosted on my [GitHub](https://github.com/Phyrne/saveosx).
