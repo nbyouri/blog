@@ -23,7 +23,8 @@ The hacks we've implemented achieve a number of things. The end result will be a
 
 #### X11
 Xorg's X11 has been one of the main areas of focus for our project. We strived to implement it as seemlessly as with other systems like BSD and Linux.
-{<1>}![A Save OS X desktop](http://paste.unixhub.net/index.php/QVav/)
+
+![A Save OS X desktop](http://paste.unixhub.net/index.php/QVav/)
 
 Here's a shot of an OS X desktop utilising our hacks and packages.
 We've got a bunch of window managers and desktop environments in our repo ready to install.
