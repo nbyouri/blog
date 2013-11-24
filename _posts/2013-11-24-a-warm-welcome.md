@@ -41,7 +41,9 @@ It doesn't come with hefty dependancies, like XCode and it's easy to maintain; n
 
 Here's a quick video demonstration of the installation of Google's [Go](http://golang.org/) , using pkgin:
 
+<div style="width:500px; margin-left:auto; margin-right:auto;">
 <iframe src="//player.vimeo.com/video/80066069" width="500" height="244" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
 
 It's that easy. No need to go to Apple's developer site, download a hefty installer, no time spent watching things compile. Just search for the package you want, then install it! And hey, if the package you want isn't there, drop us a line on irc or e-mail (contact details listed at the end) and I'm sure we'd be more than happy to get it packaged up for you.
 
