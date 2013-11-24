@@ -29,7 +29,7 @@ Xorg's X11 has been one of the main areas of focus for our project. We strived t
 Here's a shot of an OS X desktop utilising our hacks and packages.
 We've got a bunch of window managers and desktop environments in our repo ready to install.
 
-###The packages
+####The packages
 A great amount of time and wizardry has been spent building our excellent package repository, bringing software that was previously unavailable (at least certainly not in a convenient manner) to OS X users in an easy to use format. 
 
 ####pkgsrc
