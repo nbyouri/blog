@@ -49,7 +49,7 @@ All the binaries available on our repo are 64bit too, [see for yourself!](http:/
 
 Here's the repo capacity at the time of writing (22 November 2013):
 
-{% highlight sh %}
+{% highlight ruby %}
 Packages available: 7462
 Total size of packages: 7.85GB
 {% endhighlight %}
