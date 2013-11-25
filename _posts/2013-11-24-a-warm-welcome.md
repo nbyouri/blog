@@ -1,3 +1,4 @@
+#Introducing Save OS X
 Greetings humble reader. You've reached the official blog for the Save OS X project. We'll be posting here regularly with news & tutorials relating to the project, and may also post from time to time about loosely related subjects.
 
 So, enough of that, let's get down to what you're probably all curious about...
@@ -8,7 +9,7 @@ Save OS X is a hacking and development project for Apple's Operating System; OS 
 ##Why?
 To put it simply: because OS X is capable of much more than is immediately apparent to the average user. It has a familiar set of underlying utilities, many taken from the NetBSD, FreeBSD & OpenBSD projects. We want to complement these with other tools available.
 
-In my personal opinion, having a monopoly like Apple pay their developers to build a UNIX-like Operating System, that is designed from the core to work in perfect harmony with their hardware, is a wonderful thing. We're not going to spout off and rant about how "Apple are superior", or anything ludacris like that, we're not trying to promote them or their product in any way. We just want people to understand that OS X is a perfectly viable option for hackers and developers alike.
+In my personal opinion, having a monopoly like Apple pay their developers to build a UNIX-like Operating System, that is designed from the core to work in perfect harmony with their hardware, is a wonderful thing. We're not going to spout off and rant about how "Apple are superior", or anything ludicrous like that, we're not trying to promote them or their product in any way. We just want people to understand that OS X is a perfectly viable option for hackers and developers alike.
 
 ##How?
 We've mostly been working away quietly on this project without much exposure to the community, and throughout this time, the project has been shaped and molded into two main components; a collective of hacks pulled together in scripts and our beefy package repo.
