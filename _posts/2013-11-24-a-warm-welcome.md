@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-#Introducing Save OS X
-=======
 ---
 layout: post
 title: Introducing Save OS X
 author: Calum MacRae
 ---
+
 Greetings humble reader. You've reached the official blog for the Save OS X project. We'll be posting here regularly with news & tutorials relating to the project, and may also post from time to time about loosely related subjects.
 
 So, enough of that, let's get down to what you're probably all curious about...
