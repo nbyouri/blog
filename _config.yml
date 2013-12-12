@@ -3,7 +3,7 @@ pygments: true
 permalink: :title
 rdiscount:
   extensions: [smart]
-title : Mac OS X Tips and Hacks
+title :  OS X Unbound
 production_url : http://saveosx.org
 description: "A blog by Youri Mouton and Calum Macrae"
 disqus_shortname: saveosx
