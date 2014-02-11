@@ -31,3 +31,10 @@ How do I install signed packages?
 ---------------------------------
 
 You can simply keep installing the packages as you used to, no specific configuration needed on your side.
+
+Where's my bonus picture?
+-------------------------
+
+Here's a bonus picture of my pkgsrc tree :)
+
+![bonus](https://pbs.twimg.com/media/BfjrFFlIcAASyQU.jpg)
