@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title: Signed Packages
 author: Youri Mouton
 ---
