@@ -1,11 +1,4 @@
 article h1 {
-    /* background-image: url(https://www.mirbsd.org/pics/logos/pkgsrc.png); */
-    /* border-radius: 4px; */
-    padding: 5px;
-    background-repeat: no-repeat;
-    background-position-x: 99%;
-    /* background-color: black; */
-    background-image: url(http://www.pkgsrc.org/img/pkgsrc-long.png);
-    padding-bottom: 10px;
-    background-size: 22%;
+    background: transparent url('http://www.pkgsrc.org/img/pkgsrc-long.png') no-repeat right top;
+    background-size: 5em;
 }
