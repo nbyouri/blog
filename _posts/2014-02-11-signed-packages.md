@@ -36,6 +36,7 @@ How do I install signed packages?
 ---------------------------------
 
 You can simply keep installing the packages as you used to, no specific configuration needed on your side. But if you want to install signed packages only, add this to your /usr/pkg/etc/pkg_install.conf:     
+
         GPG=/usr/local/bin/gpg
         GPG_SIGN_AS=2D99C8F7
         VERIFIED_INSTALLATION=always
@@ -52,7 +53,7 @@ Here's an example:
         1 packages to be installed: gtk3+-3.10.6 (17M to download, 70M to install)
         
         downloading packages...
-        gtk3+-3.10.6.tgz                                               100%   17MB 282.5KB/s 252.3KB/s   01:02    
+        gtk3+-3.10.6.tgz                   100%   17MB 282.5KB/s 252.3KB/s   01:02    
         installing packages...
         installing gtk3+-3.10.6...
         pkg_install warnings: 0, errors: 0
@@ -68,4 +69,4 @@ Here's a bonus picture of my pkgsrc tree :)
 
 ![bonus](http://i.imgur.com/rrGFaWz.jpg?1)
 
-# [Link to the magnificent EdgeBSD project twitter!](https://twitter.com/EdgeBSD)
+### [Link to the magnificent EdgeBSD project twitter!](https://twitter.com/EdgeBSD)
