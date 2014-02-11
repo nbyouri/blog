@@ -1,3 +1,7 @@
+---
+layout: layout
+title: "Download and Install"
+---
 Download and Install
 ====================
 
@@ -11,25 +15,26 @@ Using the archive
 
 This is the default, and the recommended one, for two reasons: first, it's the most tested method; and second, you'll be aware of the steps you do, in case you want to remove it, or if, out of luck, something goes wrong.
 
-1. Download [bootstrap.tar.gz](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.tar.gz).
+1. Download [bootstrap.tar.gz](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.tar.gz): `$ curl -o bootstrap-x86_64.tar.gz http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.tar.gz`.
 2. As root, extract it: `$ tar -C / -xzf bootstrap-x86_64.tar.gz`.
 3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
 
 Using the .pkg file (not properly tested)
 -----------------------------------------
 
-1. Download [bootstrap.pkg](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.pkg)
+1. Download [bootstrap.pkg](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.pkg).
 2. Install the .pkg file.
 3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
 
 From the source
 ---------------
 
-1. `git clone https://github.com/yrmt/pkgsrc`
-2. `cd pkgsrc/bootstrap`
-3. `git checkout pkgsrc_2013Q3`
-4. `sudo ./bootstrap --prefix=/usr/pkg --pkgdbdir=/var/db/pkg --abi=64 --compiler=clang`
-5. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
+    git clone https://github.com/yrmt/pkgsrc
+    cd pkgsrc/bootstrap
+    git checkout pkgsrc_2013Q3
+    sudo ./bootstrap --prefix=/usr/pkg --pkgdbdir=/var/db/pkg --abi=64 --compiler=clang
+
+Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
 
 There, you have pkgsrc set up! Now start installing packages like this:
 
