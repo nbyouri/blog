@@ -11,10 +11,23 @@ I've got this idea from the awesome work of khorben , a NetBSD developper and le
 
 The packages are signed with gnupg version 2.0.22 and this is my info:
 
-pub   4096R/2D99C8F7 2014-02-05     
-uid                  Youri Mouton <youri.mout@gmail.com>     
-uid                  Youri Mouton <yrmt@edgebsd.org>     
-sub   4096R/B6BAE02C 2014-02-05     
+        pub   4096R/2D99C8F7 2014-02-05     
+        uid                  Youri Mouton <youri.mout@gmail.com>     
+        uid                  Youri Mouton <yrmt@edgebsd.org>     
+        sub   4096R/B6BAE02C 2014-02-05     
 
 And [here](http://paste.unixhub.net/index.php/hO8S/)'s my gpg public key if you need it.
 
+So how do the package compare to the non signed ones? Here's the anatomy of a signed package: 
+
+        ──── ar -t /Volumes/pkgsrc/packages/All/nmap-6.40.tgz
+        +PKG_HASH
+        +PKG_GPG_SIGNATURE
+        nmap-6.40.tgz
+
+So basically it's a tgz archive which contains the signing information and the actual package which is the same as  the non signed packages.
+
+How do I install signed packages?
+---------------------------------
+
+You can simply keep installing the packages as you used to, no specific configuration needed on your side.
