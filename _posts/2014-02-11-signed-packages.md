@@ -2,6 +2,7 @@
 layout: post
 title: Signed Packages
 author: Youri Mouton
+style: pkgsrc.css
 ---
 
 The pkgsrc 2013Q3 branch repo is almost finished compiling, it features all the port fixes I've been working on, and now the ports use the X11 libs from inside pkgsrc so XQuartz will only be needed to actually start the X server! I will try to get an X server working from pkgsrc to avoid having to install XQuartz from macosforge but that is more complicated than I first thought (I'll post about it later).
