@@ -36,6 +36,26 @@ How do I install signed packages?
 ---------------------------------
 
 You can simply keep installing the packages as you used to, no specific configuration needed on your side.
+Here's an example:
+
+        ──── sudo pkgin -y in gtk3+
+        reading local summary...
+        processing local summary...
+        updating database: 100%
+        calculating dependencies... done.
+        
+        nothing to upgrade.
+        1 packages to be installed: gtk3+-3.10.6 (17M to download, 70M to install)
+        
+        downloading packages...
+        gtk3+-3.10.6.tgz                                               100%   17MB 282.5KB/s 252.3KB/s   01:02    
+        installing packages...
+        installing gtk3+-3.10.6...
+        pkg_install warnings: 0, errors: 0
+        reading local summary...
+        processing local summary...
+        updating database: 100%
+        marking gtk3+-3.10.6 as non auto-removable
 
 Where's my bonus picture?
 -------------------------
