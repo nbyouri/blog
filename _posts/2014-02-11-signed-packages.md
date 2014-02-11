@@ -38,3 +38,6 @@ Where's my bonus picture?
 Here's a bonus picture of my pkgsrc tree :)
 
 ![bonus](https://pbs.twimg.com/media/BfjrFFlIcAASyQU.jpg)
+
+
+# [Link to the magnificent EdgeBSD project twitter!](https://twitter.com/EdgeBSD)
