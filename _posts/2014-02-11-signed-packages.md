@@ -11,11 +11,10 @@ I've got this idea from the awesome work of khorben , a NetBSD developper and le
 
 The packages are signed with gnupg version 2.0.22 and this is my info:
 
-`
 pub   4096R/2D99C8F7 2014-02-05     
 uid                  Youri Mouton <youri.mout@gmail.com>     
 uid                  Youri Mouton <yrmt@edgebsd.org>     
 sub   4096R/B6BAE02C 2014-02-05     
-`
 
+And [here](http://paste.unixhub.net/index.php/hO8S/)'s my gpg public key if you need it.
 

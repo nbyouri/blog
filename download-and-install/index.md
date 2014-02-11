@@ -26,6 +26,8 @@ This is the default, and the recommended one, for two reasons: first, it's the m
 
 3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
 
+4. Add `/usr/pkg/man` in your shell MANPATH variable.
+
 Using the .pkg file (not properly tested)
 -----------------------------------------
 
