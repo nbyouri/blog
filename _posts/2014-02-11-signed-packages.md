@@ -9,7 +9,7 @@ The pkgsrc 2013Q3 branch repo is almost finished compiling, it features all the 
 But more importantly, the packages are now signed! This means you can easily make sure the packages are coming from a trusted source (because you trust me, right?). 
 I've got this idea from the awesome work of khorben , a NetBSD developer and leader of [EdgeBSD](http://edgebsd.org), which is a great project I'm also trying to help on. Check [this](http://video.fosdem.org/2014/AW1121/Saturday/The_EdgeBSD_Project.webm) video if you want to learn more about it and learn more about package signing on pkgsrc. khorben pushed his changes to NetBSD so all that was needed was a [patch](http://lists.edgebsd.org/edgebsd-developers/2013/09/msg00001.html) to the pkgsrc makefiles and a few config adjustments in mk.conf and pkg_install.conf. 
 
-The packages are signed with gnupg version 2.0.22 and here's my info:
+The packages are signed with gnupg version 2.0.22 and here are my gpg details:
 
         pub   4096R/2D99C8F7 2014-02-05     
         uid                  Youri Mouton <youri.mout@gmail.com>     
