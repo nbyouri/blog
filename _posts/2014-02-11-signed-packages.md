@@ -63,7 +63,7 @@ Here's an example:
 Where's my bonus picture?
 -------------------------
 
-Here's a bonus picture of my pkgsrc tree :)
+Here's a picture of my pkgsrc tree :)
 
 ![bonus](http://i.imgur.com/rrGFaWz.jpg?1)
 
