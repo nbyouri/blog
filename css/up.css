@@ -67,3 +67,8 @@ h1 {
 body {
     -webkit-font-smoothing: antialiased;
 }
+article img, .content img {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
