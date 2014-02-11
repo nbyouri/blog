@@ -1,7 +1,11 @@
 ---
 layout: layout
 ---
-
+{% if page.style %}
+        <style type="text/css">
+            {{ page.style }}
+        </style>
+{% endif %}
 <article>
   <h1>
     <a href="{{ page.url }}">{{ page.title }}</a>
