@@ -54,7 +54,7 @@ ul.listing li {
     color: #222!important;
 }
 a:hover {
-    color: #c7254e!important;
+    /*color: #c7254e!important;*/
     text-decoration: none!important;
 }
 article, .contents {
