@@ -18,7 +18,7 @@ This is the default, and the recommended one, for two reasons: first, it's the m
 
 1. Download [bootstrap.tar.gz](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.tar.gz):
 
-       $ curl -o bootstrap-x86_64.tar.gz http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.tar.gz
+      $ curl -o bootstrap-x86_64.tar.gz http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.tar.gz
 
 2. As root, extract it:
 
