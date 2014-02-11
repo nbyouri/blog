@@ -35,7 +35,11 @@ So basically it's a tgz archive which contains the signing information and the a
 How do I install signed packages?
 ---------------------------------
 
-You can simply keep installing the packages as you used to, no specific configuration needed on your side.
+You can simply keep installing the packages as you used to, no specific configuration needed on your side. But if you want to install signed packages only, add this to your /usr/pkg/etc/pkg_install.conf:     
+        GPG=/usr/local/bin/gpg
+        GPG_SIGN_AS=2D99C8F7
+        VERIFIED_INSTALLATION=always
+    
 Here's an example:
 
         ──── sudo pkgin -y in gtk3+
