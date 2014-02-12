@@ -24,6 +24,10 @@ This is the default, and the recommended one, for two reasons: first, it's the m
 
        $ tar -C / -xzf bootstrap-x86_64.tar.gz
 
+3. Or, the steps 1 and 2 combined:
+
+       $ curl -o bootstrap-x86_64.tar.gz http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64.tar.gz | gzcat | (cd /; sudo tar -xpf -)
+
 3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
 4. Add `/usr/pkg/man` in your shell `MANPATH` variable.
 
