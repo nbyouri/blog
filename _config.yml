@@ -4,7 +4,7 @@ permalink: :title
 rdiscount:
   extensions: [smart]
 title :  OS X Unbound
-production_url : http://saveosx.org
+production_url : http://blog.saveosx.org
 description: "A blog by Youri Mouton and Calum Macrae"
 disqus_shortname: saveosx
 analytics: UA-44722172-1
