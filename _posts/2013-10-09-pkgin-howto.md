@@ -21,7 +21,7 @@ You can look at the repo [here](http://saveosx.org/packages).
 
 This installer was made for Maverick, it won't work on Mountain Lion or previous Mac OS X releases. yet.
 
-[Download](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.pkg) the installer needed to install pkgsrc and pkgin (34m)
+[Download](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64.pkg) the installer needed to install pkgsrc and pkgin (34m)
 
 #### Getting ready:     
 

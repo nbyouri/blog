@@ -16,9 +16,9 @@ Using the archive
 
 This is the default, and the recommended one, for two reasons: first, it's the most tested method; and second, you'll be aware of the steps you do, in case you want to remove it, or if, out of luck, something goes wrong.
 
-1. Download [bootstrap.tar.gz](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.tar.gz):
+1. Download [bootstrap.tar.gz](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64.tar.gz):
 
-       $ curl -o bootstrap-x86_64.tar.gz http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.tar.gz
+       $ curl -o bootstrap-x86_64.tar.gz http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64.tar.gz
 
 2. As root, extract it:
 
@@ -30,7 +30,7 @@ This is the default, and the recommended one, for two reasons: first, it's the m
 Using the .pkg file (not properly tested)
 -----------------------------------------
 
-1. Download [bootstrap.pkg](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.pkg).
+1. Download [bootstrap.pkg](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64.pkg).
 2. Install the .pkg file.
 3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
 4. Add `/usr/pkg/man` in your shell `MANPATH` variable.

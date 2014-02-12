@@ -49,7 +49,7 @@ Here's a quick video demonstration of the installation of Google's [Go](http://g
 It's that easy. No need to go to Apple's developer site, download a hefty installer, no time spent watching things compile. Just search for the package you want, then install it! And hey, if the package you want isn't there, drop us a line on irc or e-mail (contact details listed at the end) and I'm sure we'd be more than happy to get it packaged up for you.
 
 
-All the binaries available on our repo are 64bit too, [see for yourself!](http://saveosx.org/packages/Darwin/2013Q2/x86_64/)
+All the binaries available on our repo are 64bit too, [see for yourself!](http://pkgsrc.saveosx.org/Darwin/2013Q2/x86_64/)
 
 Here's the repo capacity at the time of writing (22 November 2013):
 
@@ -85,7 +85,7 @@ This project only supports the latest OS X release; currently Mavericks.
 
 The hacks have been packed up in a collection of scripts, and conveniently been tied together in a bootstrapper. There are some final, minor tweaks needed on the scripts, mostly cosmetic, and then we'll be releasing info on how to get started!
 
-For now, if you want to try out some packages, use [our pkgin boostrap](http://saveosx.org/packages/Darwin/bootstrap/bootstrap-x86_64.pkg) and get  testing!
+For now, if you want to try out some packages, use [our pkgin boostrap](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64.pkg) and get  testing!
 Please send any feedback to myself or Youri:
 
 <a href="mailto:calum0macrae@gmail.com">calum0macrae@gmail.com</a>
