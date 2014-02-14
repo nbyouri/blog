@@ -39,7 +39,7 @@ You can simply keep installing the packages as you used to, no specific configur
 
 
         GPG=/usr/pkg/bin/gpg
-        VERIFIED_INSTALLATION=always
+        leVERIFIED_INSTALLATION=always
     
 Here's an example:
 
