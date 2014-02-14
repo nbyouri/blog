@@ -35,11 +35,24 @@ So basically it's a tgz archive which contains the signing information and the a
 How do I install signed packages?
 ---------------------------------
 
-You can simply keep installing the packages as you used to, no specific configuration needed on your side. But if you want to install signed packages only, add this to your /usr/pkg/etc/pkg_install.conf:     
+First, import my key I linked above so pkg_add, which is used by pkgin can verify that the package is coming from me.
+        
+        ──── gpg --import yrmtspubkey
+
+You might see a message that says the key is not trusted, so to silence it you must set a level of trust on my key:
+
+        ──── gpg --edit-key 2D99C8F7
+
+Then you'll be prompted which level of trust you want to set, then type `save` and you're done!
+            
+ 
+Add this to your /usr/pkg/etc/pkg_install.conf: 
 
         GPG=/usr/pkg/bin/gpg
         VERIFIED_INSTALLATION=always
     
+After the steps mentionned above, you can simply install packages as you used to. 
+
 Here's an example:
 
         ──── sudo pkgin -y in gtk3+
@@ -61,7 +74,18 @@ Here's an example:
         updating database: 100%
         marking gtk3+-3.10.6 as non auto-removable
 
-Where's my bonus picture?
+How do I create signed packages?
+--------------------------------
+
+Put your ID in /usr/pkg/etc/pkg_install.conf, so for me:
+
+        GPG_SIGN_AS=2D99C8F7
+
+And add this in /usr/pkg/etc/mk.conf:
+
+        SIGN_PACKAGES=gpg
+
+Then the port will ask for your key when running `make package`.  
 -------------------------
 
 Here's a picture of my pkgsrc tree :)
