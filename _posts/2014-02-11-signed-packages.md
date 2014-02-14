@@ -89,11 +89,12 @@ And add this in /usr/pkg/etc/mk.conf:
 
         SIGN_PACKAGES=gpg
 
-Then the port will ask for your key when running `make package`.  
+Then the port will ask for your password when running `make package`.  
 
 
 
-
+>
+----
 
 > As a little bonus, here's a picture of my pkgsrc tree with a sticker I got at FOSDEM!
 
