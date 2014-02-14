@@ -32,7 +32,7 @@ So how do the packages compare to the non signed ones? Here's the anatomy of a s
 
 It's a tgz archive which contains the signing information and the actual package which is the same as  the non signed packages.
 
-The +PKG_GPG_SIGNATURE contains the gpg public key needed to verify the authenticity of the package and the +PKG_HASH contains hashes of every 40 bytes of the package files.
+The `+PKG_GPG_SIGNATURE` file contains the gpg public key needed to verify the authenticity of the package and the `+PKG_HASH` file contains hashes of every 40 bytes of the package files.
 
 How do I install signed packages?
 ---------------------------------
