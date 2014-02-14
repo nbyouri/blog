@@ -37,9 +37,8 @@ How do I install signed packages?
 
 You can simply keep installing the packages as you used to, no specific configuration needed on your side. But if you want to install signed packages only, add this to your /usr/pkg/etc/pkg_install.conf:     
 
-
         GPG=/usr/pkg/bin/gpg
-        leVERIFIED_INSTALLATION=always
+        VERIFIED_INSTALLATION=always
     
 Here's an example:
 
