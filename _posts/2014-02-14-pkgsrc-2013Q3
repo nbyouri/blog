@@ -1,0 +1,20 @@
+---
+layout: pkgsrc-post
+title: pkgsrc_2013Q3 packages now available.
+author: Youri Mouton
+---
+
+
+My poor MacBook just finished compiling the 2013Q3 branch of pkgsrc, you can have a look [here](http://pkgsrc.saveosx.org/Darwin/2013Q3/x86_64/). 
+
+
+Stats:
+------
+
+        Remote package database(s):
+                Number of repositories: 1
+                Packages available: 7558
+                Total size of packages: 6.97 GB
+
+
+Most of the packages are also signed using gpg, see [this](http://saveosx.org/signed-packages/) post about it.
