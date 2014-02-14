@@ -95,8 +95,8 @@ Then the port will ask for your key when running `make package`.
 
 
 
-As a little bonus, here's a picture of my pkgsrc tree with a sticker I got at FOSDEM!
+> As a little bonus, here's a picture of my pkgsrc tree with a sticker I got at FOSDEM!
 
 ![bonus](http://i.imgur.com/rrGFaWz.jpg?1)
 
-### [Link to the magnificent EdgeBSD project twitter!](https://twitter.com/EdgeBSD)
+##### [Link to the magnificent EdgeBSD project twitter!](https://twitter.com/EdgeBSD)
