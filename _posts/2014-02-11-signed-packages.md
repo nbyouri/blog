@@ -39,7 +39,7 @@ First, import my key I linked above so pkg_add, which is used by pkgin can verif
         
         ──── gpg --import yrmtspubkey
 
-You might see a message that says the key is not trusted, so to silence it you must set a level of trust on my key:
+When installing packages, you might see a message that says the key is not trusted, to silence it you must set a level of trust on my key:
 
         ──── gpg --edit-key 2D99C8F7
 
@@ -77,7 +77,9 @@ Here's an example:
 How do I create signed packages?
 --------------------------------
 
-Put your ID in /usr/pkg/etc/pkg_install.conf, so for me:
+First, you must apply khorben's [patch](http://git.edgebsd.org/gitweb/?p=edgebsd-pkgsrc.git;a=blobdiff;f=mk/pkgformat/pkg/package.mk;h=d75bad26e0c460f5d1d4c69bec0536a77de79da2;hp=cdee24570f4b98b71a7bca86b0e998b9db248336;hb=16c6eceef5b4a1314096b564d68e5d990a6ae5b1;hpb=45f514b94f43afdfd93f8f25ea30c56c29d23249) on pkgsrc's makefiles 
+
+Put your gpg ID in /usr/pkg/etc/pkg_install.conf, so for me:
 
         GPG_SIGN_AS=2D99C8F7
 
