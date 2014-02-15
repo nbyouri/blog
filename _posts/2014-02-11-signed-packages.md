@@ -38,6 +38,10 @@ How do I install signed packages?
 ---------------------------------
 
 First, import my key I linked above so pkg_add, which is used by pkgin can verify that the package is coming from me.
+
+        ──── gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 2D99C8F7
+
+Or, using a local file containing my key:
         
         ──── gpg --import yrmtspubkey
 
