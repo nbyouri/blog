@@ -72,3 +72,6 @@ article img, .content img {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
+p {
+    padding-left: 5px;
+}
