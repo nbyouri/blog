@@ -89,9 +89,11 @@ And add this in /usr/pkg/etc/mk.conf:
 
         SIGN_PACKAGES=gpg
 
-Then the port will ask for your password when running `make package`.  
+Then the port will ask for your password when running `make package`, like this:
 
-
+        You need a passphrase to unlock the secret key for
+        user: "Youri Mouton <youri.mout@gmail.com>"
+        4096-bit RSA key, ID 2D99C8F7, created 2014-02-05
 
 >
 ----
