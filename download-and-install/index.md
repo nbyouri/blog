@@ -22,7 +22,7 @@ This is the default, and the recommended method, for two reasons: it's the most 
 
   Or, using rsync:
  
-       $ rsync -P rsync://saveosx.org/pkgsrc/Darwin/bootstrap/bootstrap-x86_64.tar.gz
+       $ rsync -P rsync://saveosx.org/pkgsrc/Darwin/bootstrap/bootstrap-x86_64.tar.gz .
 
 2. As root, extract it:
 
