@@ -7,7 +7,7 @@ author: Youri Mouton
 The pkgsrc 2013Q3 branch repo is almost finished compiling, it features all the port fixes I've been working on, and now the ports use the X11 libs from inside pkgsrc so XQuartz will only be needed to actually start the X server! I will try to get an X server working from pkgsrc to avoid having to install XQuartz from macosforge but that is more complicated than I first thought (I'll post about it later).
 
 But more importantly, the packages are now signed! This means you can easily make sure the packages are coming from a trusted source (because you trust me, right?). 
-I've got this idea from the awesome work of khorben , a NetBSD developer and leader of [EdgeBSD](http://edgebsd.org), which is a great project I'm also trying to help on. Check [this](http://video.fosdem.org/2014/AW1121/Saturday/The_EdgeBSD_Project.webm) video if you want to learn more about it and learn more about package signing on pkgsrc. khorben pushed his changes to NetBSD so all that was needed was a [patch](http://lists.edgebsd.org/edgebsd-developers/2013/09/msg00001.html) to the pkgsrc makefiles and a few config adjustments in mk.conf and pkg_install.conf. 
+I've got this idea from the awesome work of khorben, a NetBSD developer and leader of [EdgeBSD](http://edgebsd.org), whose project I'm also trying to help on. Check [this](http://video.fosdem.org/2014/AW1121/Saturday/The_EdgeBSD_Project.webm) video if you want to learn more about it and learn more about package signing on pkgsrc. khorben pushed his changes to NetBSD so all that was needed was a [patch](http://lists.edgebsd.org/edgebsd-developers/2013/09/msg00001.html) to the pkgsrc makefiles and a few config adjustments in mk.conf and pkg_install.conf. 
 
 Technical details
 ------------------
