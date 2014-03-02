@@ -91,7 +91,7 @@ Please send any feedback to myself or Youri:
 <a href="mailto:calum0macrae@gmail.com">calum0macrae@gmail.com</a>
 <a href="mailto:youri.mout@gmail.com">youri.mout@gmail.com</a>
 
-Or catch us on irc at `#saveosx` on `irc.unixhub.net`
+Or catch us on irc at `#saveosx` on `irc.oftc.net`
 
 ####Until next time
 We hope you've enjoyed what you've read and are as excited about this project and its future as we are.
