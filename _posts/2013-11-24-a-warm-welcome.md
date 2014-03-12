@@ -25,11 +25,6 @@ The hacks we've implemented achieve a number of things. The end result will be a
 #### X11
 Xorg's X11 has been one of the main areas of focus for our project. We strived to implement it as seemlessly as with other systems like BSD and Linux.
 
-[![screenshot](http://paste.unixhub.net/index.php/QVav/)](http://paste.unixhub.net/index.php/QVav/)
-
-Here's a shot of an OS X desktop utilising our hacks and packages.
-We've got a bunch of window managers and desktop environments in our repo ready to install.
-
 ####The packages
 A great amount of time and wizardry has been spent building our excellent package repository, bringing software that was previously unavailable (at least certainly not in a convenient manner) to OS X users in an easy to use format. 
 
@@ -75,8 +70,6 @@ We have a bunch of notable packages in our repo, including:
 And that's just to name a a very tiny few. Many of our packages aren't available through other package/ports managers for OS X.
 We're also improving and adding features to pkgsrc/pkgin as we go and are commiting the code upstream to contribute back.
 
-For instance, a handy stats screen:
-![pkgin stats](http://paste.unixhub.net/index.php/aRZ)
 
 ####Okay, so how can I get all this implemented on my system?
 Setup scripts for the project are being hosted on my [GitHub](https://github.com/Phyrne/saveosx).

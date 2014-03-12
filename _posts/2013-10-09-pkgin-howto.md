@@ -57,9 +57,6 @@ List installed packages
 
 `$ pkgin list`      
 
-#### Example:
-
-![img](http://paste.unixhub.net/index.php/Za2/)
 
 ### Read the pkgin man page!     
 

@@ -21,8 +21,6 @@ The packages are signed with gnupg version 2.0.22 and here are my gpg details:
         Key fingerprint = 81F7 EC68 C5BD 5DED 7A7B  2832 6A09 5CC6 2D99 C8F7
 
 
-And [here](http://paste.unixhub.net/index.php/hO8S/)'s my gpg public key if you need it.
-
 So how do the packages compare to the non signed ones? Here's the anatomy of a signed package: 
 
         ──── ar -t /Volumes/pkgsrc/packages/All/nmap-6.40.tgz
@@ -39,7 +37,7 @@ How do I install signed packages?
 
 First, import my key I linked above so pkg_add, which is used by pkgin can verify that the package is coming from me.
 
-        ──── gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 2D99C8F7
+        ──── gpg --recv-keys 2D99C8F7
 
 Or, using a local file containing my key:
         
