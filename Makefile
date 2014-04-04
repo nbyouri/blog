@@ -4,7 +4,7 @@ all:
 	${TARGETS}
 
 build:
-	@jekyll build
+	jekyll build
 
 serve: 
 	rsync -ahz _site/* root@saveosx.org:/usr/local/www/saveosx/blog/; 
@@ -12,4 +12,4 @@ serve:
 git:
 	git add -A;
 	git commit -m 'update';
-	git push ;
+	git push;
