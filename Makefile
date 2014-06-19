@@ -7,7 +7,7 @@ build:
 	jekyll build
 
 serve: 
-	rsync -ahz _site/* root@saveosx.org:/usr/local/www/saveosx/blog/; 
+	scp _site/* root@saveosx.org:/usr/local/www/saveosx/blog/; 
 
 git:
 	git add -A;

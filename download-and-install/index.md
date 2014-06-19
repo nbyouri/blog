@@ -32,7 +32,7 @@ This is the default, and the recommended method, for two reasons: it's the most 
 
        $ curl -o bootstrap-x86_64.tar.gz http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64.tar.gz | gzcat | (cd /; sudo tar -xpf -)
 
-3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
+3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell's `PATH` variable.
 4. Add `/usr/pkg/man` in your shell `MANPATH` variable.
 
 Using the .pkg file (not available)
