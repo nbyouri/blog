@@ -1,9 +1,8 @@
 ---
 layout: pkgsrc-post
-title: pkgsrcCon 2014
+title: pkgsrcCon 2014 London
 author: Youri Mouton
 ---
-# PkgsrcCon 2014 : London
 
 It happened just a few days ago and I had a great time meeting the people working on the framework we like so much. There were lots of NetBSD developers but also Mac OS X and SmartOS users and more.
 
