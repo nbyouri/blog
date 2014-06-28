@@ -1,5 +1,5 @@
 --- 
-layout: pkgsrc-post
+layout: post
 title: pkgsrc_2013Q4 available, update your packages
 author: Youri Mouton
 ---
