@@ -48,7 +48,7 @@ From source
 
     $ git clone https://github.com/yrmt/pkgsrc
     $ cd pkgsrc/bootstrap
-    $ git checkout pkgsrc_2013Q3
+    $ git checkout pkgsrc_2013Q4
     $ sudo ./bootstrap --prefix=/usr/pkg --pkgdbdir=/var/db/pkg --abi=64 --compiler=clang
 
 Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.

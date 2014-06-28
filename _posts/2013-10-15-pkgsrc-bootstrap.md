@@ -12,7 +12,7 @@ First clone the pkgsrc git repository:
 
 `cd pkgsrc/bootstrap`     
 
-`git checkout pkgsrc_2013Q3`
+`git checkout pkgsrc_2013Q4`
 
 `sudo ./bootstrap --prefix=/usr/pkg --pkgdbdir=/var/db/pkg --abi=64 --compiler=clang`     
 
