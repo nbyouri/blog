@@ -38,7 +38,6 @@ If you have package requests or questions, you're welcome to ask on our IRC chan
 	calum0macrae@gmail.com 
 	youri.mout@gmail.com
 
-The PGP key fingerprint used for signing packages : [6A095CC62D99C8F7](https://keybase.io/yrmt)
+The PGP key fingerprint used to sign packages : [6A095CC62D99C8F7](https://keybase.io/yrmt)
 
-For anyone wondering, yes we're working in pkgsrc_2014Q1 ! :)
-
+![img](https://www.pkgsrc.org/img/pkgsrc-long.png)
