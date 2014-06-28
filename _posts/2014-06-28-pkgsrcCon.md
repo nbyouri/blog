@@ -19,7 +19,7 @@ Here's a list of pkgsrc related talks that were given:
 
 - @wiedi's (Sebastian Wiedenroth) common pkgsrc errors web page 
 	
-		link coming soon...
+        [https://up.frubar.net/2915/report.html](https://up.frubar.net/2915/report.html)
 
 - "Pretty tabular data without much effort" by @abs  (David Brownlee)
 
