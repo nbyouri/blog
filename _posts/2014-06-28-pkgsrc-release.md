@@ -11,7 +11,7 @@ It took a good week and here are the results
 	Packages available: 8105
 	Total size of packages: 7223M
 
-You can take a look at the available packages here: 
+You can take a look at the available packages [here](http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64/)
 
 ### How to update
 
@@ -30,8 +30,6 @@ And fully upgrade your packages:
 
 ### More information
 
-We're still fixing packages though, so that number might go up! 
-
 If you have package requests or questions, you're welcome to ask on our IRC channel or send us an email
 	
 	irc.oftc.net
@@ -40,6 +38,7 @@ If you have package requests or questions, you're welcome to ask on our IRC chan
 	calum0macrae@gmail.com 
 	youri.mout@gmail.com
 
+The PGP key fingerprint is as follow: `[6A095CC62D99C8F7](https://keybase.io/yrmt)`
 
 For anyone wondering, yes we're working in pkgsrc_2014Q1 ! :)
 
