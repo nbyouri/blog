@@ -58,7 +58,7 @@ On the second day, we had a day of hacking on pkgsrc things
 - I looked at the much needed Xfce 4.10 [port](https://github.com/NetBSDfr/xfce4) and got it to work on Mac OS  X
 - @spz and @schmonz worked on the wiki
 - pkgtools/pkg_regress for package testing
-- Sevan got a free G4 Mac mini so he can work on pkgsrc along with his cute 12" G4 MacBook
+- Sevan got a free G4 Mac mini so he can work on pkgsrc along with his cute 12" G4 MacBook, he got gcc44 to gcc47 to build fine
 - @wiedi got started working on getting FUSE support for Mac OS X in pkgsrc, it's build system appears to make it hard.
 - more stuff quiet people were working on I don't know about..
 
