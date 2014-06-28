@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building 64 pkgsrc ports on Mac OS X
+title: Building 64 bit pkgsrc ports on Mac OS X
 author: Youri Mouton
 ---
 
