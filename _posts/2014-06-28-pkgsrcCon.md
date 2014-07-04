@@ -14,7 +14,7 @@ Here's a list of pkgsrc related talks that were given:
 
 - bulktracker by @bsiegert (Benny Siegert), a nice way to visualize bulk builds statistics
 
-       [http://bulktracker.appspot.com/](http://bulktracker.appspot.com/)
+       http://bulktracker.appspot.com
 
 
 - @wiedi's (Sebastian Wiedenroth) common pkgsrc errors web page 
@@ -64,4 +64,4 @@ On the second day, we had a day of hacking on pkgsrc things
 
 ## Drinks
 
-Calum and I had drinks with Sevan, @jaap, @schmonz, @wiedi, we talked for hours about making the world a better place and how projects like NetBSD and pkgsrc were impacting our lives.
+Calum and I had drinks with Sevan, @jaap, @schmonz, @wiedi, we talked for hours about making the world a better place and how projects like NetBSD and pkgsrc was impacting our lives.
