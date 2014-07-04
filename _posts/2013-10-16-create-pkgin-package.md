@@ -9,7 +9,7 @@ Here we'll take ncurses as an example:
 If the package is available on pkgsrc:
 Get the package from the pkgsrc/packages directory.
 
-Otherwise, here's how to make it manually:
+Otherwise, here's how to make it manually for use with pkgin or pkg_add:
 
 
 #### Create the work directory.            
