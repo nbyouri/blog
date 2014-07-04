@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create pkgin packages on Mac OS X
+title: Manually create pkgsrc packages on Mac OS X
 author: Youri Mouton
 ---
 
