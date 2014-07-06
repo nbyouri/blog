@@ -1,6 +1,6 @@
 ---
 layout: pkgsrc-post
-tite: An introduction to pkgsrc
+title: An introduction to pkgsrc
 author: Youri Mouton
 ---
 
