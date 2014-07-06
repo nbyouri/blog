@@ -2,7 +2,6 @@
 layout: pkgsrc-post
 tite: An introduction to pkgsrc
 author: Youri Mouton
-published: false
 ---
 
 This guide should allow you to learn how to create a new port or simply fix a port you need. There are three target demographics listed below, this guide is mostly intended to the second target demographics but it also gives an introduction for port developers.
@@ -14,17 +13,15 @@ This guide should allow you to learn how to create a new port or simply fix a po
 	- port developers
 		(you should be able to get started here)
 
----
 
-### pkgsrc tree
+## pkgsrc tree
 
 You should have a pkgsrc tree sitting somewhere on your disk, if you don't you should bootstrap it, see my [blog post](http://saveosx.org/pkgsrc-bootstrap/) about it. 
 
 The tree contains a Makefile, a README, category directories containing the ports, the bootstrap directory, documentation, the mk/* containing the actual pkgsrc framework system Makefiles, shell and awk scripts, ports distfiles, packages, and `pkglocate`, a script to find pacakges in the tree.
 
----
 
-### use the right tools
+## use the right tools
 
 If you want to get started working on ports like creating new ones or simply fix ones you need, you should know about these tools:
 
@@ -32,7 +29,8 @@ If you want to get started working on ports like creating new ones or simply fix
 	
 		pkgin -y in pkg_developer
 
-	It contains very useful programs like:
+It contains very useful programs like:
+
  - checkperms: 
  		
 		verify file permissions
@@ -67,11 +65,10 @@ If you want to get started working on ports like creating new ones or simply fix
 
 		sanity check for pkg-config in ports
 
----
 
-### port contents
+## port contents
 
-So what does a pkgsrc port contain?
+A pkgsrc port should at least contain:
 
 - `Makefile` : a comment, developer info, software download site and lots of other possibilities
 - `DESCR` : a paragraph containing the description for the software of the port we're making
@@ -123,9 +120,8 @@ distinfo:
 	RMD160 (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 9102eb2a938be38c4adf8cfbf781c04d0844d09a
 	Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 
----
 
-### make
+## make
 
 Now you know what kind of files you can see when you're in a port directory. The command used to compile it is the NetBSD `make` but often `bmake` on non NetBSD systems to avoid Makefile errors. Typing make alone will only compile the program but you can also use other command line arguments to make such as extract, patch, configure, install, package, ...
 
@@ -159,9 +155,8 @@ You should be aware that there are many make options along with these targets, l
 - `CHECK_FILES`
 - and many others described the the NetBSD pkgsrc guide
 
----
 
-### pkgsrc configuration
+## pkgsrc configuration
 
 The framework uses an `mk.conf` file, usually found in /etc. Here's how mine looks:
 
@@ -216,9 +211,8 @@ The framework uses an `mk.conf` file, usually found in /etc. Here's how mine loo
 
 Keep in mind that there are many other available options documented in the official pkgsrc guide.
 
----
 
-### creating a simple port
+## creating a simple port
 
 Let's create a little port using the tools we've talked about above. I will use a little window manager called 2bwm.
 
@@ -323,7 +317,7 @@ It looks like this file is provided by xcb-util-keysyms, so let's add:
 
 in our Makefile.
 
-Clean, build again, and add more dependencies until it passes the build stage. Here's how my Makefile ends up looking like this:
+Clean, build again, and add more dependencies until it passes the build stage. Here's how my Makefile ends up looking like:
 
 	# $NetBSD$
 
@@ -346,7 +340,7 @@ Clean, build again, and add more dependencies until it passes the build stage. H
 
 #### install phase
 
-Geat ! We got our program to compile in pkgsrc. Now we must generate the PLIST file so we can actually install the program, but we must `make stage-install` to be sure that it would install in the right place.
+Geat ! We got our program to compile in pkgsrc. Now we must generate the PLIST file so we can actually install the program, but we must `make stage-install` to make sure that it installs in the right place.
 
 	
 	# find /pkgsrc/work/wm/2bwm/work/.destdir/
@@ -366,12 +360,12 @@ returns:
 	/pkgsrc/work/wm/2bwm/work/.destdir//usr/local/share/man/man1/hidden.1
 	/pkgsrc/work/wm/2bwm/work/.destdir//usr/pkg
 
-Which doesn't look right since our `LOCALBASE` is `/usr/pkg`.
+This doesn't look right since our `LOCALBASE` is `/usr/pkg`.
 
 
 	# make print-PLIST
 
-returns nothing, because 2bwm installs files in the wrong place, we need to fix 2bwm's own Makefile to use the right `DESTDIR` and `PREFIX`, that is set to the right place by pkgsrc. Let's inspect how 2bwm installs:
+returns nothing, because 2bwm installs files in the wrong place so we need to fix 2bwm's own Makefile to use the right `DESTDIR` and `PREFIX`, that is set to the right place by pkgsrc. Let's inspect how 2bwm installs:
 
 From 2bwm's Makefile: 
 
@@ -383,7 +377,7 @@ From 2bwm's Makefile:
 	install -pm 644 2bwm.man $(DESTDIR)$(MANPREFIX)/man1/2bwm.1
 	install -pm 644 hidden.man $(DESTDIR)$(MANPREFIX)/man1/hidden.1
 
-This looks right since it installs in a `DESTDIR`/`PREFIX` but it sets 
+This looks fine since it installs in a `DESTDIR`/`PREFIX` but it sets 
 
 > PREFIX=/usr/local
 
@@ -391,13 +385,13 @@ and
 
 > MANPREFIX=$(PREFIX)/share/man
 
-We should remove the first line and edit the man prefix:
+In the beginning of the Makefile. We should remove the first line and edit the man prefix:
 
 > MANPREFIX=${PKGMANDIR}
 
-So pkgsrc can install the program's files in the right place. We have two ways of modifying this file, either patch the Makefile or use `sed` substitution which is a builtin pkgsrc feature that allows you to change files with a sed command before building the port. 
+so pkgsrc can install the program's files in the right place. We have two ways of modifying this file, either patch the Makefile or use `sed` substitution which is a builtin pkgsrc feature that allows you to change lines in files with a sed command before building the port. 
 
-I will show how to do both ways so you can get an introduction on how to generate patch files for pkgsrc to apply.
+I will show how to do both ways so you can get an introduction on how to generate patch files for pkgsrc.
 
 #### patching the Makefile :
 
@@ -430,7 +424,7 @@ pkgdiff "/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile"
  
 
 
-- create the patch with `mkpatches`, it should create a `patches` directory in the port containing the patch and an original file that you can remove with `mkpatches -c`. 
+- create the patch with `mkpatches`, it should create a `patches` directory in the port containing the patch and an original file removed with `mkpatches -c`. 
 
 		# find patches/*
 		patches/patch-Makefile
@@ -458,7 +452,7 @@ you should get this new line:
 
 		# make print-PLIST > PLIST
 	
-	which should contain
+	containing:
 
 		@comment $NetBSD$
 		bin/2bwm
@@ -473,7 +467,7 @@ you should get this new line:
 
 You should be able to fix the prefix error much quicker than with the patching explained above thanks to the sed substitution framework. Here's how it looks like in my port Makefile:
 
-	SUBST_CLASSES+=		makefile
+	SUBST_CLASSES+=			makefile
 	SUBST_STAGE.makefile=	pre-build
 	SUBST_MESSAGE.makefile=	Fixing makefile
 	SUBST_FILES.makefile=	Makefile
@@ -503,25 +497,24 @@ Then you should do some testing on the program itelf on at least two platforms s
 
 You can find the 2bwm port I submitted in [pkgsrc-wip](http://pkgsrc-wip.cvs.sourceforge.net/viewvc/pkgsrc-wip/wip/2bwm/).
 
----
 
-### pkgsrc and wip 
+## pkgsrc and wip 
 
-If you would like to submit your port for others to use you can either subscribe to pkgsrc-wip or ask a NetBSD developer to add it for you which can be tough. Even though there are many IRC channels in which you can find nice developers, you will have to take the time to get to know them. The easiest way for beginners is to submit to pkgsrc-wip so other people can review and test it first. 
+If you want to submit your port for others to use you can either subscribe to pkgsrc-wip or ask a NetBSD developer to add it for you which can be tough. Even though there are many IRC channels in which you can find nice developers, you will have to take the time to get to know them. The easiest way for beginners is to submit to pkgsrc-wip so other people can review and test it first. 
 
-pkgsrc-wip is hosted on [sourceforge](https://sourceforge.net/projects/pkgsrc-wip/) and you can easily get cvs access to it if you create an account on sourceforge and send an email to NetBSD developer `@wiz` (Thomas Klausner) asking nicely for commit access. I got access fairly quickly and he even fixed a port to show me how to do it properly. 
+pkgsrc-wip is hosted on [sourceforge](https://sourceforge.net/projects/pkgsrc-wip/) and you can easily get cvs access to it if you create an account on there and send an email to NetBSD developer `@wiz` (Thomas Klausner) asking nicely for commit access. I got access fairly quickly and he even fixed a port to show me how to do it properly. 
 
 You can also send me an email or talk to me on IRC so I can submit it for you.
 
 
-### the options framework
+## the options framework
 
 You can create port options with the `options.mk` file, like for `wm/dwm`
 
 	
 	# $NetBSD: options.mk,v 1.2 2011/06/17 11:59:57 obache Exp $
 
-	PKG_OPTIONS_VAR=	PKG_OPTIONS.dwm
+	PKG_OPTIONS_VAR=			PKG_OPTIONS.dwm
 	PKG_SUPPORTED_OPTIONS=	xinerama
 	PKG_SUGGESTED_OPTIONS=	xinerama
 
@@ -536,7 +529,7 @@ You can create port options with the `options.mk` file, like for `wm/dwm`
 	.if !empty(PKG_OPTIONS:Mxinerama)
 	.  include "../../x11/libXinerama/buildlink3.mk"
 	.else
-	SUBST_CLASSES+=		options
+	SUBST_CLASSES+=			options
 	SUBST_STAGE.options=	pre-build
 	SUBST_MESSAGE.options=	Toggle the Xinerama support
 	SUBST_FILES.options=	config.mk
@@ -548,6 +541,21 @@ This file should be included in the Makefile:
 
 	.include "options.mk"
 
+If you type `make show-options`, you should see this:
+
+	Any of the following general options may be selected:
+	xinerama	 Enable Xinerama support.
+
+	These options are enabled by default:
+		xinerama
+
+	These options are currently enabled:
+		xinerama
+
+	You can select which build options to use by setting 	PKG_DEFAULT_OPTIONS
+	or PKG_OPTIONS.dwm.
+
+Running `make PKG_OPTIONS=""` should build without the `xinerama` dwm option enabled by default.
 
 The options.mk file must contain these variables:
 
@@ -557,9 +565,8 @@ The options.mk file must contain these variables:
 
 It allows you to change configure arguments and include other buildlinks, and various other settings.
 
----
 
-### hosting a package repo
+## hosting a package repo
 
 Now that you've created a few ports, you might want to make
 precompiled packages available for testing. You will need pkgsrc's `pkg_install` on the host system. I host my [packages](http://pkgsrc.saveosx.org/) on a FreeBSD server with a bootstrapped pkgsrc.
@@ -619,15 +626,13 @@ And this shell alias to upload all my built packages, but I still need to run `a
 
 Then you should be able to set the url in repositories.conf to use your packages with pkgin. You can also install them directly with something like `pkg_add http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64/All/9menu-1.8nb1.tgz` of course. 
 
----
 
-### build all packages
+## build all packages
 
 Bulk building pkgsrc packages is a topic for another post, see jperkin's excellent blog [posts](http://www.perkin.org.uk/posts/distributed-chrooted-pkgsrc-bulk-builds.html) about this.
 
----
 
-### faq
+## faq
 
 #### what if the port I'm making is a dependency for another one?
 
@@ -708,20 +713,18 @@ This means you're not using the right `make`. On most systems, the make installe
 
 2. If you have a feeling a port is stuck in the building stage, disable make jobs in your mk.conf
 
----
+3. Please contribute here :)
 
-### links
+
+## links
 - [Jonathan Perkin's excellent blog](http://www.perkin.org.uk/)
 - [NetBSD's very extensive pkgsrc guide](http://www.netbsd.org/docs/pkgsrc/)
 - [NetBSD's pkgsrc wiki](http://wiki.netbsd.org/pkgsrc/)
 - Other blog posts here :)
 
-### where to find me
+## where to find me
 
 - yrmt@edgebsd.org 
 - irc.oftc.net 
 	
 	`#saveosx`
-
-
-===
