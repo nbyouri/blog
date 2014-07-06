@@ -87,21 +87,21 @@ Makefile:
 {% highlight make %}
 # $NetBSD$
 
-PKGNAME=	   osxinfo-0.1
-CATEGORIES=	misc
-GHCOMMIT=	   de74b8960f27844f7b264697d124411f81a1eab6
-DISTNAME=	   ${GHCOMMIT}
-MASTER_SITES=	https://github.com/yrmt/osxinfo/archive/
+PKGNAME=      osxinfo-0.1
+CATEGORIES=   misc
+GHCOMMIT=     de74b8960f27844f7b264697d124411f81a1eab6
+DISTNAME=     ${GHCOMMIT}
+MASTER_SITES= https://github.com/yrmt/osxinfo/archive/
 
-MAINTAINER=	youri.mout@gmail.com
-HOMEPAGE=	   http://github.com/yrmt/osxinfo
-COMMENT=	   Small Mac OS X Info Program
-LICENSE=	   isc
+MAINTAINER=   youri.mout@gmail.com
+HOMEPAGE=     http://github.com/yrmt/osxinfo
+COMMENT=      Small Mac OS X Info Program
+LICENSE=      isc
 
 ONLY_FOR_PLATFORM= Darwin-*-*
 
-DIST_SUBDIR=	osxinfo
-WRKSRC=		${WRKDIR}/osxinfo-${GHCOMMIT}
+DIST_SUBDIR= osxinfo
+WRKSRC=	${WRKDIR}/osxinfo-${GHCOMMIT}
 
 .include "../../databases/sqlite3/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
@@ -166,39 +166,39 @@ You should be aware that there are many make options along with these targets, l
 
 The framework uses an `mk.conf` file, usually found in /etc. Here's how mine looks:
 
+{% highlight make %}
+# Tue Oct 15 21:21:46 CEST 2013
 
-	# Tue Oct 15 21:21:46 CEST 2013
+.ifdef BSD_PKG_MK	# begin pkgsrc settings
 
-	.ifdef BSD_PKG_MK	# begin pkgsrc settings
+DISTDIR=   /pkgsrc/distfiles
+PACKAGES=  /pkgsrc/packages
+WRKOBJDIR= /pkgsc/work
+ABI=            64
+PKGSRC_COMPILER=clang
+CC=		clang
+CXX=		clang++
+CPP=		${CC} -E
 
-	DISTDIR=               /pkgsrc/distfiles
-	PACKAGES=              /pkgsrc/packages
-	WRKOBJDIR=             /pkgsrc/work
-	ABI=						64
-	PKGSRC_COMPILER=			clang
-	CC=							clang
-	CXX=						clang++
-	CPP=						${CC} -E
-
-	PKG_DBDIR=				/var/db/pkg
-	LOCALBASE=				/usr/pkg
-	VARBASE=					/var
-	PKG_TOOLS_BIN=			/usr/pkg/sbin
-	PKGINFODIR=				info
-	PKGMANDIR=				man
-	BINPKG_SITES=           http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64
-	DEPENDS_TARGET=         bin-install
-	X11_TYPE=modular
-	TOOLS_PLATFORM.awk?=		/usr/pkg/bin/nawk
-	TOOLS_PLATFORM.sed?=		/usr/pkg/bin/nbsed
-	ALLOW_VULNERABLE_PACKAGES=  yes
-	MAKE_JOBS=              		8
-	SKIP_LICENSE_CHECK=             yes
-	PKG_DEVELOPER=					YES
-	SIGN_PACKAGES=                  gpg
-	PKG_DEFAULT_OPTIONS+=   -pulseaudio -x264 -imlib2-amd64 -dconf
-	.endif			# end pkgsrc settings
-
+PKG_DBDIR=	/var/db/pkg
+LOCALBASE=	/usr/pkg
+VARBASE=	/var
+PKG_TOOLS_BIN=	/usr/pkg/sbin
+PKGINFODIR=	info
+PKGMANDIR=	man
+BINPKG_SITES=   http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64
+DEPENDS_TARGET= bin-install
+X11_TYPE=       modular
+TOOLS_PLATFORM.awk?=/usr/pkg/bin/nawk
+TOOLS_PLATFORM.sed?=/usr/pkg/bin/nbsed
+ALLOW_VULNERABLE_PACKAGES= yes
+MAKE_JOBS=                 8
+SKIP_LICENSE_CHECK=        yes
+PKG_DEVELOPER=		   yes
+SIGN_PACKAGES=             gpg
+PKG_DEFAULT_OPTIONS+=      -pulseaudio -x264 -imlib2-amd64 -dconf
+.endif			   # end pkgsrc settings
+{% endhighlight %}
 
 - I use `DISTDIR`, `PACKAGES`, `WRKOBJDIR` to move distfiles, packages and source files somewhere else to keep my pkgsrc tree clean
 - `PKGSRC_COMPILER`, `CC`, `CXX`, `CPP` and `ABI` are my compiler options. I'm using clang to create 64 bit binaries here
@@ -247,19 +247,20 @@ So now you have valid `Makefile` and `distinfo` files but you need to write a pa
 Here's how they look like at the moment: 
 	
  Makefile:
- 
-	# $NetBSD$
+{% highlight make %} 
+# $NetBSD$
 
-	DISTNAME=	2bwm-0.1
-	CATEGORIES=	wm
-	MASTER_SITES=	http://pkgsrc.saveosx.org/Darwin/distfiles/
+DISTNAME=       2bwm-0.1
+CATEGORIES=     wm
+MASTER_SITES=   http://pkgsrc.saveosx.org/Darwin/distfiles/
 
-	MAINTAINER=	yrmt@users.sourceforge.net
-	HOMEPAGE=	http://github.com/venam/2bwm/
-	COMMENT=	Fast floating WM written over the XCB library and derived from mcwm
-	LICENSE=	isc
+MAINTAINER=     yrmt@users.sourceforge.net
+HOMEPAGE=       http://github.com/venam/2bwm/
+COMMENT=        Fast floating WM written over the XCB library and derived from mcwm
+LICENSE=        isc
 
-	.include "../../mk/bsd.pkg.mk"
+.include "../../mk/bsd.pkg.mk"
+{% endhighlight %}
 
 distinfo:
 
@@ -325,23 +326,24 @@ in our Makefile.
 
 Clean, build again, and add more dependencies until it passes the build stage. Here's how my Makefile ends up looking like:
 
-	# $NetBSD$
+{% highlight make %}
+# $NetBSD$
 
-	DISTNAME=	2bwm-0.1
-	CATEGORIES=	wm
-	MASTER_SITES=	http://pkgsrc.saveosx.org/Darwin/distfiles/
+DISTNAME=       2bwm-0.1
+CATEGORIES=     wm
+MASTER_SITES=   http://pkgsrc.saveosx.org/Darwin/distfiles/
 
-	MAINTAINER=	yrmt@users.sourceforge.net
-	HOMEPAGE=	http://github.com/venam/2bwm/
-	COMMENT=	Fast floating WM written over the XCB library and derived from mcwm
-	LICENSE=	isc
+MAINTAINER=     yrmt@users.sourceforge.net
+HOMEPAGE=       http://github.com/venam/2bwm/
+COMMENT=        Fast floating WM written over the XCB library and derived from mcwm
+LICENSE=        isc
 
-	.include "../../x11/libxcb/buildlink3.mk"
-	.include "../../x11/xcb-util-wm/buildlink3.mk"
-	.include "../../x11/xcb-util-keysyms/buildlink3.mk"
-	.include "../../x11/xcb-util/buildlink3.mk"
-	.include "../../mk/bsd.pkg.mk"
-
+.include "../../x11/libxcb/buildlink3.mk"
+.include "../../x11/xcb-util-wm/buildlink3.mk"
+.include "../../x11/xcb-util-keysyms/buildlink3.mk"
+.include "../../x11/xcb-util/buildlink3.mk"
+.include "../../mk/bsd.pkg.mk"
+{% endhighlight %}
 
 
 #### install phase
@@ -375,13 +377,15 @@ returns nothing, because 2bwm installs files in the wrong place so we need to fi
 
 From 2bwm's Makefile: 
 
-	install: $(TARGETS)
-	test -d $(DESTDIR)$(PREFIX)/bin || mkdir -p $(DESTDIR)$(PREFIX)/bin
-	install -pm 755 2bwm $(DESTDIR)$(PREFIX)/bin
-	install -pm 755 hidden $(DESTDIR)$(PREFIX)/bin
-	test -d $(DESTDIR)$(MANPREFIX)/man1 || mkdir -p $(DESTDIR)$(MANPREFIX)/man1
-	install -pm 644 2bwm.man $(DESTDIR)$(MANPREFIX)/man1/2bwm.1
-	install -pm 644 hidden.man $(DESTDIR)$(MANPREFIX)/man1/hidden.1
+{% highlight make %}
+install: $(TARGETS)
+        test -d $(DESTDIR)$(PREFIX)/bin || mkdir -p $(DESTDIR)$(PREFIX)/bin
+        install -pm 755 2bwm $(DESTDIR)$(PREFIX)/bin
+        install -pm 755 hidden $(DESTDIR)$(PREFIX)/bin
+        test -d $(DESTDIR)$(MANPREFIX)/man1 || mkdir -p $(DESTDIR)$(MANPREFIX)/man1
+        install -pm 644 2bwm.man $(DESTDIR)$(MANPREFIX)/man1/2bwm.1
+        install -pm 644 hidden.man $(DESTDIR)$(MANPREFIX)/man1/hidden.1
+{% endhighlight %}
 
 This looks fine since it installs in a `DESTDIR`/`PREFIX` but it sets 
 
@@ -413,19 +417,14 @@ pkgdiff "/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile"
 
 	and this returns our diff: 
 	
-		$NetBSD$
-
-		--- /Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile.orig	2014-07-05 11:38:22.000000000 +0000
-		+++ /Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile
-		@@ -1,9 +1,8 @@
- 		VERSION=2013-3
- 
- 		RM=/bin/rm
-		-PREFIX=/usr/local
- 		LIB_SUFFIX=lib
-		-MANPREFIX=$(PREFIX)/share/man
-		+MANPREFIX=${PKGMANDIR}
- 		TWOBWM_PATH=${PREFIX}/bin/2bwm
+{% highlight diff %}
+RM=/bin/rm
+-PREFIX=/usr/local
+LIB_SUFFIX=lib
+-MANPREFIX=$(PREFIX)/share/man
++MANPREFIX=${PKGMANDIR}
+TWOBWM_PATH=${PREFIX}/bin/2bwm
+{% endhighlight %}
  
  
 
@@ -473,12 +472,14 @@ you should get this new line:
 
 You should be able to fix the prefix error much quicker than with the patching explained above thanks to the sed substitution framework. Here's how it looks like in my port Makefile:
 
-	SUBST_CLASSES+=			makefile
-	SUBST_STAGE.makefile=	pre-build
-	SUBST_MESSAGE.makefile=	Fixing makefile
-	SUBST_FILES.makefile=	Makefile
-	SUBST_SED.makefile=	-e 's,/usr/local,${PREFIX},g'
-	SUBST_SED.makefile+=	-e 's,share/man,${PKGMANDIR},g'
+{% highlight make %}
+SUBST_CLASSES+=         makefile
+SUBST_STAGE.makefile=   pre-build
+SUBST_MESSAGE.makefile= Fixing makefile
+SUBST_FILES.makefile=   Makefile
+SUBST_SED.makefile=     -e 's,/usr/local,${PREFIX},g'
+SUBST_SED.makefile+=    -e 's,share/man,${PKGMANDIR},g'
+{% endhighlight %}
 
 As you can see, you can do multiple commands on multiple files, it is very useful for very small fixes like this.
 
@@ -518,30 +519,32 @@ You can also send me an email or talk to me on IRC so I can submit it for you.
 You can create port options with the `options.mk` file, like for `wm/dwm`
 
 	
-	# $NetBSD: options.mk,v 1.2 2011/06/17 11:59:57 obache Exp $
+{% highlight make %}
+# $NetBSD: options.mk,v 1.2 2011/06/17 11:59:57 obache Exp $
 
-	PKG_OPTIONS_VAR=			PKG_OPTIONS.dwm
-	PKG_SUPPORTED_OPTIONS=	xinerama
-	PKG_SUGGESTED_OPTIONS=	xinerama
+PKG_OPTIONS_VAR=			PKG_OPTIONS.dwm
+PKG_SUPPORTED_OPTIONS=	xinerama
+PKG_SUGGESTED_OPTIONS=	xinerama
 
-	.include "../../mk/bsd.options.mk"
+.include "../../mk/bsd.options.mk"
 
-	#
-	# Xinerama support
-	#
-	# If we don't want the Xinerama support we delete XINERAMALIBS and
-	# XINERAMAFLAGS lines, otherwise the Xinerama support is the default.
-	#
-	.if !empty(PKG_OPTIONS:Mxinerama)
-	.  include "../../x11/libXinerama/buildlink3.mk"
-	.else
-	SUBST_CLASSES+=			options
-	SUBST_STAGE.options=	pre-build
-	SUBST_MESSAGE.options=	Toggle the Xinerama support
-	SUBST_FILES.options=	config.mk
-	SUBST_SED.options+=	-e '/^XINERAMA/d'
-	.  include "../../x11/libX11/buildlink3.mk"
-	.endif
+#
+# Xinerama support
+#
+# If we don't want the Xinerama support we delete XINERAMALIBS and
+# XINERAMAFLAGS lines, otherwise the Xinerama support is the default.
+#
+.if !empty(PKG_OPTIONS:Mxinerama)
+.  include "../../x11/libXinerama/buildlink3.mk"
+.else
+SUBST_CLASSES+=         options
+SUBST_STAGE.options=    pre-build
+SUBST_MESSAGE.options=  Toggle the Xinerama support
+SUBST_FILES.options=    config.mk
+SUBST_SED.options+=     -e '/^XINERAMA/d'
+.  include "../../x11/libX11/buildlink3.mk"
+.endif
+{% endhighlight %}
 
 This file should be included in the Makefile:
 
@@ -579,19 +582,20 @@ precompiled packages available for testing. You will need pkgsrc's `pkg_install`
 
 I use this `zsh` function to :
 
-	add () {
-		# upload the package to remote server
-		scp $1 yrmt@saveosx.org:/usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/All/ 2> /dev/null
-		
-		# update the package summary
-		ssh yrmt@saveosx.org 'cd /usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/All/;
-        	rm pkg_summary.gz;
-         	/usr/pkg/sbin/pkg_info -X *.tgz | gzip -9 > pkg_summary.gz'
-		
-		# pkgin update
-		sudo pkgin update
-	}
-
+{% highlight bash %} 
+add () {
+	# upload the package to remote server
+	scp $1 yrmt@saveosx.org:/usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/All/ 2> /dev/null
+	
+	# update the package summary
+	ssh yrmt@saveosx.org 'cd /usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/All/;
+	rm pkg_summary.gz;
+ 	/usr/pkg/sbin/pkg_info -X *.tgz | gzip -9 > pkg_summary.gz'
+	
+	# pkgin update
+	sudo pkgin update
+}
+{% endhighlight %}
 
 - upload a package 
 - update the package summary, which is an archive containing information about all present packages that will be picked up by pkg_install and pkgin. It looks like this for one package:
@@ -649,14 +653,15 @@ You should just generate the buildlink3.mk file we've talked about earlier like 
 #### what if the program is only hosted on GitHub ?
 
 pkgsrc supports fetching archives from specific git commits on GitHub like this:
-
-	PKGNAME=		2bwm-0.1
-	CATEGORIES=		wm
-	GHCOMMIT=		52a097ca644eb571b22a135951c945fcca57a25c
-	DISTNAME=		${GHCOMMIT}
-	MASTER_SITES=	https://github.com/venam/2bwm/archive/
-	DIST_SUBDIR=	2bwm
-	WRKSRC=			${WRKDIR}/2bwm-${GHCOMMIT}
+{% highlight make %}
+PKGNAME=           2bwm-0.1
+CATEGORIES=        wm
+GHCOMMIT=          52a097ca644eb571b22a135951c945fcca57a25c
+DISTNAME=          ${GHCOMMIT}
+MASTER_SITES=      https://github.com/venam/2bwm/archive/
+DIST_SUBDIR=       2bwm
+WRKSRC=            ${WRKDIR}/2bwm-${GHCOMMIT}
+{% endhighlight %}
 
 You can then easily update the git commit and the distinfo with it to update the program. 
 
@@ -665,20 +670,23 @@ You can then easily update the git commit and the distinfo with it to update the
 You can do all Makefile operations directly from the port's Makefile like this: 
 
 
-	post-extract:
-		${CHMOD} a-x ${WRKSRC}/elementary/apps/48/internet-mail.svg
+{% highlight make %}
+post-extract:
+	${CHMOD} a-x ${WRKSRC}/elementary/apps/48/internet-mail.svg
 
-	do-install:
-		${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX}/share/icons
-		cd ${WRKSRC} && pax -rw -pe . ${DESTDIR}${PREFIX}/share/icons/
+do-install:
+	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX}/share/icons
+	cd ${WRKSRC} && pax -rw -pe . ${DESTDIR}${PREFIX}/share/icons/
+{% endhighlight %}
 
 To install, but you can also build programs from the Makefile. This is what qt4-sqlite3 uses:
 
-	do-build:
-		cd ${WRKSRC}/src/tools/bootstrap && env ${MAKE_ENV} ${GMAKE}
-		cd ${WRKSRC}/src/tools/moc && env ${MAKE_ENV} ${GMAKE}
-		cd ${WRKSRC}/src/plugins/sqldrivers/sqlite && env ${MAKE_ENV} ${GMAKE}
-
+{% highlight make %}
+do-build:
+	cd ${WRKSRC}/src/tools/bootstrap && env ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC}/src/tools/moc && env ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC}/src/plugins/sqldrivers/sqlite && env ${MAKE_ENV} ${GMAKE}
+{% endhighlight %}
 
 
 You can install the following type of files: 
