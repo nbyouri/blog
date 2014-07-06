@@ -84,6 +84,7 @@ Here's how they would look like for a small port I submitted not long ago in pkg
 
 Makefile: 
 	
+        {% highlight make %}
 	# $NetBSD$
 
 	PKGNAME=	   osxinfo-0.1
@@ -104,6 +105,7 @@ Makefile:
 
 	.include "../../databases/sqlite3/buildlink3.mk"
 	.include "../../mk/bsd.pkg.mk"
+        {% endhighlight %}
 
 DESCR: 
 	
