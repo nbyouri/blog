@@ -18,9 +18,9 @@ This guide should allow you to learn how to create a new port or simply fix a po
 
 You should have a copy of the pkgsrc tree sitting somewhere on your disk, already bootstrapped, see this [blog post](http://saveosx.org/pkgsrc-bootstrap/) on how to do this.
 
-The tree contains a Makefile, a README, category directories containing the ports, the bootstrap directory and some documentation.
+The tree contains a `Makefile`, a `README`, category directories containing the ports, the bootstrap directory and some documentation.
 
-The mk/* contains the pkgsrc framework Makefiles, shell and sed/awk scripts, ports distfiles, packages. 
+`mk/*` contains the pkgsrc framework Makefiles, shell and sed/awk scripts, ports distfiles, packages. 
 
 `pkglocate` is a script to find port names in the tree, the `pkgfind` program is much faster though.
 
