@@ -22,7 +22,7 @@ The tree contains a `Makefile`, a `README`, category directories containing the 
 
 `mk/*` contains the pkgsrc framework Makefiles, shell and sed/awk scripts, ports distfiles, packages. 
 
-`pkglocate` is a script to find port names in the tree, the `pkgfind` program is much faster though.
+`pkglocate` is a script to find port names in the tree, though `pkgtools/pkgfind` is much faster.
 
 
 ## use the right tools
