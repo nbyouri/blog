@@ -169,32 +169,32 @@ The framework uses an `mk.conf` file, usually found in /etc. Here's how mine loo
 {% highlight make %}
 # Tue Oct 15 21:21:46 CEST 2013
 
-.ifdef BSD_PKG_MK	# begin pkgsrc settings
+.ifdef BSD_PKG_MK          # begin pkgsrc settings
 
-DISTDIR=   /pkgsrc/distfiles
-PACKAGES=  /pkgsrc/packages
-WRKOBJDIR= /pkgsc/work
-ABI=            64
-PKGSRC_COMPILER=clang
-CC=		clang
-CXX=		clang++
-CPP=		${CC} -E
+DISTDIR=                   /pkgsrc/distfiles
+PACKAGES=                  /pkgsrc/packages
+WRKOBJDIR=                 /pkgsc/work
+ABI=                       64
+PKGSRC_COMPILER=           clang
+CC=                        clang
+CXX=                       clang++
+CPP=                       ${CC} -E
 
-PKG_DBDIR=	/var/db/pkg
-LOCALBASE=	/usr/pkg
-VARBASE=	/var
-PKG_TOOLS_BIN=	/usr/pkg/sbin
-PKGINFODIR=	info
-PKGMANDIR=	man
-BINPKG_SITES=   http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64
-DEPENDS_TARGET= bin-install
-X11_TYPE=       modular
-TOOLS_PLATFORM.awk?=/usr/pkg/bin/nawk
-TOOLS_PLATFORM.sed?=/usr/pkg/bin/nbsed
+PKG_DBDIR=                 /var/db/pkg
+LOCALBASE=                 /usr/pkg
+VARBASE=                   /var
+PKG_TOOLS_BIN=             /usr/pkg/sbin
+PKGINFODIR=                info
+PKGMANDIR=                 man
+BINPKG_SITES=              http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64
+DEPENDS_TARGET=            bin-install
+X11_TYPE=                  modular
+TOOLS_PLATFORM.awk?=       /usr/pkg/bin/nawk
+TOOLS_PLATFORM.sed?=       /usr/pkg/bin/nbsed
 ALLOW_VULNERABLE_PACKAGES= yes
 MAKE_JOBS=                 8
 SKIP_LICENSE_CHECK=        yes
-PKG_DEVELOPER=		   yes
+PKG_DEVELOPER=             yes
 SIGN_PACKAGES=             gpg
 PKG_DEFAULT_OPTIONS+=      -pulseaudio -x264 -imlib2-amd64 -dconf
 .endif			   # end pkgsrc settings
@@ -417,14 +417,14 @@ pkgdiff "/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile"
 
 	and this returns our diff: 
 	
-{% highlight diff %}
-RM=/bin/rm
--PREFIX=/usr/local
-LIB_SUFFIX=lib
--MANPREFIX=$(PREFIX)/share/man
-+MANPREFIX=${PKGMANDIR}
-TWOBWM_PATH=${PREFIX}/bin/2bwm
-{% endhighlight %}
+        {% highlight diff %}
+        RM=/bin/rm
+        -PREFIX=/usr/local
+        LIB_SUFFIX=lib
+        -MANPREFIX=$(PREFIX)/share/man
+        +MANPREFIX=${PKGMANDIR}
+        TWOBWM_PATH=${PREFIX}/bin/2bwm
+        {% endhighlight %}
  
  
 
@@ -632,7 +632,9 @@ add () {
 
 And this shell alias to upload all my built packages, but I still need to run `add()` mentionned above to update the pkg_summary
 
-	up='rsync -avhz --progress /pkgsrc/packages/ root@saveosx.org:/usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/'
+{% highlight bash %} 
+up='rsync -avhz --progress /pkgsrc/packages/ root@saveosx.org:/usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/'
+{% endhighlight %} 
 
 Then you should be able to set the url in repositories.conf to use your packages with pkgin. You can also install them directly with something like `pkg_add http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64/All/9menu-1.8nb1.tgz` of course. 
 
