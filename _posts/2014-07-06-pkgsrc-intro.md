@@ -4,7 +4,7 @@ title: An introduction to pkgsrc
 author: Youri Mouton
 ---
 
-This guide should allow you to learn how to create a new port or simply fix a port you need. There are three target demographics listed below, this guide is mostly intended to the second target demographics but it also gives an introduction for port developers.
+This guide should allow you to learn how to create a new port or simply fix a port that you need. There are three target demographics listed below, this guide is mostly intended to the second target demographics but it also gives an introduction for port developers.
 
 	- binary packages user with pkgin or pkg_add 
  		(you should be confident here)
