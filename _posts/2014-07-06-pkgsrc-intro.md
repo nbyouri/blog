@@ -20,7 +20,7 @@ You should have a copy of the pkgsrc tree sitting somewhere on your disk, alread
 
 The tree contains a `Makefile`, a `README`, category directories containing the ports, the bootstrap directory and some documentation.
 
-`mk/*` contains the pkgsrc framework Makefiles, shell and sed/awk scripts, ports distfiles, packages. 
+The `mk/*` directory contains the pkgsrc framework Makefiles but also shell and Awk scripts, ports distfiles, packages. 
 
 `pkglocate` is a script to find port names in the tree, though `pkgtools/pkgfind` is much faster.
 
