@@ -711,14 +711,13 @@ You can install the following type of files:
 
 #### common errors
 
-1. > Makefile:19: *** missing separator.  Stop.
+- > Makefile:19: *** missing separator.  Stop.
 
 This means you're not using the right `make`. On most systems, the make installed from the pkgsrc bootstrap is called `bmake`
 
+- If you have a feeling a port is stuck in the building stage, disable make jobs in your mk.conf
 
-2. If you have a feeling a port is stuck in the building stage, disable make jobs in your mk.conf
-
-3. Please contribute here :)
+- Please contribute here :)
 
 
 ## links
