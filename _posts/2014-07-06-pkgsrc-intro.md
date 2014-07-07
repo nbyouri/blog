@@ -101,7 +101,7 @@ LICENSE=      isc
 ONLY_FOR_PLATFORM= Darwin-*-*
 
 DIST_SUBDIR= osxinfo
-WRKSRC=	${WRKDIR}/osxinfo-${GHCOMMIT}
+WRKSRC= ${WRKDIR}/osxinfo-${GHCOMMIT}
 
 .include "../../databases/sqlite3/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
