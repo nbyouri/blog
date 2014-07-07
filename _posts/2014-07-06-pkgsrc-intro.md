@@ -415,19 +415,8 @@ I will show how to do both ways so you can get an introduction on how to generat
 	> pkgvi: File was modified. For a diff, type:
 pkgdiff "/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile"
 
-	and this returns our diff: 
+	and this returns our diff.
 	
-        {% highlight diff %}
-        RM=/bin/rm
-        -PREFIX=/usr/local
-        LIB_SUFFIX=lib
-        -MANPREFIX=$(PREFIX)/share/man
-        +MANPREFIX=${PKGMANDIR}
-        TWOBWM_PATH=${PREFIX}/bin/2bwm
-        {% endhighlight %}
- 
- 
-
 
 - create the patch with `mkpatches`, it should create a `patches` directory in the port containing the patch and an original file removed with `mkpatches -c`. 
 
