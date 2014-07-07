@@ -578,8 +578,8 @@ add () {
 	
 	# update the package summary
 	ssh yrmt@saveosx.org 'cd /usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/All/;
-	rm pkg_summary.gz;
- 	/usr/pkg/sbin/pkg_info -X *.tgz | gzip -9 > pkg_summary.gz'
+	        rm pkg_summary.gz;
+ 	        /usr/pkg/sbin/pkg_info -X *.tgz | gzip -9 > pkg_summary.gz'
 	
 	# pkgin update
 	sudo pkgin update
