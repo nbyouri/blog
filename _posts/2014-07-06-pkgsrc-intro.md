@@ -197,7 +197,7 @@ SKIP_LICENSE_CHECK=        yes
 PKG_DEVELOPER=             yes
 SIGN_PACKAGES=             gpg
 PKG_DEFAULT_OPTIONS+=      -pulseaudio -x264 -imlib2-amd64 -dconf
-.endif			   # end pkgsrc settings
+.endif                     # end pkgsrc settings
 {% endhighlight %}
 
 - I use `DISTDIR`, `PACKAGES`, `WRKOBJDIR` to move distfiles, packages and source files somewhere else to keep my pkgsrc tree clean
