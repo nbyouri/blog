@@ -226,11 +226,11 @@ Let's create a little port using the tools we've talked about above. I will use 
 
 - Now that we have a proper link for our program source, create a directory for your port:
 	
-		# mkdir ~/pkgsrc/wm/2bwm
+		$ mkdir ~/pkgsrc/wm/2bwm
 
 - Use `url2pkg` to create the needed files automatically:
 		
-		# url2pkg http://pkgsrc.saveosx.org/Darwin/distfiles/2bwm-0.1.tar.gz
+		$ url2pkg http://pkgsrc.saveosx.org/Darwin/distfiles/2bwm-0.1.tar.gz
 
 You'll be presented with a text editor like `vim` to enter basic Makefile options:
 
@@ -289,7 +289,7 @@ But our PLIST file is still empty.
 
 Let's find out which port provides this file ! 
 
-	# pkgin se xcb 
+	$ pkgin se xcb 
 
 returns these possible packages: 
 
@@ -303,7 +303,7 @@ returns these possible packages:
 
 Package content inspection allowed me to find the right port 
 
-	# pkgin pc libxcb|grep randr.h
+	$ pkgin pc libxcb|grep randr.h
 
 So we can add the libxcb `buildlink3.mk` file to the Makefile above the bsd.pkg.mk include: 
 
@@ -311,8 +311,8 @@ So we can add the libxcb `buildlink3.mk` file to the Makefile above the bsd.pkg.
 
 This allows the port to link 2bwm against the libxcb port. Let's try to build the port again!
 
-	# make clean
-	# make
+	$ make clean
+	$ make
 
 Reports another error !
 
@@ -351,7 +351,7 @@ LICENSE=        isc
 Geat ! We got our program to compile in pkgsrc. Now we must generate the PLIST file so we can actually install the program, but we must `make stage-install` to make sure that it installs in the right place.
 
 	
-	# find /pkgsrc/work/wm/2bwm/work/.destdir/
+	$ find /pkgsrc/work/wm/2bwm/work/.destdir/
 
 returns:
 
@@ -371,7 +371,7 @@ returns:
 This doesn't look right since our `LOCALBASE` is `/usr/pkg`.
 
 
-	# make print-PLIST
+	$ make print-PLIST
 
 returns nothing, because 2bwm installs files in the wrong place so we need to fix 2bwm's own Makefile to use the right `DESTDIR` and `PREFIX`, that is set to the right place by pkgsrc. Let's inspect how 2bwm installs:
 
@@ -408,7 +408,7 @@ I will show how to do both ways so you can get an introduction on how to generat
 - edit the file you need to modify with `pkgvi`:
 
 	
-		# pkgvi /pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile
+		$ pkgvi /pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile
 
 	which should return:
 
@@ -420,12 +420,12 @@ pkgdiff "/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile"
 
 - create the patch with `mkpatches`, it should create a `patches` directory in the port containing the patch and an original file removed with `mkpatches -c`. 
 
-		# find patches/*
+		$ find patches/*
 		patches/patch-Makefile
 
 - now that the patch has been created, we need to add it's hash to distinfo otherwise pkgsrc won't pick it up:
 
-		# make mdi
+		$ make mdi
 you should get this new line:
 
 	> SHA1 (patch-Makefile) = 9f8cd00a37edbd3e4f65915aa666ebd0f3c04e04
@@ -433,7 +433,7 @@ you should get this new line:
 
 - you can now clean and `make patch` and `make stage-install CHECK_FILES=no` since we still haven't generated a proper PLIST. Let's see if 2wm files were installed in the right place this time:
 
-		# find /pkgsrc/work/wm/2bwm/work/.destdir/
+		$ find /pkgsrc/work/wm/2bwm/work/.destdir/
 
 		/pkgsrc/work/wm/2bwm/work/.destdir/
 		/pkgsrc/work/wm/2bwm/work/.destdir//usr
@@ -444,7 +444,7 @@ you should get this new line:
 
 	It looks like it is alright ! Let's generate the PLIST:
 
-		# make print-PLIST > PLIST
+		$ make print-PLIST > PLIST
 	
 	containing:
 
@@ -454,7 +454,7 @@ you should get this new line:
 
 	There you have a working port you can install normally with 
 
-		# make install 
+		$ make install 
 
 
 #### using the sed substitution framework
@@ -477,7 +477,7 @@ As you can see, you can do multiple commands on multiple files, it is very usefu
 
 Now that we have a working port, we must make sure it complies to the pkgsrc rules. 
 
-	# pkglint
+	$ pkglint
 	
 Returns 
 
@@ -639,7 +639,7 @@ Bulk building pkgsrc packages is a topic for another post, see jperkin's excelle
 
 You should just generate the buildlink3.mk file we've talked about earlier like this:
 
-	# createbuildlink > buildlink3.mk
+	$ createbuildlink > buildlink3.mk
 
 #### what if the program is only hosted on GitHub ?
 
