@@ -709,6 +709,10 @@ You can install the following type of files:
 
 `INSTALLATION_DIRS` : A list of directories relative to PREFIX that are created by pkgsrc at the beginning of the install phase. The package is supposed to create all needed directories itself before installing files to it and list all other directories here.
 
+#### GNU Configure
+
+If your program uses a GNU configure script `url2pkg` will see it and prefix / destdir related issues shouldn't be a problem. Such programs are relatively easy to work with in pkgsrc.
+
 #### common errors
 
 - > Makefile:19: *** missing separator.  Stop.
