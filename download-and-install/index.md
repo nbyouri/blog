@@ -3,7 +3,7 @@ layout: layout
 title: "Download and Install"
 ---
 
-[![](http://www.3tb.de/netbsd/pkgsrc-logo-outline.png)](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2013Q4.pkg)
+<a href="http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2013Q4.pkg"><img src="http://www.3tb.de/netbsd/pkgsrc-logo-outline.png" width="500" height="300" /></a>
 Download and Install
 ====================
 
