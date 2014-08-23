@@ -11,6 +11,15 @@ Before you get started: **you'll need root privileges on your system**
 
 We provide three methods for setting up pkgsrc and pkgin on OS X
 
+Using the .pkg file 
+-----------------------------------------
+
+1. Download [bootstrap.pkg](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2013Q4.pkg).
+2. Install the .pkg file.
+3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
+4. Add `/usr/pkg/man` in your shell `MANPATH` variable.
+
+
 Using the archive
 -----------------
 
@@ -35,13 +44,6 @@ This is the default, and the recommended method, for two reasons: it's the most 
 3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell's `PATH` variable.
 4. Add `/usr/pkg/man` in your shell `MANPATH` variable.
 
-Using the .pkg file (not available)
------------------------------------------
-
-1. Download [bootstrap.pkg](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2013Q4.pkg).
-2. Install the .pkg file.
-3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell `PATH` variable.
-4. Add `/usr/pkg/man` in your shell `MANPATH` variable.
 
 From source
 -----------
