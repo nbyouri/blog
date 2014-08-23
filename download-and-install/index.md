@@ -4,6 +4,7 @@ title: "Download and Install"
 ---
 
 Just click on the icon! 
+-----------------------
 
 <a href="http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2013Q4.pkg"><img src="http://www.3tb.de/netbsd/pkgsrc-logo-outline.png" width="500" height="300" /></a>
 Download and Install
