@@ -5,6 +5,7 @@ rdiscount:
   extensions: [smart]
 title :  Save OS X Blog
 production_url : http://blog.saveosx.org
+local_url : http://localhost:4000
 description: "A blog by Youri Mouton and Calum Macrae"
 disqus_shortname: saveosx
 analytics: UA-44722172-1

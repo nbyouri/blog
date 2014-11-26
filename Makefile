@@ -1,7 +1,10 @@
-TARGETS: build serve git 
+TARGETS: build serve serve-local git 
 
 all:
 	${TARGETS}
+
+serve-local:
+	jekyll serve&
 
 build:
 	jekyll build
