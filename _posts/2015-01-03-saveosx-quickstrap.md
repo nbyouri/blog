@@ -3,7 +3,7 @@ layout: post
 title: A Streamlined Bootstrapper for Save OS X
 author: Calum MacRae
 ---
-__Editors Note: This is a cross-post from Calum's personal blog: http://cmacr.ae__
+__Editors Note: This is a cross-post from Calum's personal blog: [http://cmacr.ae](http://cmacr.ae)__
 
 [Youri](https://twitter.com/YouriMouton) and I have been working on [Save OS X](https://github.com/cmacrae/saveosx) on and off for quite some time now. It's grown and matured into something we're very proud of, but sadly, we're not the best at advocacy. This is something we'll be working on.
 
