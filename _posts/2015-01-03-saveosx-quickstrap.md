@@ -31,6 +31,11 @@ I decided to throw a demo up, using [showterm.io](https://showterm.io/a3ccab391e
 
 _Note: The time for some of the exeutions in this demo are inaccurate - it is, in fact, a faster process from the shell. This is due to the way [showterm](https://showterm.io) processes text_
 
+Go grab it
+----------
+You can get the `quickstrap` script from my GitHub:
+[https://github.com/cmacrae/saveosx](https://github.com/cmacrae/saveosx)  
+
 So, have at it people. Let us know what you think!
 
 We'll keep you posted!
