@@ -98,3 +98,7 @@ article, .content {
 	padding: 0!important;
 }
 
+.navbar-inverse .navbar-toggle {
+	border: none;
+}
+
