@@ -2,6 +2,7 @@
 layout: post
 title: A Streamlined Bootstrapper for Save OS X
 author: Calum MacRae
+tags: pkgsrc, saveosx
 ---
 __Editors Note: This is a cross-post from Calum's personal blog: [http://cmacr.ae](http://cmacr.ae)__
 

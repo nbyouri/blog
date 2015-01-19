@@ -2,6 +2,7 @@
 layout: pkgsrc-post
 title: An introduction to pkgsrc
 author: Youri Mouton
+tags: pkgsrc
 ---
 
 This guide should allow you to learn how to create a new port or simply fix a port that you need. There are three target demographics listed below:

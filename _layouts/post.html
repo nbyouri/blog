@@ -7,7 +7,10 @@ layout: layout
   </h1>
 
   <section class="byline">
-  {{ page.date | date: "%B %e, %Y" }} by {{ page.author }}
+  {{ page.date | date: "%B %e, %Y" }} by {{ page.author }}, tags:  
+  {% for tags in page.tags %}
+        {{ tags }}
+  {% endfor %}
   </section>
 
   {{ content }}

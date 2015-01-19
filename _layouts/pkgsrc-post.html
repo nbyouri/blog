@@ -1,16 +1,16 @@
 ---
 layout: layout
 ---
-
-<link href="/css/pkgsrc.css" rel="stylesheet">
-
 <article>
   <h1>
     <a href="{{ page.url }}">{{ page.title }}</a>
   </h1>
 
   <section class="byline">
-  {{ page.date | date: "%B %e, %Y" }} by {{ page.author }}
+  {{ page.date | date: "%B %e, %Y" }} by {{ page.author }}, tags:  
+  {% for tags in page.tags %}
+        {{ tags }}
+  {% endfor %}
   </section>
 
   {{ content }}
