@@ -70,8 +70,11 @@ article img, .content img {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
-ul, p {
+p {
     padding-left: 5px;
+    font-family: "Helvetica";
+}
+ul {
     font-family: "Helvetica";
 }
 .navbar-fixed-top {
