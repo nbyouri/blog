@@ -65,7 +65,7 @@ h1 {
     padding-bottom: 3px!important;
 }
 body {
-    -webkit-font-smoothing: antialiased;
+    font-family: Montserrat;
 }
 article img, .content img {
     border-radius: 4px;
@@ -80,4 +80,9 @@ p {
 }
 a {
         color: #2c3e50;
-    }
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-Regular.otf);
+}
+
