@@ -70,7 +70,7 @@ article img, .content img {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
-p {
+ul, p {
     padding-left: 5px;
     font-family: "Helvetica";
 }
@@ -88,4 +88,5 @@ a {
 .navbar-brand {
     padding: 28.5px 212px;
 }
+
 
