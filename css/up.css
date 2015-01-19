@@ -53,7 +53,7 @@ ul.listing li {
 #footer section.meta a {
     color: #222!important;
 }
-a:hover {
+.container a:hover {
     color: #c7254e!important;
     text-decoration: none!important;
 }
