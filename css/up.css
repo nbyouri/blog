@@ -75,6 +75,7 @@ article img, .content img {
 }
 p {
     padding-left: 5px;
+    font-family: "Helvetica";
 }
 .navbar-fixed-top {
     background-color: #34495e;
