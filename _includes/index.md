@@ -1,6 +1,5 @@
 Save OS X
 =========
-The official repo for the [Save OS X](http://saveosx.org/) project's set-up scripts.
 
 About
 -----
@@ -15,6 +14,7 @@ We want to show people that OS X is a perfectly viable option for developers, sy
 
 Installation
 ------------
+
 To get started, grab a copy of the repo (either clone it, or download as a zip).
 Open up a Terminal (this must be Apple's 'Terminal.app'), then `cd` to the `scripts` sub-directory and run the `bootstrap` script.
 
@@ -28,6 +28,7 @@ Open up a Terminal (this must be Apple's 'Terminal.app'), then `cd` to the `scri
 
 [Here's a quick demo of the script in action](https://showterm.io/a3ccab391e69016360b98)  
 _Note: The time for some of the exeutions in this demo are inaccurate - it is, in fact, a faster process from the shell. This is due to the way [showterm](https://showterm.io) processes text_
+
 
 So what do these scripts do?
 ----------------------------
@@ -53,16 +54,16 @@ See [here](http://pkgin.net/#examples) for pkgin's usage examples.
 Why choose Save OS X (specifically pkgin) over \<insert package manager here\>?
 -----------------------------------------------------------------------------
 Here's a list of properties that make [pkgin](http://pkgin.net/) (a binary package manager for pkgsrc) different from other package managers available for OS X:
-- Precompiled packages from a trusted source
-- Signed pacakges with GPG
-- Dead simple makefiles
-- A robust multi platform framework
-- Can be bootstrapped without any external dependencies other than a C compiler & a shell
-- Tried and true, with a huge community of BSD developers behind it (and many devs from other communities)
-- A very large collection of packages (up to 15,000)
-- Ultra portable framework for use on many other OS's results in high quality ports
-- Easy creation of new ports/packages
-- Source code & package management are kept separated
+		Precompiled packages from a trusted source
+	- Signed pacakges with GPG
+	- Dead simple makefiles
+	- A robust multi platform framework
+	- Can be bootstrapped without any external dependencies other than a C compiler & a shell
+	- Tried and true, with a huge community of BSD developers behind it (and many devs from other communities)
+	- A very large collection of packages (up to 15,000)
+	- Ultra portable framework for use on many other OS's results in high quality ports
+	- Easy creation of new ports/packages
+	- Source code & package management are kept separated
 
 Who?
 ----
