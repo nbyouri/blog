@@ -54,7 +54,7 @@ ul.listing li {
     color: #222!important;
 }
 a:hover {
-    /*color: #c7254e!important;*/
+    color: #c7254e!important;
     text-decoration: none!important;
 }
 article, .contents {
@@ -79,7 +79,7 @@ p {
     background-color: #34495e;
 }
 a {
-        color: #2c3e50;
+        color: #2a6496;
 }
 @font-face {
     font-family: Montserrat;
