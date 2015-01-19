@@ -187,7 +187,7 @@ VARBASE=                   /var
 PKG_TOOLS_BIN=             /usr/pkg/sbin
 PKGINFODIR=                info
 PKGMANDIR=                 man
-BINPKG_SITES=              http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64
+BINPKG_SITES=              http://pkgsrc.saveosx.org/Darwin/2014Q4/x86_64
 DEPENDS_TARGET=            bin-install
 X11_TYPE=                  modular
 TOOLS_PLATFORM.awk?=       /usr/pkg/bin/nawk
@@ -570,23 +570,6 @@ It allows you to change configure arguments and include other buildlinks, and va
 Now that you've created a few ports, you might want to make
 precompiled packages available for testing. You will need pkgsrc's `pkg_install` on the host system. I host my [packages](http://pkgsrc.saveosx.org/) on a FreeBSD server with a bootstrapped pkgsrc.
 
-I use this `zsh` function to :
-
-{% highlight bash %} 
-add () {
-	# upload the package to remote server
-	scp $1 yrmt@saveosx.org:/usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/All/ 2> /dev/null
-	
-	# update the package summary
-	ssh yrmt@saveosx.org 'cd /usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/All/;
-	        rm pkg_summary.gz;
- 	        /usr/pkg/sbin/pkg_info -X *.tgz | gzip -9 > pkg_summary.gz'
-	
-	# pkgin update
-	sudo pkgin update
-}
-{% endhighlight %}
-
 - upload a package 
 - update the package summary, which is an archive containing information about all present packages that will be picked up by pkg_install and pkgin. It looks like this for one package:
 
@@ -618,15 +601,6 @@ add () {
 
 
 - update pkgin 
-
-
-And this shell alias to upload all my built packages, but I still need to run `add()` mentionned above to update the pkg_summary
-
-{% highlight bash %} 
-up='rsync -avhz --progress /pkgsrc/packages/ root@saveosx.org:/usr/local/www/saveosx/packages/Darwin/2013Q4/x86_64/'
-{% endhighlight %} 
-
-Then you should be able to set the url in repositories.conf to use your packages with pkgin. You can also install them directly with something like `pkg_add http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64/All/9menu-1.8nb1.tgz` of course. 
 
 
 ## build all packages
