@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     //border-right: #e6e6e6 1px solid;
     //border-left: #e6e6e6 1px solid;
     padding-right: 50px;
+    margin-top: 40px;
 }
 h4 {
     border-bottom: 1px solid #e6e6e6!important;
@@ -84,5 +85,9 @@ a {
 @font-face {
     font-family: Montserrat;
     src: url(montserrat/Montserrat-Regular.otf);
+}
+
+.navbar-brand {
+    padding: 28.5px 212px;
 }
 
