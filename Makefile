@@ -1,4 +1,4 @@
-TARGETS: build serve serve-local git 
+TARGETS: build serve git 
 
 all:
 	${TARGETS}
