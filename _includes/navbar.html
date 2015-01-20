@@ -13,19 +13,21 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-            <li>
-            <a href="/download-and-install">Download & Install</a>
-        </li>
-            <li>
-            <a href="/about">About</a>
-            </li>
-            <li>
-            <a href="/blog">Blog</a>
-            </li>
-            <li>
-            <a href="https://github.com/cmacrae/saveosx">GitHub</a>
-            </li>
+            <li><a href="/download-and-install">Download & Install</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
         </ul>
     </div>
 </div>
 </nav>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+        });
+    });
+</script>

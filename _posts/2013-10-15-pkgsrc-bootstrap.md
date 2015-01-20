@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building 64 bit pkgsrc ports on Mac OS X
+title: Building 64 bit pkgsrc ports on Mac OS X from git
 author: Youri Mouton
 ---
 
@@ -8,11 +8,11 @@ You'll need the Xcode command line tools for this.
 
 First clone the pkgsrc git repository:        
 
-`git clone https://github.com/yrmt/pkgsrc`       
+`git clone https://github.com/jsonn/pkgsrc`       
 
 `cd pkgsrc/bootstrap`     
 
-`git checkout pkgsrc_2013Q4`
+`git checkout pkgsrc_2014Q4`
 
 `sudo ./bootstrap --prefix=/usr/pkg --pkgdbdir=/var/db/pkg --abi=64 --compiler=clang`     
 

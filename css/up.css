@@ -102,3 +102,6 @@ article, .content {
 	border: none;
 }
 
+.selected {
+  color:white;
+}

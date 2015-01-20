@@ -1,1 +1,6 @@
-I like to spend my free time to dabble on Unix systems such as FreeBSD or NetBSD and I've gained interest in bringing the experience I get on the aforementionned systems on Mac OS X which is feasible since it has a nice 
+---
+layout: layout
+title: "Posts"
+---
+
+{% markdown index.md %}

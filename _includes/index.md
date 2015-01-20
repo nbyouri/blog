@@ -1,80 +1,59 @@
-Save OS X
-=========
+#### Installing the required files for running pkgin:
 
-About
------
-[Save OS X](http://saveosx.org/) is a hacking and development project for Apple’s Operating System: OS X.
-We’re geared towards bringing a wealth of software that’s often found on other UNIX derived OS’s to OS X and showing the user that they can use OS X as a great UNIX based workstation.
+The packages are built on Mac OS X Yosemite using the pkgsrc framework from the NetBSD Foundation.
 
-Why?
-----
-To put it simply: because OS X is capable of much more than is immediately apparent to the average user. It has a familiar set of underlying utilities, many taken from the various BSD projects. We want to complement these with other tools available.
+[Download](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2014Q4.tar.gz) the archive needed to install pkgsrc and pkgin (8MB)
 
-We want to show people that OS X is a perfectly viable option for developers, sysadmins, hackers, or just those who like to tinker.
+Extract it with
 
-Installation
-------------
+`$ sudo tar -C / -xzf bootstrap-x86_64-2014Q4.tar.gz`
 
-To get started, grab a copy of the repo (either clone it, or download as a zip).
-Open up a Terminal (this must be Apple's 'Terminal.app'), then `cd` to the `scripts` sub-directory and run the `bootstrap` script.
+Have a [look](http://pkgsrc.saveosx.org/Darwin/2014Q4/x86_64/All/) our latest packages, they're 64bit and PGP signed!
 
-That should get you started.
-Simple as that!
+#### Getting ready:     
 
-Want secure binary package management on OS X fast?
----------------------------------------------------
-For a streamlined setup, to get you up and running in under a minute, there's the `quickstrap` script.
-Open up a Terminal (this must be Apple's 'Terminal.app'), then `cd` to the `scripts` sub-directory and run the `quickstrap` script.
+Update pkgin with the new repositories information     
 
-[Here's a quick demo of the script in action](https://showterm.io/a3ccab391e69016360b98)  
-_Note: The time for some of the exeutions in this demo are inaccurate - it is, in fact, a faster process from the shell. This is due to the way [showterm](https://showterm.io) processes text_
+`$ sudo pkgin -y update`
 
+Add /usr/pkg/bin and /usr/pkg/sbin to your $PATH   
 
-So what do these scripts do?
-----------------------------
-If you follow the steps in the [installation section](#installation), you'll be greeted by an interactive script.
-In a nutshell, this script will walk you through the set-up of [pkgsrc](http://pkgsrc.net), [pkgin](http://pkgin.net), set up your PATH & optionally implement [X11](http://www.x.org/wiki/) (using [XQuartz](https://xquartz.macosforge.org/landing/)) in a seamless manner. 
+`$ PATH=/usr/pkg/bin:/usr/pkg/sbin:$PATH`     
 
-The X11 set-up script also has a revoke flag (`-r`), so you can try out our X11 hacks, and later remove them if you're not a fan.
+Add /usr/pkg/man to your $MANPATH    
 
-If you're familiar with shell, peruse through the code, it should be pretty clear what's happening :)
+`$ MANPATH=/usr/pkg/man:$MANPATH`    
 
-pkgin usage
------------
-Want to find and install a package?
+You might want to add this to your shell configuration.
 
-`pkgin search <package name>`
+#### Using pkgin:
 
-`pkgin install <package name>`
+Search for a package       
 
-Nice 'n easy!
+`$ pkgin search tmux`      
 
-See [here](http://pkgin.net/#examples) for pkgin's usage examples.
+Install a package       
 
-Why choose Save OS X (specifically pkgin) over \<insert package manager here\>?
------------------------------------------------------------------------------
-Here's a list of properties that make [pkgin](http://pkgin.net/) (a binary package manager for pkgsrc) different from other package managers available for OS X:
-		Precompiled packages from a trusted source
-	- Signed pacakges with GPG
-	- Dead simple makefiles
-	- A robust multi platform framework
-	- Can be bootstrapped without any external dependencies other than a C compiler & a shell
-	- Tried and true, with a huge community of BSD developers behind it (and many devs from other communities)
-	- A very large collection of packages (up to 15,000)
-	- Ultra portable framework for use on many other OS's results in high quality ports
-	- Easy creation of new ports/packages
-	- Source code & package management are kept separated
+`$ sudo pkgin in tmux`      
 
-Who?
-----
-[Save OS X](http://saveosx.org/) is a collaborative project between [Calum MacRae](https://github.com/cmacrae) and [Youri Mouton](https://github.com/yrmt)
+List available packages     
 
-**E-mail:** [calum0macrae@gmail.com](mailto:calum0macrae@gmail.com) / [youri.mout@gmail.com](mailto:youri.mout@gmail.com)
+`$ pkgin avail`      
 
-**IRC**: Come join us at `#saveosx` on `irc.oftc.net`
+List installed packages      
 
-**Twitter**: [@calumacrae](https://twitter.com/calumacrae) / [@YouriMouton](https://twitter.com/YouriMouton)
+`$ pkgin list`      
 
-License
--------
-Use of this source code is governed by an ISC license that can be found in [the LICENSE file](LICENSE)
+Package statistics
+
+`$ pkgin stats`
+
+More features are available, remember to read the man page !
+
+For info about creating packages and helping out, check the [blog](blog)!
+
+#### Repository status: 
+
+        Number of repositories: 1
+        Packages available: 11494
+        Total size of packages: 11G

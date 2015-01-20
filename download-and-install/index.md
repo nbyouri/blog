@@ -22,15 +22,13 @@ If you'd prefer an interactive install, run the `bootstrap` script.
 Using the archive
 -----------------
 
-This is the default, and the recommended method, for two reasons: it's the most tested and you'll be aware of the changes you're making to your system.
-
 1. Download [bootstrap.tar.gz](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2014Q4.tar.gz):
 
        $ curl -O http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2014Q4.tar.gz
 
-2. As root, extract it:
+2. extract it:
 
-       $ tar -C / -xzf bootstrap-x86_64-2014Q4.tar.gz
+       $ sudo tar -C / -xzf bootstrap-x86_64-2014Q4.tar.gz
 
 3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell's `PATH` variable.
 4. Add `/usr/pkg/man` in your shell `MANPATH` variable.
