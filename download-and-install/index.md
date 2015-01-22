@@ -12,24 +12,13 @@ Before you get started: **you'll need root privileges on your system**
 Want to be up and running fast?
 -------------------------------
 For a streamlined setup, to get you up and running in under a minute, there's the `quickstrap` script.  
-To get started, grab a copy of [cmacrae](https://twitter.com/calumacrae)'s [bootstrap repo](https://github.com/cmacrae/saveosx)  
+To get started, grab a copy of our [bootstrap repo](https://github.com/cmacrae/saveosx) over on GitHub:
 
-       $ git clone git://github.com/cmacrae/saveosx
+	$ git clone git://github.com/cmacrae/saveosx
+
+Or, if you don't have `git` installed, just [grab the zip archive](https://github.com/cmacrae/saveosx/archive/master.zip).
 	   
-Open up a Terminal (this must be Apple's 'Terminal.app'), then cd to the scripts sub-directory and run the `quickstrap` script.  
-If you'd prefer an interactive install, run the `bootstrap` script.  
+Open up a Terminal (this must be Apple's 'Terminal.app'), then `cd` to the `scripts` sub-directory and run the `quickstrap` script.  
+If you'd prefer an interactive install, run the `bootstrap` script, which also includes the set up of [XQuartz](http://xquartz.macosforge.org/) and some work we've done to make it a seemless X11 experience.
 
-Using the archive
------------------
-
-1. Download [bootstrap.tar.gz](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2014Q4.tar.gz):
-
-       $ curl -O http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2014Q4.tar.gz
-
-2. extract it:
-
-       $ sudo tar -C / -xzf bootstrap-x86_64-2014Q4.tar.gz
-
-3. Add `/usr/pkg/bin` and `/usr/pkg/sbin` in your shell's `PATH` variable.
-4. Add `/usr/pkg/man` in your shell `MANPATH` variable.
-
+Want to read more about the install? See [the 'Install' section of the README](https://github.com/cmacrae/saveosx#installation)!  
