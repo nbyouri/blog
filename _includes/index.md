@@ -3,7 +3,7 @@ Save OS X
 
 #####Secure binary package management for OS X!      
 
- 	$ sudo pkgin install tmux
+	$ sudo pkgin install tmux
 
 #####Many, many packages to choose from
 
