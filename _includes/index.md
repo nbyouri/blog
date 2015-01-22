@@ -21,4 +21,4 @@ Save OS X
 	$ which pkgin      
 	/usr/pkg/bin/pkgin        
 
-##Want are you waiting for? [Go get started](download-and-install/), it's easy!
+##What are you waiting for? [Go get started](download-and-install/), it's easy!
