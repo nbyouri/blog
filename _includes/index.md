@@ -22,3 +22,5 @@ Save OS X
 	/usr/pkg/bin/pkgin        
 
 #####What are you waiting for? [Go get started](download-and-install/), it's easy!
+
+[![pkgsrc]()](_includes/pkgsrc.png)
