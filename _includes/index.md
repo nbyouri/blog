@@ -23,4 +23,5 @@ Save OS X
 
 #####What are you waiting for? [Go get started](download-and-install/), it's easy!
 
+<p align="center">Made with ❤ using"</p>
 [![pkgsrc]({{site.url}}/assets/pkgsrc.png)](http://pkgsrc.org)
