@@ -23,4 +23,4 @@ Save OS X
 
 #####What are you waiting for? [Go get started](download-and-install/), it's easy!
 
-![pkgsrc]({{site.url}}/assets/pkgsrc.png)
+[![pkgsrc]({{site.url}}/assets/pkgsrc.png)](http://pkgsrc.org)
