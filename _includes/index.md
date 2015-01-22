@@ -15,7 +15,7 @@ Save OS X
 
 #####Up and running in seconds      
 
-	$ /usr/bin/time ./quickstrap        
+	$ time ./quickstrap        
 	17.92 real         2.99 user         0.65 sys     
 
 	$ which pkgin      
