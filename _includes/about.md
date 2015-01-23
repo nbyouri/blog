@@ -57,16 +57,16 @@ Why choose Save OS X (specifically pkgin) over \<insert package manager here\>?
 -----------------------------------------------------------------------------
 Here's a list of properties that make pkgsrc (a binary package manager for pkgsrc) different from other package managers available for OS X:
 
-	- Precompiled packages from a trusted source
-	- Signed pacakges with GPG
-	- Dead simple makefiles
-	- A robust multi platform framework
-	- Can be bootstrapped without any external dependencies other than a C compiler & a shell
-	- Tried and true, with a huge community of BSD developers behind it (and many devs from other communities)
-	- A very large collection of packages (up to 15,500)
-	- Ultra portable framework for use on [many other OS](http://www.netbsd.org/docs/software/packages.html#platforms)'s results in high quality ports
-	- Easy creation of new ports/packages
-	- Source code & package management are kept separated
+- Precompiled packages from a trusted source
+- Signed pacakges with GPG
+- Dead simple makefiles
+- A robust multi platform framework
+- Can be bootstrapped without any external dependencies other than a C compiler & a shell
+- Tried and true, with a huge community of BSD developers behind it (and many devs from other communities)
+- A very large collection of packages (up to 15,500)
+- Ultra portable framework for use on <a href="http://www.netbsd.org/docs/software/packages.html#platforms">many other OS</a>'s results in high quality ports
+- Easy creation of new ports/packages
+- Source code & package management are kept separated
 
 Who?
 ----
