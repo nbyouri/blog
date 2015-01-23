@@ -54,7 +54,8 @@ See [here](http://pkgin.net/#examples) for pkgin's usage examples.
 Why choose Save OS X (specifically pkgin) over \<insert package manager here\>?
 -----------------------------------------------------------------------------
 Here's a list of properties that make [pkgin](http://pkgin.net/) (a binary package manager for pkgsrc) different from other package managers available for OS X:
-		Precompiled packages from a trusted source
+
+	- Precompiled packages from a trusted source
 	- Signed pacakges with GPG
 	- Dead simple makefiles
 	- A robust multi platform framework
