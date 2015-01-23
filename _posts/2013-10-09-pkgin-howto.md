@@ -91,5 +91,5 @@ List installed packages
 	pkg-build-defs      (pbd ) -  Show remote package's build definitions.
 	stats               (st  ) -  Packages statistics.
 
-### Read the pkgin man page!     
+### [Read the pkgin man page!](http://saveosx.org/man/)     
 
