@@ -22,3 +22,5 @@ Open up a Terminal (this must be Apple's 'Terminal.app'), then `cd` to the `scri
 If you'd prefer an interactive install, run the `bootstrap` script, which also includes the set up of [XQuartz](http://xquartz.macosforge.org/) and some work we've done to make it a seamless X11 experience.
 
 Want to read more about the install? See [the 'Install' section of the README](https://github.com/cmacrae/saveosx#installation)!  
+
+Learn how to use pkgin [here](http://saveosx.org/pkgin-howto/).

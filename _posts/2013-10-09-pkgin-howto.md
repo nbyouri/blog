@@ -19,9 +19,7 @@ You can look at the repo [here](http://saveosx.org/packages).
 
 #### Installing the required files for running pkgin:
 
-This installer was made for Maverick, it won't work on Mountain Lion or previous Mac OS X releases. yet.
-
-[Download](http://pkgsrc.saveosx.org/Darwin/bootstrap/bootstrap-x86_64-2013Q4.pkg) the installer needed to install pkgsrc and pkgin (34m)
+See the [install instructions](http://saveosx.org/download-and-install/) to get started.
 
 #### Getting ready:     
 
@@ -43,7 +41,11 @@ You might want to add this to your shell configuration.
 
 Search for a package       
 
-`$ pkgin search tmux`      
+`$ pkgin search tmux`  
+
+Or, using a regular expression:
+
+`$ pkgin se "clang|gcc4[45]"`
 
 Install a package       
 
@@ -57,6 +59,37 @@ List installed packages
 
 `$ pkgin list`      
 
+#### Available options
+
+	Commands and shortcuts:
+	list                (ls  ) -  List installed packages.
+	avail               (av  ) -  List available packages.
+	install             (in  ) -  Perform packages installation or upgrade.
+	update              (up  ) -  Create and populate the initial database.
+	remove              (rm  ) -  Remove packages and depending packages.
+	upgrade             (ug  ) -  Upgrade main packages to their newer versions.
+	full-upgrade        (fug ) -  Upgrade all packages to their newer versions.
+	show-deps           (sd  ) -  Display direct dependencies.
+	show-full-deps      (sfd ) -  Display dependencies recursively.
+	show-rev-deps       (srd ) -  Display reverse dependencies recursively.
+	show-category       (sc  ) -  Show packages belonging to category.
+	show-pkg-category   (spc ) -  Show package's category.
+	show-all-categories (sac ) -  Show all categories.
+	keep                (ke  ) -  Mark package as "non auto-removable".
+	unkeep              (uk  ) -  Mark package as "auto-removable".
+	show-keep           (sk  ) -  Display "non auto-removable" packages.
+	show-no-keep        (snk ) -  Display "auto-removable" packages.
+	search              (se  ) -  Search for a package.
+	clean               (cl  ) -  Clean packages cache.
+	autoremove          (ar  ) -  Autoremove orphan dependencies.
+	export              (ex  ) -  Export "non auto-removable" packages to stdout.
+	import              (im  ) -  Import "non auto-removable" package list from file.
+	provides            (prov) -  Show what files a package provides.
+	requires            (req ) -  Show what files a package requires.
+	pkg-content         (pc  ) -  Show remote package's content.
+	pkg-descr           (pd  ) -  Show remote package's long-description.
+	pkg-build-defs      (pbd ) -  Show remote package's build definitions.
+	stats               (st  ) -  Packages statistics.
 
 ### Read the pkgin man page!     
 

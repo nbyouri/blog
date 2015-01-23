@@ -12,6 +12,8 @@ To put it simply: because OS X is capable of much more than is immediately appar
 
 We want to show people that OS X is a perfectly viable option for developers, sysadmins, hackers, or just those who like to tinker.
 
+For this we have decided to use `The NetBSD Foundation`'s superb ports framework, pkgsrc. It works on many different operating systems and architectures, including Mac OS X Tiger (PowerPC, Intel x86) to Yosemite (Intel x86, x86_64).
+
 Installation
 ------------
 
@@ -53,15 +55,16 @@ See [here](http://pkgin.net/#examples) for pkgin's usage examples.
 
 Why choose Save OS X (specifically pkgin) over \<insert package manager here\>?
 -----------------------------------------------------------------------------
-Here's a list of properties that make [pkgin](http://pkgin.net/) (a binary package manager for pkgsrc) different from other package managers available for OS X:
+Here's a list of properties that make pkgsrc (a binary package manager for pkgsrc) different from other package managers available for OS X:
 
+	- about 20 platforms supported ranging from FreeBSD to Haiku, Mac OS X, OpenBSD
 	- Precompiled packages from a trusted source
 	- Signed pacakges with GPG
 	- Dead simple makefiles
 	- A robust multi platform framework
 	- Can be bootstrapped without any external dependencies other than a C compiler & a shell
 	- Tried and true, with a huge community of BSD developers behind it (and many devs from other communities)
-	- A very large collection of packages (up to 15,000)
+	- A very large collection of packages (up to 15,500)
 	- Ultra portable framework for use on many other OS's results in high quality ports
 	- Easy creation of new ports/packages
 	- Source code & package management are kept separated
@@ -75,7 +78,3 @@ Who?
 **IRC**: Come join us at `#saveosx` on `irc.oftc.net`
 
 **Twitter**: [@calumacrae](https://twitter.com/calumacrae) / [@YouriMouton](https://twitter.com/YouriMouton)
-
-License
--------
-Use of this source code is governed by an ISC license that can be found in [the LICENSE file](LICENSE)

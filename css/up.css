@@ -39,8 +39,9 @@ ul.listing li {
     border-bottom: #e6e6e6 1px solid!important;
 }
 
-#footer section.meta a {
+#footer section.meta {
     color: #222!important;
+    font-size: 10px!important;
 }
 a:hover {
     color: #c7254e!important;
