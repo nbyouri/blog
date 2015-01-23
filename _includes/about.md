@@ -51,7 +51,7 @@ Want to find and install a package?
 
 Nice 'n easy!
 
-See [here](http://saveosx.org/pkgin-howto/) for pkgin's usage examples.
+See [here](/pkgin-howto/) for pkgin's usage examples.
 
 Why choose Save OS X (specifically pkgin) over \<insert package manager here\>?
 -----------------------------------------------------------------------------

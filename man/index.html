@@ -14,6 +14,12 @@ td.head-vol { text-align: center; }
 table.foot td { width: 50%; }
 table.head td { width: 33%; }
 div.spacer { margin: 1em 0; }
+.content { font-family: Helvetica; 
+			margin-top: 50px;
+}
+h5 {
+	padding: 0px;
+}
 </style>
 <title>
 PKGIN(1)</title>
@@ -33,25 +39,23 @@ PKGIN(1)</td>
 </tbody>
 </table>
 <div class="section">
-<h1 id="x4e414d45">NAME</h1> <b class="name">pkgin</b> &#8212; <span class="desc">A tool to manage pkgsrc binary packages.</span></div>
+<h5 id="x4e414d45">NAME</h5> <b class="name">pkgin</b> &#8212; <span class="desc">A tool to manage pkgsrc binary packages.</span></div>
 <div class="section">
-<h1 id="x53594e4f50534953">SYNOPSIS</h1><table class="synopsis">
+<h5 id="x53594e4f50534953">SYNOPSIS</h5><table class="synopsis">
 <col style="width: 5.00ex;"/>
 <col/>
 <tbody>
 <tr>
-<td>
-pkgin</td>
-<td>
+pkgin
 [<span class="opt"><b class="flag">-dfFhPvVyn</b></span>] [<span class="opt"><b class="flag">-l</b> <i class="arg">limit_chars</i></span>] [<span class="opt"><b class="flag">-c</b> <i class="arg">chroot_path</i></span>] [<span class="opt"><b class="flag">-t</b> <i class="arg">log_file</i></span>] <i class="arg">command</i> [<span class="opt"><i class="arg">package</i> <i class="arg">...</i></span>]</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section">
-<h1 id="x4445534352495054494f4e">DESCRIPTION</h1> The <b class="name">pkgin</b> command is aimed at being an apt / yum like tool for managing pkgsrc binary packages. It relies on <a class="link-man">pkg_summary(5)</a> for installation, removal and upgrade of packages and associated dependencies, using a remote repository.</div>
+<h5 id="x4445534352495054494f4e">DESCRIPTION</h5> The <b class="name">pkgin</b> command is aimed at being an apt / yum like tool for managing pkgsrc binary packages. It relies on <a class="link-man">pkg_summary(5)</a> for installation, removal and upgrade of packages and associated dependencies, using a remote repository.</div>
 <div class="section">
-<h1 id="x4f5054494f4e53">OPTIONS</h1> The following command line arguments are supported:<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<h5 id="x4f5054494f4e53">OPTIONS</h5> The following command line arguments are supported:<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
 <dt class="list-tag" style="margin-top: 1.00em;">
 <b class="flag">-d</b></dt>
 <dd class="list-tag" style="margin-left: 6.00ex;">
@@ -213,7 +217,7 @@ Upgrade keepable packages to their newer versions present in the repository. If 
 </dl>
 </div>
 <div class="section">
-<h1 id="x53544154555320464c414753">STATUS FLAGS</h1> When using the <i class="arg">l</i> flag along with the <i class="arg">list</i> command, the following status flag must be set:<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<h5 id="x53544154555320464c414753">STATUS FLAGS</h5> When using the <i class="arg">l</i> flag along with the <i class="arg">list</i> command, the following status flag must be set:<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
 <dt class="list-tag" style="margin-top: 1.00em;">
 <code class="lit">=</code></dt>
 <dd class="list-tag" style="margin-left: 6.00ex;">
@@ -229,7 +233,7 @@ The installed version of the package is newer than the current version.</dd>
 </dl>
 </div>
 <div class="section">
-<h1 id="x454e5649524f4e4d454e54">ENVIRONMENT</h1><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<h5 id="x454e5649524f4e4d454e54">ENVIRONMENT</h5><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
 <dt class="list-tag" style="margin-top: 1.00em;">
 <span class="env">PKG_REPOS</span></dt>
 <dd class="list-tag" style="margin-left: 6.00ex;">
@@ -237,7 +241,7 @@ The <span class="env">PKG_REPOS</span> environment variable can be pointed to a 
 </dl>
 </div>
 <div class="section">
-<h1 id="x46494c4553">FILES</h1><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<h5 id="x46494c4553">FILES</h5><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
 <dt class="list-tag" style="margin-top: 0.00em;">
 /usr/pkg/etc/pkgin/repositories.conf</dt>
 <dd class="list-tag" style="margin-left: 6.00ex;">
@@ -245,7 +249,7 @@ This file contains a list of repository URIs that <b class="name">pkgin</b> will
 </dl>
 </div>
 <div class="section">
-<h1 id="x4558414d504c4553">EXAMPLES</h1> Setup the initial database:<div class="spacer">
+<h5 id="x4558414d504c4553">EXAMPLES</h5> Setup the initial database:<div class="spacer">
 </div>
 <pre style="margin-left: 0.00ex;" class="lit display">
 # echo ftp://ftp.fr.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/5.0/All &gt; /usr/pkg/etc/pkgin/repositories.conf 
@@ -296,9 +300,9 @@ in order to remove packages from the autoremove list, flag those with the -k mod
 proceed ? [y/N]</pre>
 </div>
 <div class="section">
-<h1 id="x53454520414c534f">SEE ALSO</h1> <a class="link-man">pkg_add(1)</a>, <a class="link-man">pkg_info(1)</a>, <a class="link-man">pkg_summary(5)</a>, <a class="link-man">pkgsrc(7)</a></div>
+<h5 id="x53454520414c534f">SEE ALSO</h5> <a href="http://netbsd.gw.com/cgi-bin/man-cgi?pkg_add++NetBSD-current" class="link-man">pkg_add(1)</a>, <a href="http://netbsd.gw.com/cgi-bin/man-cgi?pkg_info++NetBSD-current" class="link-man">pkg_info(1)</a>, <a href="http://netbsd.gw.com/cgi-bin/man-cgi?pkg_summary++NetBSD-current" class="link-man">pkg_summary(5)</a>, <a href="http://netbsd.gw.com/cgi-bin/man-cgi?pkgsrc++NetBSD-current" class="link-man">pkgsrc(7)</a></div>
 <div class="section">
-<h1 id="x415554484f5253">AUTHORS</h1><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<h5 id="x415554484f5253">AUTHORS</h5><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
 <dt class="list-tag" style="margin-top: 0.00em;">
 Emile &#8220;iMil&#8221; Heitor</dt>
 <dd class="list-tag" style="margin-left: 6.00ex;">
@@ -306,7 +310,7 @@ Initial work and ongoing development.</dd>
 </dl>
 </div>
 <div class="section">
-<h1 id="x434f4e5452494255544f5253">CONTRIBUTORS</h1><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<h5 id="x434f4e5452494255544f5253">CONTRIBUTORS</h5><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
 <dt class="list-tag" style="margin-top: 0.00em;">
 Jeremy C. Reed</dt>
 <dd class="list-tag" style="margin-left: 6.00ex;">
@@ -346,7 +350,7 @@ MINIX port</dd>
 </dl>
 </div>
 <div class="section">
-<h1 id="x42554753">BUGS</h1> We're hunting them.</div>
+<h5 id="x42554753">BUGS</h5> We're hunting them.</div>
 <table class="foot">
 <tbody>
 <tr>

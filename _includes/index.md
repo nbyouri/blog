@@ -5,7 +5,7 @@ Save OS X
 
 	$ sudo pkgin install tmux
 
-More info on pkgin usage [here](http://saveosx.org/pkgin-howto/).
+More info on pkgin usage [here](/pkgin-howto/).
 
 #####Many, many packages to choose from
 

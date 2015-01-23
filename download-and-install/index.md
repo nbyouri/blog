@@ -23,4 +23,4 @@ If you'd prefer an interactive install, run the `bootstrap` script, which also i
 
 Want to read more about the install? See [the 'Install' section of the README](https://github.com/cmacrae/saveosx#installation)!  
 
-Learn how to use pkgin [here](http://saveosx.org/pkgin-howto/).
+Learn how to use pkgin [here](/pkgin-howto/).
