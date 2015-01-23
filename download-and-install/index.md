@@ -21,6 +21,6 @@ Or, if you don't have `git` installed, just [grab the zip archive](https://githu
 Open up a Terminal (this must be Apple's 'Terminal.app'), then `cd` to the `scripts` sub-directory and run the `quickstrap` script.  
 If you'd prefer an interactive install, run the `bootstrap` script, which also includes the set up of [XQuartz](http://xquartz.macosforge.org/) and some work we've done to make it a seamless X11 experience.
 
-Want to read more about the install? See [the 'Install' section of the README](http://saveosx.org/about/#installation)!  
+Want to read more about the install? See [the 'Install' section](http://saveosx.org/about/#installation)!  
 
 Learn how to use pkgin [here](/pkgin-howto/).
