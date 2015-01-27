@@ -14,7 +14,7 @@ Want to be up and running fast?
 For a streamlined setup, to get you up and running in under a minute, there's the `quickstrap` script.  
 To get started, grab a copy of our [bootstrap repo](https://github.com/cmacrae/saveosx) over on GitHub:
 
-	$ git clone git://github.com/cmacrae/saveosx
+	$ git clone git://github.com/cmacrae/saveosx.git
 
 Or, if you don't have `git` installed, just [grab the zip archive](https://github.com/cmacrae/saveosx/archive/master.zip).
 	   
