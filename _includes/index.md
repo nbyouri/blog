@@ -13,7 +13,7 @@ More info on pkgin usage [here](/pkgin-howto/).
 	Total size of packages: 11G
 
 #####Even some of your favourite Xorg environments
-![XFCE on OS X 10.10](https://paste.xinu.at/TxiM/)
+![XFCE on OS X 10.10](http://misc.saveosx.org/xfce4.png)
 
 #####Up and running in seconds      
 
