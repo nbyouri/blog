@@ -3,13 +3,71 @@
 Right now, pkgsrc has xfce4.6, which is 6 years old and 3 stable releases late,
 I am working on updating our old xfce to the newly released 4.12.
 
-I would like to update our ports as follows:
+ports to be updated:
 
+port  | upstream version | update proposal 
+------|------------------|----------------
+audio/xfce4-mixer | 4.6.1nb21 | 4.11.0
+audio/xfce4-xmms-plugin | 0.5.1 | 0.5.3
+devel/xfce4-dev-tools | 4.6.0 | 4.12.0
+editors/xfce4-mousepad | 0.2.16 | 0.4.0
+meta-pkgs/xfce4 | 4.6.1nb32 | 4.12.0
+meta-pkgs/xfce4-extras | 4.6.1nb31 | 4.12.0
+misc/xfce4-weather-plugin | 0.6.2 | 0.8.5
+multimedia/xfce4-mpc-plugin| 0.3.2 | 0.4.4
+net/xfce4-wavelan-plugin| 0.5.4 | 0.5.11
+sysutils/xfce4-appfinder| 4.6.1nb23 | 4.12.0
+sysutils/xfce4-battery-plugin| 0.5.11nb23 | 1.0.5
+sysutils/xfce4-cpugraph-plugin| 0.3.0 | 1.0.5
+sysutils/xfce4-diskperf-plugin| 2.1.0nb21 | 2.5.4
+sysutils/xfce4-fsguard-plugin| 0.4.0nb21 | 1.0.1
+sysutils/xfce4-genmon-plugin| 3.1nb21 | 3.4
+sysutils/xfce4-netload-plugin| 0.4.0nb21 | 1.2.4
+sysutils/xfce4-quicklauncher-plugin|1.9.4nb21 | 1.9.4
+sysutils/xfce4-systemload-plugin|0.4.2nb21 | 1.1.2
+sysutils/xfce4-thunar| 1.0.1nb23 | 1.6.6
+sysutils/xfce4-volman| 0.2.0nb25 | 0.8.1 (now xfce4-thunar-volman)
+sysutils/xfce4-xarchiver| 0.5.2nb22 | 0.5.4
+sysutils/xfce4-xkb-plugin| 0.4.3nb21 | 0.7.0
+textproc/xfce4-dict-plugin|0.2.1nb21 | 0.3.0
+time/xfce4-datetime-plugin| 0.6.1nb20 | 0.6.2
+time/xfce4-orage|0.6.1nb23|4.10.0
+time/xfce4-timer-plugin|0.5.1nb21|1.6.0
+wm/xfce4-wm|4.6.1nb21 | 4.12.0
+wm/xfce4-wm-themes|4.6.0 | 4.10.0
+x11/libxfce4gui|4.6.1nb21 | 4.10.0
+x11/libxfce4util|4.6.1nb17 | 4.12.1
+x11/xfce4-clipman-plugin|0.8.0nb21 | 1.2.6
+x11/xfce4-desktop|4.6.1nb23 | 4.12.0
+x11/xfce4-exo|0.3.101nb26 | 0.10.3
+x11/xfce4-eyes-plugin|4.4.0nb21|4.4.3
+x11/xfce4-gtk2-engine|2.6.0nb19|3.2.0
+x11/xfce4-notes-plugin|1.6.0nb21|1.1.7
+x11/xfce4-panel|4.6.2nb22 | 4.12.0
+x11/xfce4-places-plugin|1.0.0nb24|1.6.0
+x11/xfce4-session|4.6.1nb21|4.12.0
+x11/xfce4-settings|4.6.5nb23|4.12.0
+x11/xfce4-terminal|0.4.2nb21|0.6.3
 
-port  | description 
-------|-----------
-audio/xfce4-mixer | updated from 4.6.1nb21 to 4.11.0
-audio/xfce4-xmms-plugin | updated from 0.5.1 to 0.5.3
-devel/xfce4-dev-tools | updated from 4.6.0 to 4.12.0
+ports to be renamed:
 
+- sysutils/xfce4-volman -> sysutils/xfce4-volman
 
+ports to be removed because they are no longer being developed: 
+
+- print/xfce4-print| 4.6.1nb25
+- x11/libxfce4menu| 4.6.1nb18
+- x11/xfce4-screenshooter-plugin| 1.0.0nb21
+- x11/xfce4-utils | 4.6.1nb23
+
+ports already up-to-date:
+
+- graphics/xfce4-icon-theme
+
+ports that are updated but linux only:
+
+- sysutils/xfce4-thunar-volman
+
+ports crashing on NetBSD:
+
+- xfce4-taskmanager segfaults
