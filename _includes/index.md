@@ -24,8 +24,8 @@ More info on pkgin usage [here](/pkgin-howto/).
 	/usr/pkg/bin/pkgin        
 
 #####What makes it different from Homebrew and MacPorts ?
-
-It is much faster than both because it only installs packages.     
+We distribute binary packages, so; no compilation is necessary. This means you can install packages and 
+their dependencies much faster!
 pkgsrc is cross-platform, which means the package you're going to install with
 saveosx will also be available in the same way for SmartOS, NetBSD, FreeBSD, Linux, ...
 
