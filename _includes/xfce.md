@@ -3,7 +3,7 @@
 Right now, pkgsrc has xfce4.6, which is 6 years old and 3 stable releases late,
 I am working on updating our old xfce to the newly released 4.12.
 
-##ports to be updated:
+####ports to be updated
 
 port  | upstream version | update proposal 
 ------|------------------|----------------
@@ -28,7 +28,7 @@ sysutils/xfce4-netload-plugin| 0.4.0nb21 | 1.2.4
 sysutils/xfce4-quicklauncher-plugin|1.9.4nb21 | 1.9.4
 sysutils/xfce4-systemload-plugin|0.4.2nb21 | 1.1.2
 sysutils/xfce4-thunar| 1.0.1nb23 | 1.6.6
-sysutils/xfce4-volman| 0.2.0nb25 | 0.8.1 (now xfce4-thunar-volman)
+sysutils/xfce4-volman| 0.2.0nb25 | 0.8.1
 sysutils/xfce4-xarchiver| 0.5.2nb22 | 0.5.4
 sysutils/xfce4-xkb-plugin| 0.4.3nb21 | 0.7.0
 textproc/xfce4-dict-plugin|0.2.1nb21 | 0.3.0
@@ -51,7 +51,7 @@ x11/xfce4-session|4.6.1nb21|4.12.0
 x11/xfce4-settings|4.6.5nb23|4.12.0
 x11/xfce4-terminal|0.4.2nb21|0.6.3
 
-##ports to be addded:
+##ports to be addded
 
 port|description|version
 ----|-----------|--------
@@ -69,32 +69,53 @@ x11/xfce4-thunar-shares-plugin | quickly share a folder using Samba from Thunar 
 devel/xfce4-thunar-vcs-plugin | Thunar vcs integration plugin | 0.1.4
 x11/xfce4-tumbler | D-Bus thumbnailing service | 0.1.31
 
-##ports to be renamed:
+####ports to be removed 
 
-- sysutils/xfce4-volman -> sysutils/xfce4-volman
+port | version | reason
+-----|---------|--------
+print/xfce4-print| 4.6.1nb25 | no longer maintained
+x11/libxfce4menu| 4.6.1nb18 | no longer maintained
+x11/xfce4-screenshooter-plugin| 1.0.0nb21 | replaced by xfce4-screenshooter
+x11/xfce4-utils | 4.6.1nb23 | no longer maintained
 
-##ports to be removed because they are no longer being developed: 
-
-- print/xfce4-print| 4.6.1nb25
-- x11/libxfce4menu| 4.6.1nb18
-- x11/xfce4-screenshooter-plugin| 1.0.0nb21
-- x11/xfce4-utils | 4.6.1nb23
-
-##ports already up-to-date:
+####ports already up-to-date:
 
 - graphics/xfce4-icon-theme
 
-##ports that are updated but linux only:
+####ports that are updated but linux only:
 
-- sysutils/xfce4-thunar-volman
+sysutils/xfce4-volman | needs gudev
 
-##ports crashing on NetBSD:
+####ports crashing on NetBSD:
 
 - xfce4-taskmanager segfaults
 
-Links 
------
-	- https://github.com/yrmt/pkgsrc/tree/trunk/xfce4
-	- http://xfce.org/
-	- http://www.xfce.org/download/changelogs/4.12
-	- https://wiki.xfce.org/
+####supported platforms 
+
+platform | priority | status
+---------|----------|-------
+NetBSD amd64 current | highest | almost 100% working
+NetBSD i386 current | highest | almost 100% working
+SmartOS | high | mostly working, needs more testing
+FreeBSD | high | mostly working, needs more testing
+DragonFlyBSD | high | some packages not working, but the core works
+OS X | mid | mostly working, no session support
+OpenBSD | low | untested
+Linux | low | untested
+
+
+####how to test
+
+- clone my pkgsrc git mirror: [https://github.com/yrmt/pkgsrc](https://github.com/yrmt/pkgsrc)
+- extract my port files in your tree: [http://pkgsrc.saveosx.org/xfce4.12.tar.gz](http://pkgsrc.saveosx.org/xfce4.12.tar.gz)
+- install xfce4/xfce4 and xfce4/xfce4-extras
+
+####Links 
+
+- [xfce 4.12 ports](https://github.com/yrmt/pkgsrc/tree/trunk/xfce4)
+
+- [xfce](http://xfce.org/)
+
+- [a tour of xfce 4.12](http://www.xfce.org/download/changelogs/4.12)
+
+- [xfce wiki](https://wiki.xfce.org/)
