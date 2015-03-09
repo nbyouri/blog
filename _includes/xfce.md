@@ -5,7 +5,7 @@ I am working on updating our old xfce to the newly released 4.12.
 
 ####ports to be updated
 
-port  | upstream version | update proposal 
+port  | pkgsrc version | upstream version 
 ------|------------------|----------------
 audio/xfce4-mixer | 4.6.1nb21 | 4.11.0
 audio/xfce4-xmms-plugin | 0.5.1 | 0.5.3
@@ -109,6 +109,16 @@ Linux | low | untested
 - clone my pkgsrc git mirror: [https://github.com/yrmt/pkgsrc](https://github.com/yrmt/pkgsrc)
 - extract my port files in your tree: [http://pkgsrc.saveosx.org/xfce4.12.tar.gz](http://pkgsrc.saveosx.org/xfce4.12.tar.gz)
 - install xfce4/xfce4 and xfce4/xfce4-extras
+
+####todo
+
+- get xfce to pick the right icon theme after installing.
+
+- thunar plugin: [http://archive.xfce.org/src/thunar-plugins/](http://archive.xfce.org/src/thunar-plugins/)
+
+- panel plugins: [http://archive.xfce.org/src/panel-plugins/](http://archive.xfce.org/src/panel-plugin)
+
+- xfce applications: [http://archive.xfce.org/src/apps/](http://archive.xfce.org/src/apps/)
 
 ####Links 
 
