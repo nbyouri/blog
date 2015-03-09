@@ -3,14 +3,16 @@
 Right now, pkgsrc has xfce4.6, which is 6 years old and 3 stable releases late,
 I am working on updating our old xfce to the newly released 4.12.
 
-ports to be updated:
+##ports to be updated:
 
 port  | upstream version | update proposal 
 ------|------------------|----------------
 audio/xfce4-mixer | 4.6.1nb21 | 4.11.0
 audio/xfce4-xmms-plugin | 0.5.1 | 0.5.3
 devel/xfce4-dev-tools | 4.6.0 | 4.12.0
+devel/xfconf | 4.6.1nb22 | 4.12.0
 editors/xfce4-mousepad | 0.2.16 | 0.4.0
+graphics/ristretto |0.0.22nb27 | 0.8.0
 meta-pkgs/xfce4 | 4.6.1nb32 | 4.12.0
 meta-pkgs/xfce4-extras | 4.6.1nb31 | 4.12.0
 misc/xfce4-weather-plugin | 0.6.2 | 0.8.5
@@ -49,25 +51,50 @@ x11/xfce4-session|4.6.1nb21|4.12.0
 x11/xfce4-settings|4.6.5nb23|4.12.0
 x11/xfce4-terminal|0.4.2nb21|0.6.3
 
-ports to be renamed:
+##ports to be addded:
+
+port|description|version
+----|-----------|--------
+x11/garcon | Xfce menu library | 0.4.0
+sysutils/xfce4-bsdcpufreq-plugin | shows cpu frequencies  | 0.1.0
+sysutils/xfce4-cpufreq-plugin | shows cpu frequencies (linux) | 1.1.1
+mail/xfce4-mailwatch-plugin | Xfce mail checker plugin for the panel | 1.2.0
+sysutils/xfce4-mount-plugin | Xfce mount/umount utility for the panel | 0.6.7
+x11/xfce4-notifyd | Xfce notify daemon | 0.2.4
+x11/xfce4-screenshooter | Xfce screenshot application | 1.8.2 
+sysutils/xfce4-taskmanager | Xfce task manager | 1.1.0
+archivers/xfce4-thunar-archive | Thunar archive plugin | 0.3.1
+multimedia/xfce4-thunar-media-tags | Thunar media tags plugin | 0.2.1
+x11/xfce4-thunar-shares-plugin | quickly share a folder using Samba from Thunar | 0.2.0
+devel/xfce4-thunar-vcs-plugin | Thunar vcs integration plugin | 0.1.4
+x11/xfce4-tumbler | D-Bus thumbnailing service | 0.1.31
+
+##ports to be renamed:
 
 - sysutils/xfce4-volman -> sysutils/xfce4-volman
 
-ports to be removed because they are no longer being developed: 
+##ports to be removed because they are no longer being developed: 
 
 - print/xfce4-print| 4.6.1nb25
 - x11/libxfce4menu| 4.6.1nb18
 - x11/xfce4-screenshooter-plugin| 1.0.0nb21
 - x11/xfce4-utils | 4.6.1nb23
 
-ports already up-to-date:
+##ports already up-to-date:
 
 - graphics/xfce4-icon-theme
 
-ports that are updated but linux only:
+##ports that are updated but linux only:
 
 - sysutils/xfce4-thunar-volman
 
-ports crashing on NetBSD:
+##ports crashing on NetBSD:
 
 - xfce4-taskmanager segfaults
+
+Links 
+-----
+	- https://github.com/yrmt/pkgsrc/tree/trunk/xfce4
+	- http://xfce.org/
+	- http://www.xfce.org/download/changelogs/4.12
+	- https://wiki.xfce.org/
