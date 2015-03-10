@@ -7,6 +7,8 @@ I am working on updating our old xfce to the newly released 4.12.
 
 - make sure icons are set oob
 - change default theme
+- settings manager is empty?
+
 
 
 ####packages to be updated
@@ -115,10 +117,6 @@ Linux | low | untested
 ####todo
 
 - get genmon to build
-
-- get xfce to pick the right icon theme after installing.
-
-- more thunar plugins: [http://archive.xfce.org/src/thunar-plugins/](http://archive.xfce.org/src/thunar-plugins/)
 
 - more panel plugins: [http://archive.xfce.org/src/panel-plugins/](http://archive.xfce.org/src/panel-plugin)
 
