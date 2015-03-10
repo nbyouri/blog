@@ -3,10 +3,16 @@
 Right now, pkgsrc has xfce4.6, which is 6 years old and 3 stable releases late,
 I am working on updating our old xfce to the newly released 4.12.
 
-####ports to be updated
+#####XXX: Todo before submitting
 
-port  | pkgsrc version | upstream version 
-------|------------------|----------------
+- make sure icons are set oob
+- change default theme
+
+
+####packages to be updated
+
+package  | pkgsrc version | upstream version 
+---------|----------------|----------------
 audio/xfce4-mixer | 4.6.1nb21 | 4.11.0
 audio/xfce4-xmms-plugin | 0.5.1 | 0.5.3
 devel/xfce4-dev-tools | 4.6.0 | 4.12.0
@@ -51,13 +57,11 @@ x11/xfce4-session|4.6.1nb21|4.12.0
 x11/xfce4-settings|4.6.5nb23|4.12.0
 x11/xfce4-terminal|0.4.2nb21|0.6.3
 
-##ports to be addded
+##packages to be addded
 
-port|description|version
+port|comment|version
 ----|-----------|--------
 x11/garcon | Xfce menu library | 0.4.0
-sysutils/xfce4-bsdcpufreq-plugin | shows cpu frequencies  | 0.1.0
-sysutils/xfce4-cpufreq-plugin | shows cpu frequencies (linux) | 1.1.1
 mail/xfce4-mailwatch-plugin | Xfce mail checker plugin for the panel | 1.2.0
 sysutils/xfce4-mount-plugin | Xfce mount/umount utility for the panel | 0.6.7
 x11/xfce4-notifyd | Xfce notify daemon | 0.2.4
@@ -69,24 +73,21 @@ x11/xfce4-thunar-shares-plugin | quickly share a folder using Samba from Thunar 
 devel/xfce4-thunar-vcs-plugin | Thunar vcs integration plugin | 0.1.4
 x11/xfce4-tumbler | D-Bus thumbnailing service | 0.1.31
 
-####ports to be removed 
+####packages to be removed 
 
 port | version | reason
 -----|---------|--------
 print/xfce4-print| 4.6.1nb25 | no longer maintained
-x11/libxfce4menu| 4.6.1nb18 | no longer maintained
+x11/libxfce4menu| 4.6.1nb18 | replaced by garcon
 x11/xfce4-screenshooter-plugin| 1.0.0nb21 | replaced by xfce4-screenshooter
-x11/xfce4-utils | 4.6.1nb23 | no longer maintained
+x11/xfce4-utils | 4.6.1nb23 | replaced by xfce4-dev-tools
+sysutils/xfce4-volman | 0.2.0bn25 | linux only; needs gudev
 
-####ports already up-to-date:
+####packages already up-to-date:
 
 - graphics/xfce4-icon-theme
 
-####ports that are updated but linux only:
-
-sysutils/xfce4-volman | needs gudev
-
-####ports crashing on NetBSD:
+####packages crashing on NetBSD:
 
 - xfce4-taskmanager segfaults
 
@@ -103,26 +104,31 @@ OS X | mid | mostly working, no session support
 OpenBSD | low | untested
 Linux | low | untested
 
-
 ####how to test
 
 - clone my pkgsrc git mirror: [https://github.com/yrmt/pkgsrc](https://github.com/yrmt/pkgsrc)
-- extract my port files in your tree: [http://pkgsrc.saveosx.org/xfce4.12.tar.gz](http://pkgsrc.saveosx.org/xfce4.12.tar.gz)
-- install xfce4/xfce4 and xfce4/xfce4-extras
+ or clone [edgebsd-pkgsrc.git](http://git.edgebsd.org/gitweb/?p=edgebsd-pkgsrc.git;a=summary)
+- install xfce4/xfce4 and xfce4/xfce4-extras if you're on my github repo
+- install meta-pkgs/xfce4 and meta-pkgs/xfce4-extras if you're on edgebsd-pkgsrc.git
+
 
 ####todo
 
+- get genmon to build
+
 - get xfce to pick the right icon theme after installing.
 
-- thunar plugin: [http://archive.xfce.org/src/thunar-plugins/](http://archive.xfce.org/src/thunar-plugins/)
+- more thunar plugins: [http://archive.xfce.org/src/thunar-plugins/](http://archive.xfce.org/src/thunar-plugins/)
 
-- panel plugins: [http://archive.xfce.org/src/panel-plugins/](http://archive.xfce.org/src/panel-plugin)
+- more panel plugins: [http://archive.xfce.org/src/panel-plugins/](http://archive.xfce.org/src/panel-plugin)
 
-- xfce applications: [http://archive.xfce.org/src/apps/](http://archive.xfce.org/src/apps/)
+- more xfce applications: [http://archive.xfce.org/src/apps/](http://archive.xfce.org/src/apps/)
 
 ####Links 
 
-- [xfce 4.12 ports](https://github.com/yrmt/pkgsrc/tree/trunk/xfce4)
+- [`pkglint -Wall -Call` results](http://pkgsrc.saveosx.org/xfce/pkglint-results.txt)
+
+- [xfce 4.12 packages](https://github.com/yrmt/pkgsrc/tree/trunk/xfce4)
 
 - [xfce](http://xfce.org/)
 
