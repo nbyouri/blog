@@ -3,7 +3,7 @@ highlighter: rouge
 permalink: :title
 rdiscount:
   extensions: [smart]
-title :  Save OS X Blog
+title :  Save OS X
 production_url : http://blog.saveosx.org
 local_url : http://localhost:4000
 description: "A blog by Youri Mouton and Calum Macrae"

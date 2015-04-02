@@ -14,6 +14,10 @@
 
         <link href="/css/up.css" rel="stylesheet">
 
+	{% if page && page.css %}
+	<link rel="stylesheet" href="/css/{{ page.css }}.css">
+	{% endif %}
+
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
