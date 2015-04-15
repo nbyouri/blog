@@ -99,6 +99,7 @@ platform | priority | status
 ---------|----------|-------
 NetBSD amd64 current | highest | works
 NetBSD i386 current | highest | works
+NetBSD evbarm current | highest | works
 SmartOS | high | mostly working, needs more testing
 FreeBSD | high | keyboard settings not working?
 DragonFlyBSD | high | Works, install hal from pkgng.
@@ -111,6 +112,7 @@ Linux | low | untested
 From source:
 
 - clone [edgebsd-pkgsrc.git](http://git.edgebsd.org/gitweb/?p=edgebsd-pkgsrc.git;a=summary)
+- switch to the `yrmt-xfce412-rel` branch
 - install meta-pkgs/xfce4 and meta-pkgs/xfce4-extras
 
 From packages:
@@ -121,9 +123,9 @@ From packages:
 
 - update xfce4-session to 4.12.2 (need NetBSD hibernate command)
 
-- add local xfce4-taskmanager work to package (needs cleanup)
-
 - get genmon to work (just crashes at startup)
+
+- submit patches upstream
 
 - more panel plugins: [http://archive.xfce.org/src/panel-plugins/](http://archive.xfce.org/src/panel-plugin)
 
@@ -131,9 +133,7 @@ From packages:
 
 ####Links 
 
-- [NetBSD amd64 packages](http://pkgsrc.saveosx.org/NetBSD/amd64/All/)
-
-- [`pkglint -Wall -Call` results](http://pkgsrc.saveosx.org/xfce/pkglint-results.txt)
+- [NetBSD i386 packages by @ebijun](ftp://ftp.netbsd.org/pub/NetBSD/misc/jun/XFCE4.12/i386-7.99.9/)
 
 - [xfce](http://xfce.org/)
 
