@@ -17,7 +17,7 @@ More info on pkgin usage [here](/pkgin-howto/).
 
 #####Up and running in seconds      
 
-	$ time ./quickstrap        
+	$ time ./bootstrap        
 	17.92 real         2.99 user         0.65 sys     
 
 	$ which pkgin      
