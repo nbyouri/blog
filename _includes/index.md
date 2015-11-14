@@ -9,8 +9,8 @@ More info on pkgin usage [here](/pkgin-howto/).
 
 #####Many, many packages to choose from
 
-	Packages available: 11563       
-	Total size of packages: 11G
+	Packages available: 13550
+	Total size of packages: 8677M
 
 #####Even some of your favourite Xorg environments
 ![XFCE on OS X 10.10](http://misc.saveosx.org/xfce4.png)
@@ -21,7 +21,7 @@ More info on pkgin usage [here](/pkgin-howto/).
 	17.92 real         2.99 user         0.65 sys     
 
 	$ which pkgin      
-	/usr/pkg/bin/pkgin        
+	/opt/pkg/bin/pkgin        
 
 #####Speedy Package Installs
 We distribute binary packages, so; no compilation is necessary, unlike MacPorts or Homebrew. This means you can install packages and 

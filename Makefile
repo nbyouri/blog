@@ -10,7 +10,7 @@ build:
 	jekyll build
 
 serve: 
-	rsync -avhz _site/* root@saveosx.org:/usr/local/www/saveosx/blog/; 
+	rsync -avhz _site/* youri@saveosx.org:~/saveosx/blog/; 
 
 git:
 	git add -A;
