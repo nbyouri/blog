@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>pkgsrcCon 2014 London</title>
+
+        <meta name="author" content="Youri Mouton" />
+        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+        <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
+
+        <link href="/css/up.css" rel="stylesheet">
+
+	
+	<link rel="stylesheet" href="/css/.css">
+	
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+	<script type="text/javascript">
+		if (window.location.href == "http://netbsd-news.me") {
+		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
+		}
+	</script>
+    </head>
+    
+     <body>
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+	
+        <a class="navbar-brand" href="/">Save OS X</a>
+	
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/download-and-install">Download & Install</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
+        </ul>
+    </div>
+    
+</div>
+</nav>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+        });
+    });
+</script>
+
+
+         <div class="container">
+             <div class="content">
+                 <article>
+  <h1>
+    pkgsrcCon 2014 London
+  </h1>
+
+  <section class="byline">
+  June 28, 2014 by Youri Mouton, tags:  
+  
+  </section>
+
+  <p>It happened just a few days ago and I had a great time meeting the people working on the framework we like so much. There were lots of NetBSD developers but also Mac OS X and SmartOS users and more.</p>
+
+<h2>conference highlights</h2>
+
+<p>We had 3 minutes talks and longer talks on the first day and we were about 20 people in there.</p>
+
+<p>Here&rsquo;s a list of pkgsrc related talks that were given:</p>
+
+<ul>
+<li><p>bulktracker by @bsiegert (Benny Siegert), a nice way to visualize bulk builds statistics</p>
+
+<pre><code> http://bulktracker.appspot.com
+</code></pre></li>
+<li><p>@wiedi&rsquo;s (Sebastian Wiedenroth) common pkgsrc errors web page</p>
+
+<p>  <a href="https://up.frubar.net/2915/report.html">https://up.frubar.net/2915/report.html</a></p></li>
+<li><p>&ldquo;Pretty tabular data without much effort&rdquo; by @abs  (David Brownlee)</p>
+
+<p>  <a href="http://sync.absd.org/www/pkgsrc-report.html">http://sync.absd.org/www/pkgsrc-report.html</a></p></li>
+<li><p>OCaml packages on pkgsrc for functional programming wizards like @jaap (Jaap Boender, pkgsrcCon host) and how OCaml updates breaks it&rsquo;s related packages like with Golang</p></li>
+<li><p>Cross Compiling with qemu by @justin (Justin Cormack)</p></li>
+<li><p>Sevan Janiyan&rsquo;s GCC fixes for Mac OS X on PowerPC and how he got 4.7 to build</p></li>
+<li><p>How package installs and upgrades are handled on The NetBSD Foundation servers by @spz (S.P Zeidler, who admitted using her beloved Amiga as a mirror for <a href="http://netbsd.org">http://netbsd.org</a>, but only for static content of course :])</p></li>
+<li><p>NetBSD thin clients by ThinIT @sborill (Stephen Borill)</p>
+
+<p>  <a href="http://www.bsdcan.org/2009/schedule/attachments/77_BuildingProductsWithNetBSDthin-clients-Stephen-Borrill.pdf">Paper from EuroBSDCon 2007</a></p></li>
+<li><p>A great talk by @schmonz (Amitai Schlair), president of TNF (The NetBSD Foundation) looking at pkgsrc in the future</p>
+
+<ul>
+<li>how do we make pkgsrc easier for developers</li>
+<li>allow users to post in wiki and other changes to allow more much, much needed documentation</li>
+<li>use a scripted language instead of a <code>Makefile</code> for ports, lua?</li>
+<li>automated testing of packages</li>
+<li>move away from cvs</li>
+<li>lots of other ideas&hellip;</li>
+<li>it was the only filmed talk, it should be up soon</li>
+</ul>
+</li>
+<li><p>The talks were recorded, I will link them when they&rsquo;re available.</p></li>
+<li><p>I talked a bit about being a new pkgsrc user and how documentation could be improved and introduced the SaveOSX project. I was a bit nervous at first but I was pleased with the positive response I got from a lot of really skilled people.</p></li>
+</ul>
+
+
+<h2>Hackathon</h2>
+
+<p>On the second day, we had a day of hacking on pkgsrc things</p>
+
+<ul>
+<li>@schmonz helped me fix pkgsrc for Mac OS X Yosemite which happened to be an easy fix.</li>
+<li>Calum and I worked on the SaveOSX scripts</li>
+<li>I looked at the much needed Xfce 4.10 <a href="https://github.com/NetBSDfr/xfce4">port</a> and got it to work on Mac OS  X</li>
+<li>@spz and @schmonz worked on the wiki</li>
+<li>pkgtools/pkg_regress for package testing</li>
+<li>Sevan got a free G4 Mac mini so he can work on pkgsrc along with his cute 12" G4 MacBook, he got gcc44 to gcc47 to build fine</li>
+<li>@wiedi got started working on getting FUSE support for Mac OS X in pkgsrc, it&rsquo;s build system appears to make it hard.</li>
+<li>more stuff quiet people were working on I don&rsquo;t know about..</li>
+</ul>
+
+
+<h2>Drinks</h2>
+
+<p>Calum and I had drinks with Sevan, @jaap, @schmonz, @wiedi, we talked for hours about making the world a better place and how projects like NetBSD and pkgsrc was impacting our lives.</p>
+
+  <div class="pull"></div>
+  <a  href="https://twitter.com/share" class="twitter-share-button"
+data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
+<script>
+!function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0];
+  if(!d.getElementById(id)){
+    js=d.createElement(s);
+    js.id=id;
+    js.src="//platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js,fjs);
+  }
+}(document,"script","twitter-wjs");
+</script>
+
+  <hr>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'saveosx';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+             </div>
+         </div>
+
+         <div id="footer" class="hidden-print">
+  <section class="meta">
+    <div class="container">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Content on this site is governed by the Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </section>
+</div>
+
+         
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+     </body>
+     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <script src="/js/up.min.js"></script>
+ </html>

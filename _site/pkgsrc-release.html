@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>pkgsrc_2013Q4 available, update your packages</title>
+
+        <meta name="author" content="Youri Mouton" />
+        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+        <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
+
+        <link href="/css/up.css" rel="stylesheet">
+
+	
+	<link rel="stylesheet" href="/css/.css">
+	
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+	<script type="text/javascript">
+		if (window.location.href == "http://netbsd-news.me") {
+		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
+		}
+	</script>
+    </head>
+    
+     <body>
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+	
+        <a class="navbar-brand" href="/">Save OS X</a>
+	
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/download-and-install">Download & Install</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
+        </ul>
+    </div>
+    
+</div>
+</nav>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+        });
+    });
+</script>
+
+
+         <div class="container">
+             <div class="content">
+                 <article>
+  <h1>
+    pkgsrc_2013Q4 available, update your packages
+  </h1>
+
+  <section class="byline">
+  June 28, 2014 by Youri Mouton, tags:  
+  
+  </section>
+
+  <p>pkgsrc just finished building a new batch of 64 bit gpg signed packages on Mac OS X 10.9.3 with clang !</p>
+
+<p>It took a good week and here are the results</p>
+
+<pre><code>Packages available: 8105
+Total size of packages: 7223M
+</code></pre>
+
+<p>You can take a look at the available packages <a href="http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64/">here</a></p>
+
+<h3>How to update</h3>
+
+<p>Update the repository name in <code>/usr/pkg/etc/pkgin/repositories.conf</code> and make sure the only uncommented line is:</p>
+
+<pre><code>http://pkgsrc.saveosx.org/Darwin/2013Q4/x86_64/All
+</code></pre>
+
+<p>Then update the pkgin database:</p>
+
+<pre><code>sudo pkgin up
+</code></pre>
+
+<p>And fully upgrade your packages:</p>
+
+<pre><code>sudo pkgin fug
+</code></pre>
+
+<h3>More information</h3>
+
+<p>If you have package requests or questions, you&rsquo;re welcome to ask on our IRC channel or send us an email</p>
+
+<pre><code>irc.oftc.net
+#saveosx
+
+calum0macrae@gmail.com 
+youri.mout@gmail.com
+</code></pre>
+
+<p>The PGP key fingerprint used to sign packages : <a href="https://keybase.io/yrmt">6A095CC62D99C8F7</a></p>
+
+<p><img src="https://www.pkgsrc.org/img/pkgsrc-long.png" alt="img" /></p>
+
+  <div class="pull"></div>
+  <a  href="https://twitter.com/share" class="twitter-share-button"
+data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
+<script>
+!function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0];
+  if(!d.getElementById(id)){
+    js=d.createElement(s);
+    js.id=id;
+    js.src="//platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js,fjs);
+  }
+}(document,"script","twitter-wjs");
+</script>
+
+  <hr>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'saveosx';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+             </div>
+         </div>
+
+         <div id="footer" class="hidden-print">
+  <section class="meta">
+    <div class="container">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Content on this site is governed by the Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </section>
+</div>
+
+         
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+     </body>
+     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <script src="/js/up.min.js"></script>
+ </html>

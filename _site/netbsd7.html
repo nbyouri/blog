@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>What to expect in NetBSD 7</title>
+
+        <meta name="author" content="Youri Mouton" />
+        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+        <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
+
+        <link href="/css/up.css" rel="stylesheet">
+
+	
+	<link rel="stylesheet" href="/css/orange.css">
+	
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+	<script type="text/javascript">
+		if (window.location.href == "http://netbsd-news.me") {
+		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
+		}
+	</script>
+    </head>
+    
+     <body>
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+	
+	<a class="navbar-brand" href="/">NetBSD News</a>
+	
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+		<li><a href="http://www.netbsd.org/donations/#how-to-donate">Make a donation to the NetBSD Foundation</a></li>
+        </ul>
+    </div>
+    
+</div>
+</nav>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+        });
+    });
+</script>
+
+
+         <div class="container">
+             <div class="content">
+                 <article>
+  <h1>
+    What to expect in NetBSD 7
+  </h1>
+
+  <section class="byline">
+  April  2, 2015 by Youri Mouton, tags:  
+  
+        NetBSD
+  
+  </section>
+
+  <p>NetBSD 7 is almost out and I thought I&rsquo;d share some of the stuff that the 200+ developpers have been working on. This fantastic operating system now works on more than 70 platforms and 39 architectures like x86, mips, arm, vax, ppc, sparc, sun2/3, atari, dreamcast, alpha, amiga, luna68k, acorn32, &hellip;</p>
+
+<h2>Graphics</h2>
+
+<p>Taylor Campbell (@riadstradh) has been working hard on getting DRM/KMS, the kernel graphics drivers from Linux 3.15 ready. It supports many cards like the Intel, up through Haswell and many Radeons. He also imported <a href="http://nouveau.freedesktop.org/wiki/">Nouveau</a> code, which would make recent nVidia cards work; it compiles and links, but it is very much a work in progress.</p>
+
+<ul>
+<li><a href="http://www.netbsd.org/gallery/presentations/riastradh/asiabsdcon2015/drmkms-status.pdf">A brief overview of DRM/KMS and its status in
+NetBSD</a>, Taylor Campbell for AsiaBSDCon 2015.</li>
+</ul>
+
+
+<h2>SoC</h2>
+
+<ul>
+<li>NetBSD now supports SMP for many ARM cores.</li>
+<li>Raspberry Pi and Raspberry Pi 2 ! <a href="https://wiki.netbsd.org/ports/evbarm/raspberry_pi/">NetBSD wiki entry</a>.</li>
+<li>TI OMAP, Sitara: Beagleboard, Beaglebone, BB Black</li>
+<li>Allwinner A10, A20, A31, A80(current): Cubieboard, Cubietruck, Hummingbird, Banana Pi</li>
+<li>Marvell Armada 370: Mirabox</li>
+<li>Freescale i.MX50, i.MX51, i.MX6: KOBO, Netwalker</li>
+<li>Xilinx Zynq: Parallela, ZEDBOARD</li>
+<li>Rockship : MINIX NEO X7, Radxa Rock 2013/Pro/Lite, Rayeager PX2</li>
+<li>For ARM, The EABI (and OABI compat), Hard-float with VFP and NEON</li>
+<li>MIPS Creator CI20 reaches user land. <a href="https://blog.netbsd.org/tnf/entry/so_they_sent_me_a">NetBSD blog entry</a>.</li>
+<li>Hardkernel ODROID-C1. <a href="http://blog.netbsd.org/tnf/entry/netbsd_ported_to_hardkernel_odroid">NetBSD blog entry</a>.</li>
+<li>and more, see the evbarm <a href="http://cvsweb.netbsd.org/bsdweb.cgi/src/sys/arch/evbarm/conf/">kernel configs</a>.</li>
+</ul>
+
+
+<h2>The toolchain</h2>
+
+<ul>
+<li>NetBSD supports GCC 4.8, including C++11</li>
+<li>LLVM/Clang is also in the base, thanks to Jörg Sonnenberger (@joerg), amd64, i386, arm work well. PowerPC and MIPS are still a work in progress.</li>
+<li>PCC is also available, for m68k and vax.</li>
+<li>While the default runtime includes libgcc and libstdc++ from GCC for ABI compatibility, a fully BSD licensed RTL is available via build flags.</li>
+<li>See the <a href="http://www.netbsd.org/gallery/presentations/joerg/eurobsdcon2014/#/">EuroBSDCon 2014 presentation</a>
+about toolchains on NetBSD by Martin Husemann and Jörg Sonnenberger.</li>
+</ul>
+
+
+<h2>Security</h2>
+
+<ul>
+<li>Introduction of the <a href="http://www.daemon-systems.org/man/reallocarr.3.html">reallocarr(3)</a> function to aid memory reallocation for arrays.</li>
+<li>NetBSD also introduced a <a href="http://www.daemon-systems.org/man/reallocarray.3.html">reallocarray(3)</a> function for OpenBSD code compatibility.</li>
+<li>See the <a href="http://mail-index.netbsd.org/tech-userlevel/2015/02/05/msg008912.html">mailing lists discussion</a> about why reallocarr was implemented rather than using OpenBSD&rsquo;s reallocarray.</li>
+<li>Constant-time comparison and guaranteed zeroing for crypto:
+<a href="http://www.daemon-systems.org/man/consttime_memequal.3.html">consttime memequal(3)</a>, <a href="http://www.daemon-systems.org/man/explicit_memset.3.html">explicit_memset(3)</a>.</li>
+<li>RC4 is gone! arc4random now uses ChaCha20. <a href="http://www.netbsd.org/gallery/presentations/riastradh/eurobsdcon2014/devrandom.pdf">Taylor Campbell&rsquo;s slides about randomness in NetBSD</a>.</li>
+<li>OpenSSL updates, LibreSSL is available in pkgsrc wip, soon to be in pkgsrc.</li>
+</ul>
+
+
+<h2>Miscellaneous</h2>
+
+<ul>
+<li>bpf just-in-time native code compiler <a href="http://wiki.netbsd.org/users/alnsn/EuroBSDCon2014-JIT-Code-Generator-for-NetBSD.pdf">EuroBSDCon 2014 slides</a></li>
+<li>Major improvements to <a href="http://www.netbsd.org/~rmind/npf/">npf</a>, the scalable NetBSD packet Filter, since its preliminary release in NetBSD 6</li>
+<li>Multiprocessor USB stack</li>
+<li>New port : epoc32</li>
+<li>The installer now allows extended partitioning and disk encryption with CGD and creating partitions for RAID or Logical Volumes for LVM.</li>
+<li>The <a href="http://netbsd.gw.com/cgi-bin/man-cgi?service++NetBSD-current">service(8)</a> command, used to manage <a href="http://netbsd.gw.com/cgi-bin/man-cgi?rc.d++NetBSD-current">rc.d</a> scripts used to start daemons at boottime, much like it&rsquo;s FreeBSD and OpenBSD homologue.</li>
+</ul>
+
+
+<h2>Current work</h2>
+
+<p>The good stuff that probably won&rsquo;t make it to NetBSD 7:</p>
+
+<ul>
+<li>Stable ZFS</li>
+<li>DTrace on by default in kernel</li>
+<li>Multiprocessor network stack</li>
+<li>nVidia graphics</li>
+<li>Newer Intel graphics from Linux 4.0: Broadwell, &amp;c</li>
+<li>ARMv8 / AArch64 : 64-bit ARM.</li>
+<li>nVidia Jetson TK1</li>
+<li>risc-v</li>
+<li>OpenRISC</li>
+<li>and much more, please consider <a href="http://www.netbsd.org/donations/#how-to-donate">donating</a> to keep the project going strong :-)</li>
+</ul>
+
+
+<h2>Sources</h2>
+
+<ul>
+<li>Taylor Campbell&rsquo;s <a href="https://www.netbsd.org/gallery/presentations/riastradh/asiabsdcon2015/netbsd-wip.pdf">AsiaBSDCon 2015 slides</a> on which this article is based.</li>
+<li>The NetBSD <a href="https://www.soum.co.jp/~jun/asiabsdcon2015.pdf">Traveller&rsquo;s Guide</a>, contains lots of nice pictures of NetBSD running on exotic hardware and some info about BSD conferences in Japan.</li>
+<li><a href="http://www.netbsd.org/changes/changes-7.0.html">Significant changes from NetBSD 6.0 to 7.0</a>, for detailled changes.</li>
+</ul>
+
+
+  <div class="pull"></div>
+  <a  href="https://twitter.com/share" class="twitter-share-button"
+data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
+<script>
+!function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0];
+  if(!d.getElementById(id)){
+    js=d.createElement(s);
+    js.id=id;
+    js.src="//platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js,fjs);
+  }
+}(document,"script","twitter-wjs");
+</script>
+
+  <hr>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'saveosx';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+             </div>
+         </div>
+
+         <div id="footer" class="hidden-print">
+  <section class="meta">
+    <div class="container">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Content on this site is governed by the Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </section>
+</div>
+
+         
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+     </body>
+     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <script src="/js/up.min.js"></script>
+ </html>

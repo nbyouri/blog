@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Signed Packages</title>
+
+        <meta name="author" content="Youri Mouton" />
+        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+        <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
+
+        <link href="/css/up.css" rel="stylesheet">
+
+	
+	<link rel="stylesheet" href="/css/.css">
+	
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+	<script type="text/javascript">
+		if (window.location.href == "http://netbsd-news.me") {
+		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
+		}
+	</script>
+    </head>
+    
+     <body>
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+	
+        <a class="navbar-brand" href="/">Save OS X</a>
+	
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/download-and-install">Download & Install</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
+        </ul>
+    </div>
+    
+</div>
+</nav>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+        });
+    });
+</script>
+
+
+         <div class="container">
+             <div class="content">
+                 <article>
+  <h1>
+    Signed Packages
+  </h1>
+
+  <section class="byline">
+  February 11, 2014 by Youri Mouton, tags:  
+  
+  </section>
+
+  <p>The pkgsrc 2013Q3 branch repo is almost finished compiling, it features all the port fixes I&rsquo;ve been working on, and now the ports use the X11 libs from inside pkgsrc so XQuartz will only be needed to actually start the X server! I will try to get an X server working from pkgsrc to avoid having to install XQuartz from macosforge but that is more complicated than I first thought (I&rsquo;ll post about it later).</p>
+
+<p>But more importantly, the packages are now signed! This means you can easily make sure the packages are coming from a trusted source (because you trust me, right?).
+I&rsquo;ve got this idea from the awesome work of khorben, a NetBSD developer and leader of <a href="http://edgebsd.org">EdgeBSD</a>, whose project I&rsquo;m also trying to help on. Check <a href="http://video.fosdem.org/2014/AW1121/Saturday/The_EdgeBSD_Project.webm">this</a> video if you want to learn more about it and learn more about package signing on pkgsrc. khorben pushed his changes to NetBSD so all that was needed was a <a href="http://lists.edgebsd.org/edgebsd-developers/2013/09/msg00001.html">patch</a> to the pkgsrc makefiles and a few config adjustments in mk.conf and pkg_install.conf.</p>
+
+<h2>Technical details</h2>
+
+<p>The packages are signed with gnupg version 2.0.22 and here are my gpg details:</p>
+
+<pre><code>    pub   4096R/2D99C8F7 2014-02-05     
+    uid                  Youri Mouton &lt;youri.mout@gmail.com&gt;     
+    uid                  Youri Mouton &lt;yrmt@edgebsd.org&gt;     
+    sub   4096R/B6BAE02C 2014-02-05     
+    Key fingerprint = 81F7 EC68 C5BD 5DED 7A7B  2832 6A09 5CC6 2D99 C8F7
+</code></pre>
+
+<p>So how do the packages compare to the non signed ones? Here&rsquo;s the anatomy of a signed package:</p>
+
+<pre><code>    ──── ar -t /Volumes/pkgsrc/packages/All/nmap-6.40.tgz
+    +PKG_HASH
+    +PKG_GPG_SIGNATURE
+    nmap-6.40.tgz
+</code></pre>
+
+<p>It&rsquo;s a tgz archive which contains the signing information and the actual package which is the same as  the non signed packages.</p>
+
+<p>The <code>+PKG_GPG_SIGNATURE</code> file contains the gpg public key needed to verify the authenticity of the package and the <code>+PKG_HASH</code> file contains hashes of every 40 bytes of the package files.</p>
+
+<h2>How do I install signed packages?</h2>
+
+<p>First, import my key I linked above so pkg_add, which is used by pkgin can verify that the package is coming from me.</p>
+
+<pre><code>    ──── gpg --recv-keys 2D99C8F7
+</code></pre>
+
+<p>Or, using a local file containing my key:</p>
+
+<pre><code>    ──── gpg --import yrmtspubkey
+</code></pre>
+
+<p>When installing packages, you might see a message that says the key is not trusted, to silence it you must set a level of trust on my key:</p>
+
+<pre><code>    ──── gpg --edit-key 2D99C8F7
+</code></pre>
+
+<p>Then you&rsquo;ll be prompted which level of trust you want to set, then type <code>save</code> and you&rsquo;re done!</p>
+
+<p>Add this to your /usr/pkg/etc/pkg_install.conf:</p>
+
+<pre><code>    GPG=/usr/pkg/bin/gpg
+    VERIFIED_INSTALLATION=always
+</code></pre>
+
+<p>After the steps mentionned above, you can simply install packages as you used to.</p>
+
+<p>Here&rsquo;s an example:</p>
+
+<pre><code>    ──── sudo pkgin -y in gtk3+
+    reading local summary...
+    processing local summary...
+    updating database: 100%
+    calculating dependencies... done.
+
+    nothing to upgrade.
+    1 packages to be installed: gtk3+-3.10.6 (17M to download, 70M to install)
+
+    downloading packages...
+    gtk3+-3.10.6.tgz                   100%   17MB 282.5KB/s 252.3KB/s   01:02    
+    installing packages...
+    installing gtk3+-3.10.6...
+    pkg_install warnings: 0, errors: 0
+    reading local summary...
+    processing local summary...
+    updating database: 100%
+    marking gtk3+-3.10.6 as non auto-removable
+</code></pre>
+
+<h2>How do I create signed packages?</h2>
+
+<p>First, you must apply khorben&rsquo;s <a href="http://git.edgebsd.org/gitweb/?p=edgebsd-pkgsrc.git;a=blobdiff;f=mk/pkgformat/pkg/package.mk;h=d75bad26e0c460f5d1d4c69bec0536a77de79da2;hp=cdee24570f4b98b71a7bca86b0e998b9db248336;hb=16c6eceef5b4a1314096b564d68e5d990a6ae5b1;hpb=45f514b94f43afdfd93f8f25ea30c56c29d23249">patch</a> on pkgsrc&rsquo;s makefiles</p>
+
+<p>Put your gpg ID in /usr/pkg/etc/pkg_install.conf, so for me:</p>
+
+<pre><code>    GPG_SIGN_AS=2D99C8F7
+</code></pre>
+
+<p>And add this in /usr/pkg/etc/mk.conf:</p>
+
+<pre><code>    SIGN_PACKAGES=gpg
+</code></pre>
+
+<p>Then the port will ask for your password when running <code>make package</code>, like this:</p>
+
+<pre><code>    You need a passphrase to unlock the secret key for
+    user: "Youri Mouton &lt;yrmt@edgebsd.org&gt;"
+    4096-bit RSA key, ID 2D99C8F7, created 2014-02-05
+</code></pre>
+
+<blockquote><hr />
+
+<p>As a little bonus, here&rsquo;s a picture of my pkgsrc tree with a sticker I got at FOSDEM!</p></blockquote>
+
+<p><img src="http://i.imgur.com/rrGFaWz.jpg?1" alt="bonus" /></p>
+
+<h5><a href="https://twitter.com/EdgeBSD">Link to the magnificent EdgeBSD project twitter!</a></h5>
+
+  <div class="pull"></div>
+  <a  href="https://twitter.com/share" class="twitter-share-button"
+data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
+<script>
+!function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0];
+  if(!d.getElementById(id)){
+    js=d.createElement(s);
+    js.id=id;
+    js.src="//platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js,fjs);
+  }
+}(document,"script","twitter-wjs");
+</script>
+
+  <hr>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'saveosx';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+             </div>
+         </div>
+
+         <div id="footer" class="hidden-print">
+  <section class="meta">
+    <div class="container">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Content on this site is governed by the Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </section>
+</div>
+
+         
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+     </body>
+     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <script src="/js/up.min.js"></script>
+ </html>

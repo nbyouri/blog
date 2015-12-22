@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>pkgsrc_2013Q3 packages available</title>
+
+        <meta name="author" content="Youri Mouton" />
+        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+        <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
+
+        <link href="/css/up.css" rel="stylesheet">
+
+	
+	<link rel="stylesheet" href="/css/.css">
+	
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+	<script type="text/javascript">
+		if (window.location.href == "http://netbsd-news.me") {
+		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
+		}
+	</script>
+    </head>
+    
+     <body>
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+	
+        <a class="navbar-brand" href="/">Save OS X</a>
+	
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/download-and-install">Download & Install</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
+        </ul>
+    </div>
+    
+</div>
+</nav>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+        });
+    });
+</script>
+
+
+         <div class="container">
+             <div class="content">
+                 <article>
+  <h1>
+    pkgsrc_2013Q3 packages available
+  </h1>
+
+  <section class="byline">
+  February 14, 2014 by Youri Mouton, tags:  
+  
+  </section>
+
+  <p>My poor MacBook just finished compiling the 2013Q3 branch of pkgsrc, you can have a look at it <a href="http://pkgsrc.saveosx.org/Darwin/2013Q3/x86_64/">here</a>. I also updated the bootstrap archive; see the <a href="http://saveosx.org/download-and-install">download</a> page for instructions.</p>
+
+<h2>Pkgin Stats:</h2>
+
+<pre><code>    Remote package database(s):
+            Number of repositories: 1
+            Packages available: 7558
+            Total size of packages: 6.97 GB
+</code></pre>
+
+<h2>Build info:</h2>
+
+<p>The packages are compiled on Mac OS X 10.9.1 Mavericks and more specifically Darwin 13.0.2 for the x86_64 architecture.</p>
+
+<p>Here&rsquo;s the mk.conf I used:</p>
+
+<pre><code>    # Example /usr/pkg/etc/mk.conf file produced by bootstrap-pkgsrc
+    # Tue Oct 15 21:21:46 CEST 2013
+
+    .ifdef BSD_PKG_MK               # begin pkgsrc settings
+
+    DISTDIR=                        /content/distfiles
+    PACKAGES=                       /content/packages
+    WRKOBJDIR=                      /var/tmp/pkgsrc-build
+    ABI=                            64
+    PKGSRC_COMPILER=                clang
+    CC=                             clang
+    CXX=                            clang++
+    CPP=                            ${CC} -E
+    PKG_DBDIR=                      /var/db/pkg
+    LOCALBASE=                      /usr/pkg
+    VARBASE=                        /var
+    PKG_TOOLS_BIN=                  /usr/pkg/sbin
+    PKGINFODIR=                     info
+    PKGMANDIR=                      man
+    BINPKG_SITES=                   http://pkgsrc.saveosx.org/Darwin/2013Q3/x86_64
+    DEPENDS_TARGET=                 bin-install
+    X11_TYPE=                       modular
+    TOOLS_PLATFORM.awk?=            /usr/pkg/bin/nawk
+    TOOLS_PLATFORM.sed?=            /usr/pkg/bin/nbsed
+    ALLOW_VULNERABLE_PACKAGES=      YES
+    MAKE_JOBS=                      8
+    SKIP_LICENSE_CHECK=             YES
+    PKG_DEVELOPER=                  YES
+    SIGN_PACKAGES=                  gpg
+
+    .endif                          # end pkgsrc settings
+</code></pre>
+
+<p>Most of the packages are also signed using gpg, see <a href="http://saveosx.org/signed-packages/">this</a> post about it.</p>
+
+<h2>More information:</h2>
+
+<p>XQuartz is still needed to run the X programs but they are linked against pkgsrc&rsquo;s libraries.</p>
+
+<p>The compiler used is the clang shipped with Mac OS X:</p>
+
+<pre><code>    Apple LLVM version 5.0 (clang-500.2.79) (based on LLVM 3.3svn)
+    Target: x86_64-apple-darwin13.0.2
+    Thread model: posix
+</code></pre>
+
+<p>The packages don&rsquo;t use the built-in libraries like ncurses, libiconv, zlib for more portability.</p>
+
+<h2>Want to help contribute? </h2>
+
+<p>Come on <code>irc.oftc.net</code> on the <code>#saveosx</code> channel so we can talk about it, I need all the help I can get.</p>
+
+<p>You can find my pkgsrc tree <a href="https://github.com/yrmt/pkgsrc">here</a> and my personal ports <a href="https://github.com/yrmt/wip">here</a>.</p>
+
+<h2>pkgsrc links:</h2>
+
+<p>Here are a few links of documentation that helped me a lot.</p>
+
+<ul>
+<li><a href="http://www.netbsd.org/docs/pkgsrc/">http://www.netbsd.org/docs/pkgsrc/</a></li>
+<li><a href="http://pkgsrc.joyent.com/">http://pkgsrc.joyent.com/</a></li>
+<li><a href="http://www.pkgsrc.org/">http://www.pkgsrc.org/</a></li>
+<li><a href="http://www.perkin.org.uk/">http://www.perkin.org.uk/</a></li>
+</ul>
+
+
+<h2>Machine info</h2>
+
+<p>I used a late 2013 retina MacBook Pro with a quad core 2.5GHZ intel i5 CPU with 4GB ram. Here&rsquo;s a picture!</p>
+
+<p><img src="http://i.imgur.com/0psYyaj.jpg?1" alt="pic" /></p>
+
+  <div class="pull"></div>
+  <a  href="https://twitter.com/share" class="twitter-share-button"
+data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
+<script>
+!function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0];
+  if(!d.getElementById(id)){
+    js=d.createElement(s);
+    js.id=id;
+    js.src="//platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js,fjs);
+  }
+}(document,"script","twitter-wjs");
+</script>
+
+  <hr>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'saveosx';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+             </div>
+         </div>
+
+         <div id="footer" class="hidden-print">
+  <section class="meta">
+    <div class="container">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Content on this site is governed by the Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </section>
+</div>
+
+         
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+     </body>
+     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <script src="/js/up.min.js"></script>
+ </html>

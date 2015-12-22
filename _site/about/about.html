@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Posts</title>
+
+        <meta name="author" content="Youri Mouton" />
+        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+        <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
+
+        <link href="/css/up.css" rel="stylesheet">
+
+	
+	<link rel="stylesheet" href="/css/.css">
+	
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+	<script type="text/javascript">
+		if (window.location.href == "http://netbsd-news.me") {
+		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
+		}
+	</script>
+    </head>
+    
+     <body>
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+	
+        <a class="navbar-brand" href="/">Save OS X</a>
+	
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/download-and-install">Download & Install</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
+        </ul>
+    </div>
+    
+</div>
+</nav>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+        });
+    });
+</script>
+
+
+         <div class="container">
+             <div class="content">
+                 <h1 id="save-os-x">Save OS X</h1>
+
+
+
+
+<h5 id="secure-binary-package-management-for-os-x">Secure binary package management for OS X!</h5>
+
+
+
+
+<pre><code>$ sudo pkgin install tmux
+</code></pre>
+
+
+
+
+<p>More info on pkgin usage <a href="/pkgin-howto/">here</a>.</p>
+
+
+
+
+<h5 id="many-many-packages-to-choose-from">Many, many packages to choose from</h5>
+
+
+
+
+<pre><code>Packages available: 13550
+Total size of packages: 8677M
+</code></pre>
+
+
+
+
+<h5 id="even-some-of-your-favourite-xorg-environments">Even some of your favourite Xorg environments</h5>
+
+
+<p><img src="http://misc.saveosx.org/xfce4.png" alt="XFCE on OS X 10.10" /></p>
+
+
+
+
+<h5 id="up-and-running-in-seconds">Up and running in seconds</h5>
+
+
+
+
+<pre><code>$ time ./bootstrap        
+17.92 real         2.99 user         0.65 sys     
+
+$ which pkgin      
+/opt/pkg/bin/pkgin        
+</code></pre>
+
+
+
+
+<h5 id="speedy-package-installs">Speedy Package Installs</h5>
+
+
+<p>We distribute binary packages, so; no compilation is necessary, unlike MacPorts or Homebrew. This means you can install packages and 
+their dependencies much faster!</p>
+
+
+
+
+<h5 id="what-are-you-waiting-for-go-get-starteddownload-and-install-its-easy">What are you waiting for? <a href="download-and-install/">Go get started</a>, it’s easy!</h5>
+
+
+
+
+<p align="center">Made with ❤ using</p>
+
+
+<p><a href="http://pkgsrc.org"><img src="/assets/pkgsrc.png" alt="pkgsrc" /></a></p>
+
+
+
+
+             </div>
+         </div>
+
+         <div id="footer" class="hidden-print">
+  <section class="meta">
+    <div class="container">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Content on this site is governed by the Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </section>
+</div>
+
+         
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+     </body>
+     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <script src="/js/up.min.js"></script>
+ </html>

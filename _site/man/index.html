@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>pkgin man page</title>
+
+        <meta name="author" content="Youri Mouton" />
+        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+        <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
+
+        <link href="/css/up.css" rel="stylesheet">
+
+	
+	<link rel="stylesheet" href="/css/.css">
+	
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+	<script type="text/javascript">
+		if (window.location.href == "http://netbsd-news.me") {
+		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
+		}
+	</script>
+    </head>
+    
+     <body>
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+	
+        <a class="navbar-brand" href="/">Save OS X</a>
+	
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/download-and-install">Download & Install</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
+        </ul>
+    </div>
+    
+</div>
+</nav>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+       $("a").each(function(){
+               if ($(this).attr("href") == window.location.pathname){
+                       $(this).addClass("selected");
+               }
+        });
+    });
+</script>
+
+
+         <div class="container">
+             <div class="content">
+                 <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+table.head, table.foot { width: 100%; }
+td.head-rtitle, td.foot-os { text-align: right; }
+td.head-vol { text-align: center; }
+table.foot td { width: 50%; }
+table.head td { width: 33%; }
+div.spacer { margin: 1em 0; }
+.content { font-family: Helvetica; 
+			margin-top: 50px;
+}
+h5 {
+	padding: 0px;
+}
+</style>
+<title>
+PKGIN(1)</title>
+</head>
+<body>
+<div class="mandoc">
+<table class="head">
+<tbody>
+<tr>
+<td class="head-ltitle">
+PKGIN(1)</td>
+<td class="head-vol">
+General Commands Manual</td>
+<td class="head-rtitle">
+PKGIN(1)</td>
+</tr>
+</tbody>
+</table>
+<div class="section">
+<h5 id="x4e414d45">NAME</h5> <b class="name">pkgin</b> &#8212; <span class="desc">A tool to manage pkgsrc binary packages.</span></div>
+<div class="section">
+<h5 id="x53594e4f50534953">SYNOPSIS</h5><table class="synopsis">
+<col style="width: 5.00ex;"/>
+<col/>
+<tbody>
+<tr>
+pkgin
+[<span class="opt"><b class="flag">-dfFhPvVyn</b></span>] [<span class="opt"><b class="flag">-l</b> <i class="arg">limit_chars</i></span>] [<span class="opt"><b class="flag">-c</b> <i class="arg">chroot_path</i></span>] [<span class="opt"><b class="flag">-t</b> <i class="arg">log_file</i></span>] <i class="arg">command</i> [<span class="opt"><i class="arg">package</i> <i class="arg">...</i></span>]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section">
+<h5 id="x4445534352495054494f4e">DESCRIPTION</h5> The <b class="name">pkgin</b> command is aimed at being an apt / yum like tool for managing pkgsrc binary packages. It relies on <a class="link-man">pkg_summary(5)</a> for installation, removal and upgrade of packages and associated dependencies, using a remote repository.</div>
+<div class="section">
+<h5 id="x4f5054494f4e53">OPTIONS</h5> The following command line arguments are supported:<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-d</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Download only.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-f</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Force database update.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-F</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Force package reinstall.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-h</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Displays help for the command.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-P</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Displays packages versions instead of globs (sd, sfd, srd)</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-v</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Displays <b class="name">pkgin</b> version</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-V</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Be verbose when (un)installing</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-y</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Assumes &quot;yes&quot; as default answer, except for autoremove.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-n</b></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Assumes &quot;no&quot; as default answer.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-l</b> <i class="arg">limit_chars</i></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Only include the packages with the specified status flags.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-c</b> <i class="arg">chroot_path</i></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Enable chrooting pkgin in the given repository</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<b class="flag">-t</b> <i class="arg">log_file</i></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Logs package browsing (dependencies and impact) to a given log file</dd>
+</dl>
+<div class="spacer">
+</div>
+The <b class="name">pkgin</b> utility provides several commands:<div class="spacer">
+</div>
+<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">autoremove</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Automatically removes orphan dependencies.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">avail</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Lists all packages available in the repository.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">clean</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Delete downloaded packages from the cache directory.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">export</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Export the list of non-autoremovable packages to stdout (one category/package by line)</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">full-upgrade</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Upgrade all packages to their newer versions present in the repository.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">import</b> <i class="arg">file</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Import a list of packages to be installed from file (one category/package by line)</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">install</b> <i class="arg">package</i> <i class="arg">...</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Performs installation or upgrade of <i class="arg">package</i>. If more than one packages are specified on the command-line, all will be installed (or upgraded).</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">keep</b> <i class="arg">package</i> <i class="arg">...</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Marks <i class="arg">package</i> as &quot;non auto-removable&quot;. This means that a package that has, for instance, been compiled manually from pkgsrc, can't be removed through a <b class="name">pkgin</b> upgrade. More than one package can be specified on the command-line, to mark several packages as non-removable in a single command.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">list</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Lists all packages installed locally on a system. If the <i class="arg">l</i> modifier is added to this command, show only packages matching the status flag.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">pkg-content</b> <i class="arg">package</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Show remote <i class="arg">package</i> content.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">pkg-descr</b> <i class="arg">package</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Show remote <i class="arg">package</i> long-description.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">pkg-build-defs</b> <i class="arg">package</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Show remote <i class="arg">package</i> build definitions.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">provides</b> <i class="arg">package</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Shows what a <i class="arg">package</i> provides to others</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">remove</b> <i class="arg">package</i> <i class="arg">...</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Removes <i class="arg">package</i> as well as all packages depending on it. When more than one package are specified, they will all be uninstalled. By default, it will prompt you to confirm before package removals.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">requires</b> <i class="arg">package</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Shows what a <i class="arg">package</i> requires from others <i class="arg">packages</i>.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">search</b> <i class="arg">pattern</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Performs a regular expression search for a pattern in the repository.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">show-deps</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Displays all direct dependencies</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">show-full-deps</b> <i class="arg">package</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Displays all direct dependencies recursively</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">show-rev-deps</b> <i class="arg">package</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Displays all reverse direct dependencies for <i class="arg">package</i>. If more than one package is specified, <b class="name">pkgin</b> will show recursively reverse direct dependencies for all packages on the command-line.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">show-category</b> <i class="arg">category</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Show packages belonging to <i class="arg">category</i>.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">show-pkg-category</b> <i class="arg">package</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Show <i class="arg">package</i> category.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">show-keep</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Display &quot;non auto-removable&quot; packages.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">show-no-keep</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Display &quot;auto-removable&quot; packages.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">unkeep</b> <i class="arg">package</i> <i class="arg">...</i></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Marks <i class="arg">package</i> as &quot;auto-removable&quot;. If no other package depends on it, it will be removed when using the autoremove modifier.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">update</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Creates and populates the initial database of locally installed packages and available packages (from the remote <a class="link-man">pkg_summary(5)</a> list). This is done automatically when <b class="name">pkgin</b> is first used, when the system package database has been modified. or when <b class="name">pkgin</b> is upgraded to a new database version.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+<b class="flag">upgrade</b></dt>
+<dd class="list-tag" style="margin-left: 10.00ex;">
+Upgrade keepable packages to their newer versions present in the repository. If the installed dependencies match the listed needed dependencies, don't upgrade them.</dd>
+</dl>
+</div>
+<div class="section">
+<h5 id="x53544154555320464c414753">STATUS FLAGS</h5> When using the <i class="arg">l</i> flag along with the <i class="arg">list</i> command, the following status flag must be set:<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<dt class="list-tag" style="margin-top: 1.00em;">
+<code class="lit">=</code></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+The installed version of the package is current.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<code class="lit">&lt;</code></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+The installed version of the package is older than the current version.</dd>
+<dt class="list-tag" style="margin-top: 1.00em;">
+<code class="lit">&gt;</code></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+The installed version of the package is newer than the current version.</dd>
+</dl>
+</div>
+<div class="section">
+<h5 id="x454e5649524f4e4d454e54">ENVIRONMENT</h5><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<dt class="list-tag" style="margin-top: 1.00em;">
+<span class="env">PKG_REPOS</span></dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+The <span class="env">PKG_REPOS</span> environment variable can be pointed to a suitable repository or a list of space separated repositories in order to override <i class="file">/usr/pkg/etc/pkgin/repositories.conf</i></dd>
+</dl>
+</div>
+<div class="section">
+<h5 id="x46494c4553">FILES</h5><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<dt class="list-tag" style="margin-top: 0.00em;">
+/usr/pkg/etc/pkgin/repositories.conf</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+This file contains a list of repository URIs that <b class="name">pkgin</b> will use. It may contain macros <b class="var">$arch</b> to define the machine hardware platform and <b class="var">$osrelease</b> to define the release version for the operating system (as reported by <a class="link-man">uname(3)</a>).</dd>
+</dl>
+</div>
+<div class="section">
+<h5 id="x4558414d504c4553">EXAMPLES</h5> Setup the initial database:<div class="spacer">
+</div>
+<pre style="margin-left: 0.00ex;" class="lit display">
+# echo ftp://ftp.fr.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/5.0/All &gt; /usr/pkg/etc/pkgin/repositories.conf 
+# pkgin update 
+processing local summary... 
+updating database: 100% 
+downloading pkg_summary.bz2: 100% 
+processing remote summary (ftp://ftp.fr.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/5.0/All)... 
+updating database: 100%</pre>
+<div class="spacer">
+</div>
+Listing all packages available in the repository:<div class="spacer">
+</div>
+<pre style="margin-left: 0.00ex;" class="lit display">
+# pkgin avail | more 
+[...] 
+autoconf-2.63        Generates automatic source code configuration scripts 
+aumix-gtk-2.8nb3     Set mix levels (ncurses and GTK+ 2.0 interfaces) 
+aumix-2.8nb7         Set mix levels (ncurses interface only) 
+august-0.63b         Simple Tk-based HTML editor 
+audacity-1.2.6nb3    Audio editor 
+[...]</pre>
+<div class="spacer">
+</div>
+Install packages and their dependencies:<div class="spacer">
+</div>
+<pre style="margin-left: 0.00ex;" class="lit display">
+# pkgin install links eterm 
+nothing to upgrade. 
+11 packages to be installed: tiff-3.8.2nb4 png-1.2.35 libungif-4.1.4nb1 libltdl-1.5.26 jpeg-6bnb4 pcre-7.8 perl-5.10.0nb5 libast-0.6.1nb3 imlib2-1.4.2nb1 links-2.2nb1 eterm-0.9.4nb1 (25M to download, 64M to install) 
+proceed ? [y/N]</pre>
+<div class="spacer">
+</div>
+Remove packages and their reverse dependencies:<div class="spacer">
+</div>
+<pre style="margin-left: 0.00ex;" class="lit display">
+# pkgin remove links eterm 
+2 packages to delete: links-2.2nb1 eterm-0.9.4nb1 
+proceed ? [y/N]</pre>
+<div class="spacer">
+</div>
+Remove orphan dependencies:<div class="spacer">
+</div>
+<pre style="margin-left: 0.00ex;" class="lit display">
+# pkgin autoremove 
+in order to remove packages from the autoremove list, flag those with the -k modifier. 
+9 packages to be autoremoved: libast-0.6.1nb3 pcre-7.8 imlib2-1.4.2nb1 tiff-3.8.2nb4 png-1.2.35 libungif-4.1.4nb1 libltdl-1.5.26 perl-5.10.0nb5 jpeg-6bnb4 
+proceed ? [y/N]</pre>
+</div>
+<div class="section">
+<h5 id="x53454520414c534f">SEE ALSO</h5> <a href="http://netbsd.gw.com/cgi-bin/man-cgi?pkg_add++NetBSD-current" class="link-man">pkg_add(1)</a>, <a href="http://netbsd.gw.com/cgi-bin/man-cgi?pkg_info++NetBSD-current" class="link-man">pkg_info(1)</a>, <a href="http://netbsd.gw.com/cgi-bin/man-cgi?pkg_summary++NetBSD-current" class="link-man">pkg_summary(5)</a>, <a href="http://netbsd.gw.com/cgi-bin/man-cgi?pkgsrc++NetBSD-current" class="link-man">pkgsrc(7)</a></div>
+<div class="section">
+<h5 id="x415554484f5253">AUTHORS</h5><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<dt class="list-tag" style="margin-top: 0.00em;">
+Emile &#8220;iMil&#8221; Heitor</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Initial work and ongoing development.</dd>
+</dl>
+</div>
+<div class="section">
+<h5 id="x434f4e5452494255544f5253">CONTRIBUTORS</h5><dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="list list-tag">
+<dt class="list-tag" style="margin-top: 0.00em;">
+Jeremy C. Reed</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Testing and refinements.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+Arnaud Ysmal</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Tests and patches</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+Claude Charpentier</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+SQLite schema, and SQL queries debugging.</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+Guillaume Lasmayous</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Man page</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+Antonio Huete Jimenez</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+DragonFly port</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+Min Sik Kim</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+Darwin port</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+Filip Hajny</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+SunOS port</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+Baptiste Daroussin</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+FreeBSD port and patches</dd>
+<dt class="list-tag" style="margin-top: 0.00em;">
+Gautam B.T.</dt>
+<dd class="list-tag" style="margin-left: 6.00ex;">
+MINIX port</dd>
+</dl>
+</div>
+<div class="section">
+<h5 id="x42554753">BUGS</h5> We're hunting them.</div>
+<table class="foot">
+<tbody>
+<tr>
+<td class="foot-date">
+December 6, 2009</td>
+<td class="foot-os">
+Darwin 14.0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
+
+             </div>
+         </div>
+
+         <div id="footer" class="hidden-print">
+  <section class="meta">
+    <div class="container">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Content on this site is governed by the Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </section>
+</div>
+
+         
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+     </body>
+     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <script src="/js/up.min.js"></script>
+ </html>
