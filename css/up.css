@@ -106,3 +106,6 @@ article, .content {
 .selected {
   color:white;
 }
+a.selected {
+	color: #2a6496!important;
+}
