@@ -5,28 +5,20 @@
         <title>An introduction to pkgsrc</title>
 
         <meta name="author" content="Youri Mouton" />
-        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="description" content="A blog by Youri Mouton" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
 
         <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
 
-        <link href="/css/up.css" rel="stylesheet">
-
-	
-	<link rel="stylesheet" href="/css/.css">
-	
+		<link href="/css/up.css" rel="stylesheet">
+		<link href="/css/orange.css" rel="stylesheet">
 
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-	<script type="text/javascript">
-		if (window.location.href == "http://netbsd-news.me") {
-		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
-		}
-	</script>
     </head>
     
      <body>
@@ -40,33 +32,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-	
-        <a class="navbar-brand" href="/">Save OS X</a>
-	
+	<a class="navbar-brand" href="/">NetBSD News</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/download-and-install">Download & Install</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
+		<li><a href="http://www.netbsd.org/donations/#how-to-donate">Make a donation to the NetBSD Foundation</a></li>
         </ul>
     </div>
-    
 </div>
 </nav>
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script>
-    $(function(){
-       $("a").each(function(){
-               if ($(this).attr("href") == window.location.pathname){
-                       $(this).addClass("selected");
-               }
-        });
-    });
-</script>
 
 
          <div class="container">
@@ -171,13 +146,13 @@
 
 <ul>
 <li><code>Makefile</code> : a comment, developer info, software download site and lots of other possibilities</li>
-<li><code>DESCR</code> : a paragraph containing the description for the software of the port we&rsquo;re making</li>
+<li><code>DESCR</code> : a paragraph containing the description for the software of the port we're making</li>
 <li><code>PLIST</code> : the list of files to install, pkgsrc will only install the files listed here to your prefix</li>
 <li><code>distinfo</code> : hashes of the software archive and patches or files in the port</li>
 </ul>
 
 
-<p>Here&rsquo;s how they would look like for a small port I submitted not long ago in pkgsrc-wip</p>
+<p>Here's how they would look like for a small port I submitted not long ago in pkgsrc-wip</p>
 
 <p>Makefile:</p>
 
@@ -199,8 +174,8 @@
 <p><span class="nv">DIST_SUBDIR</span><span class="o">=</span> osxinfo
 <span class="nv">WRKSRC</span><span class="o">=</span> <span class="k">${</span><span class="nv">WRKDIR</span><span class="k">}</span>/osxinfo-<span class="k">${</span><span class="nv">GHCOMMIT</span><span class="k">}</span></p>
 
-<p><span class="err">.include</span> <span class="s2">&ldquo;../../databases/sqlite3/buildlink3.mk&rdquo;</span>
-<span class="err">.include</span> <span class="s2">&ldquo;../../mk/bsd.pkg.mk&rdquo;</span></code></pre></figure></p>
+<p><span class="err">.include</span> <span class="s2">"../../databases/sqlite3/buildlink3.mk"</span>
+<span class="err">.include</span> <span class="s2">"../../mk/bsd.pkg.mk"</span></code></pre></figure></p>
 
 <p>DESCR:</p>
 
@@ -225,19 +200,19 @@ Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 
 <h2>make</h2>
 
-<p>Now you know what kind of files you can see when you&rsquo;re in a port directory. The command used to compile it is the NetBSD <code>make</code> but often <code>bmake</code> on non NetBSD systems to avoid Makefile errors. Typing make alone will only compile the program but you can also use other command line arguments to make such as extract, patch, configure, install, package, &hellip;</p>
+<p>Now you know what kind of files you can see when you're in a port directory. The command used to compile it is the NetBSD <code>make</code> but often <code>bmake</code> on non NetBSD systems to avoid Makefile errors. Typing make alone will only compile the program but you can also use other command line arguments to make such as extract, patch, configure, install, package, ...</p>
 
-<p>I&rsquo;ll try to list them and explain them in logical order. You can run them together.</p>
+<p>I'll try to list them and explain them in logical order. You can run them together.</p>
 
 <ul>
-<li><code>make clean</code> will remove the source file from the work directory so you can restart with either new options, new patches, &hellip;</li>
-<li><code>make fetch</code> will simply fetch the file and check if the hash corresponds. It will throw an error if it doesn&rsquo;t.</li>
+<li><code>make clean</code> will remove the source file from the work directory so you can restart with either new options, new patches, ...</li>
+<li><code>make fetch</code> will simply fetch the file and check if the hash corresponds. It will throw an error if it doesn't.</li>
 <li><code>make distinfo</code> or <code>make mdi</code> to update the file hashes in the <code>distinfo</code> file mentionned above.</li>
-<li><code>make extract</code> extracts the program source files from it&rsquo;s archive in the work directory</li>
+<li><code>make extract</code> extracts the program source files from it's archive in the work directory</li>
 <li><code>make patch</code> applies the local pkgsrc patches to the source</li>
 <li><code>make configure</code> run the GNU configure script</li>
 <li><code>make</code> or <code>make build</code> or <code>make all</code> will stop after the program is compiled</li>
-<li><code>make stage-install</code> will install in the port destdir, where pkgsrc first installs program files to check if the files correspond with the <code>PLIST</code> contents before installing to your prefix. For <code>wget</code>, if you have a default WRKOBJDIR (I&rsquo;ll explain later), the program files will first be installed in <code>&lt;path&gt;/pkgsrc/net/wget/work/.destdir</code> then after a few checks, in your actual prefix like <code>/usr/pkg</code></li>
+<li><code>make stage-install</code> will install in the port destdir, where pkgsrc first installs program files to check if the files correspond with the <code>PLIST</code> contents before installing to your prefix. For <code>wget</code>, if you have a default WRKOBJDIR (I'll explain later), the program files will first be installed in <code>&lt;path&gt;/pkgsrc/net/wget/work/.destdir</code> then after a few checks, in your actual prefix like <code>/usr/pkg</code></li>
 <li><code>make test</code> run package tests, if they have any</li>
 <li><code>make package</code> create a package without installing it, it will install dependencies though</li>
 <li><code>make replace</code> upgrade or reinstall the port if already installed</li>
@@ -265,7 +240,7 @@ Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 
 <h2>pkgsrc configuration</h2>
 
-<p>The framework uses an <code>mk.conf</code> file, usually found in /etc. Here&rsquo;s how mine looks:</p>
+<p>The framework uses an <code>mk.conf</code> file, usually found in /etc. Here's how mine looks:</p>
 
 <p><figure class="highlight"><pre><code class="language-make" data-lang="make"><span class="c"># Tue Oct 15 21:21:46 CEST 2013
 </span>
@@ -301,7 +276,7 @@ Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 
 <ul>
 <li>I use <code>DISTDIR</code>, <code>PACKAGES</code>, <code>WRKOBJDIR</code> to move distfiles, packages and source files somewhere else to keep my pkgsrc tree clean</li>
-<li><code>PKGSRC_COMPILER</code>, <code>CC</code>, <code>CXX</code>, <code>CPP</code> and <code>ABI</code> are my compiler options. I&rsquo;m using clang to create 64 bit binaries here</li>
+<li><code>PKGSRC_COMPILER</code>, <code>CC</code>, <code>CXX</code>, <code>CPP</code> and <code>ABI</code> are my compiler options. I'm using clang to create 64 bit binaries here</li>
 <li><code>PKG_DBDIR</code>, <code>VARBASE</code>, <code>LOCALBASE</code>, <code>PKG_TOOLS_BIN</code> are my prefix and package database path and package tools settings</li>
 <li><code>PKGINFODIR</code>, <code>PKGMANDIR</code> are the info and man directories</li>
 <li><code>BINPKG_SITES</code> is the remote place where to get packages with the <code>bin-install</code> make target</li>
@@ -313,7 +288,7 @@ Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 <li><code>SKIP_LICENSE_CHECK</code> will skip the license check. If disabled you will have to define a list of licenses you find acceptable with <code>ACCEPTABLE_LICENSES</code></li>
 <li><code>PKG_DEVELOPER</code> this option will show more details during the port building</li>
 <li><code>SIGN_PACKAGES</code> allows you to <code>gpg</code> sign packages. More info in my <a href="http://saveosx.org/signed-packages/">blog post</a> about it</li>
-<li><code>PKG_DEFAULT_OPTIONS</code> allows you to enable or disable specific options for all ports (as defined with ports' options.mk files), I disabled a few options so less ports would break, pulseaudio doesn&rsquo;t build on Mac OS X for example, neither do x264, dconf</li>
+<li><code>PKG_DEFAULT_OPTIONS</code> allows you to enable or disable specific options for all ports (as defined with ports' options.mk files), I disabled a few options so less ports would break, pulseaudio doesn't build on Mac OS X for example, neither do x264, dconf</li>
 </ul>
 
 
@@ -321,10 +296,10 @@ Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 
 <h2>creating a simple port</h2>
 
-<p>Let&rsquo;s create a little port using the tools we&rsquo;ve talked about above. I will use a little window manager called 2bwm.</p>
+<p>Let's create a little port using the tools we've talked about above. I will use a little window manager called 2bwm.</p>
 
 <ul>
-<li><p>We need an url for the program source files archive. It can be a direct link to a tar or xz archive. Mine&rsquo;s <code>http://pkgsrc.saveosx.org/Darwin/distfiles/2bwm-0.1.tar.gz</code></p></li>
+<li><p>We need an url for the program source files archive. It can be a direct link to a tar or xz archive. Mine's <code>http://pkgsrc.saveosx.org/Darwin/distfiles/2bwm-0.1.tar.gz</code></p></li>
 <li><p>Now that we have a proper link for our program source, create a directory for your port:</p>
 
 <pre><code>  $ mkdir ~/pkgsrc/wm/2bwm
@@ -336,7 +311,7 @@ Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 </ul>
 
 
-<p>You&rsquo;ll be presented with a text editor like <code>vim</code> to enter basic Makefile options:</p>
+<p>You'll be presented with a text editor like <code>vim</code> to enter basic Makefile options:</p>
 
 <ul>
 <li><code>DISTNAME</code>, <code>CATEGORIES</code>, <code>MASTER_SITES</code> should be set automatically</li>
@@ -344,14 +319,14 @@ Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 <li>make sure the <code>HOMEPAGE</code> is set right, for 2bwm it is a github page</li>
 <li>write a <code>COMMENT</code>, it should be a one-line description of the program</li>
 <li>find out which license the program uses, in my case it is the <code>isc</code> license. You can find a list of licenses in <code>pkgsrc/mk/licenses.mk</code>.</li>
-<li>Below you will see <code>.include "../../mk/bsd.pkg.mk"</code> at the end of the Makefile and above this should go the port&rsquo;s needed dependencies to build, we&rsquo;ll leave that empty at the moment and try to figure out what 2bwm needs</li>
+<li>Below you will see <code>.include "../../mk/bsd.pkg.mk"</code> at the end of the Makefile and above this should go the port's needed dependencies to build, we'll leave that empty at the moment and try to figure out what 2bwm needs</li>
 <li>exit vim and it should fetch and update the file hashes for you. If it says <code>permission denied</code> you can just run <code>make mdi</code> to fetch and upadate the <code>distinfo</code> file</li>
 </ul>
 
 
-<p>So now you have valid <code>Makefile</code> and <code>distinfo</code> files but you need to write a paragraph in <code>DESCR</code>. You can usually find inspiration on the program&rsquo;s homepage.</p>
+<p>So now you have valid <code>Makefile</code> and <code>distinfo</code> files but you need to write a paragraph in <code>DESCR</code>. You can usually find inspiration on the program's homepage.</p>
 
-<p>Here&rsquo;s how they look like at the moment:</p>
+<p>Here's how they look like at the moment:</p>
 
 <p> Makefile:</p>
 
@@ -367,7 +342,7 @@ Size (osxinfo/de74b8960f27844f7b264697d124411f81a1eab6.tar.gz) = 5981 bytes
 <span class="nv">COMMENT</span><span class="o">=</span>        Fast floating WM written over the XCB library and derived from mcwm
 <span class="nv">LICENSE</span><span class="o">=</span>        isc</p>
 
-<p><span class="err">.include</span> <span class="s2">&ldquo;../../mk/bsd.pkg.mk&rdquo;</span></code></pre></figure></p>
+<p><span class="err">.include</span> <span class="s2">"../../mk/bsd.pkg.mk"</span></code></pre></figure></p>
 
 <p>distinfo:</p>
 
@@ -390,11 +365,11 @@ but a pointing device can be used for move, resize and raise/lower.
 
 <h4>build stage</h4>
 
-<p> Let&rsquo;s try to build the port to see if things work but as soon as the build stage starts, we get this error:</p>
+<p> Let's try to build the port to see if things work but as soon as the build stage starts, we get this error:</p>
 
-<blockquote><p>2bwm.c:26:10: fatal error: &lsquo;xcb/randr.h&rsquo; file not found</p></blockquote>
+<blockquote><p>2bwm.c:26:10: fatal error: 'xcb/randr.h' file not found</p></blockquote>
 
-<p>Let&rsquo;s find out which port provides this file !</p>
+<p>Let's find out which port provides this file !</p>
 
 <pre><code>$ pkgin se xcb 
 </code></pre>
@@ -420,7 +395,7 @@ xcb-2.4nb1           Extensible, multiple cut buffers for X
 <pre><code>.include "../../x11/libxcb/buildlink3.mk"
 </code></pre>
 
-<p>This allows the port to link 2bwm against the libxcb port. Let&rsquo;s try to build the port again!</p>
+<p>This allows the port to link 2bwm against the libxcb port. Let's try to build the port again!</p>
 
 <pre><code>$ make clean
 $ make
@@ -428,16 +403,16 @@ $ make
 
 <p>Reports another error !</p>
 
-<blockquote><p>2bwm.c:27:10: fatal error: &lsquo;xcb/xcb_keysyms.h&rsquo; file not found</p></blockquote>
+<blockquote><p>2bwm.c:27:10: fatal error: 'xcb/xcb_keysyms.h' file not found</p></blockquote>
 
-<p>It looks like this file is provided by xcb-util-keysyms, so let&rsquo;s add:</p>
+<p>It looks like this file is provided by xcb-util-keysyms, so let's add:</p>
 
 <pre><code>.include "../../x11/xcb-util-keysyms/buildlink3.mk"
 </code></pre>
 
 <p>in our Makefile.</p>
 
-<p>Clean, build again, and add more dependencies until it passes the build stage. Here&rsquo;s how my Makefile ends up looking like:</p>
+<p>Clean, build again, and add more dependencies until it passes the build stage. Here's how my Makefile ends up looking like:</p>
 
 <p><figure class="highlight"><pre><code class="language-make" data-lang="make"><span class="c"># $NetBSD$
 </span>
@@ -450,11 +425,11 @@ $ make
 <span class="nv">COMMENT</span><span class="o">=</span>        Fast floating WM written over the XCB library and derived from mcwm
 <span class="nv">LICENSE</span><span class="o">=</span>        isc</p>
 
-<p><span class="err">.include</span> <span class="s2">&ldquo;../../x11/libxcb/buildlink3.mk&rdquo;</span>
-<span class="err">.include</span> <span class="s2">&ldquo;../../x11/xcb-util-wm/buildlink3.mk&rdquo;</span>
-<span class="err">.include</span> <span class="s2">&ldquo;../../x11/xcb-util-keysyms/buildlink3.mk&rdquo;</span>
-<span class="err">.include</span> <span class="s2">&ldquo;../../x11/xcb-util/buildlink3.mk&rdquo;</span>
-<span class="err">.include</span> <span class="s2">&ldquo;../../mk/bsd.pkg.mk&rdquo;</span></code></pre></figure></p>
+<p><span class="err">.include</span> <span class="s2">"../../x11/libxcb/buildlink3.mk"</span>
+<span class="err">.include</span> <span class="s2">"../../x11/xcb-util-wm/buildlink3.mk"</span>
+<span class="err">.include</span> <span class="s2">"../../x11/xcb-util-keysyms/buildlink3.mk"</span>
+<span class="err">.include</span> <span class="s2">"../../x11/xcb-util/buildlink3.mk"</span>
+<span class="err">.include</span> <span class="s2">"../../mk/bsd.pkg.mk"</span></code></pre></figure></p>
 
 <h4>install phase</h4>
 
@@ -479,14 +454,14 @@ $ make
 /pkgsrc/work/wm/2bwm/work/.destdir//usr/pkg
 </code></pre>
 
-<p>This doesn&rsquo;t look right since our <code>LOCALBASE</code> is <code>/usr/pkg</code>.</p>
+<p>This doesn't look right since our <code>LOCALBASE</code> is <code>/usr/pkg</code>.</p>
 
 <pre><code>$ make print-PLIST
 </code></pre>
 
-<p>returns nothing, because 2bwm installs files in the wrong place so we need to fix 2bwm&rsquo;s own Makefile to use the right <code>DESTDIR</code> and <code>PREFIX</code>, that is set to the right place by pkgsrc. Let&rsquo;s inspect how 2bwm installs:</p>
+<p>returns nothing, because 2bwm installs files in the wrong place so we need to fix 2bwm's own Makefile to use the right <code>DESTDIR</code> and <code>PREFIX</code>, that is set to the right place by pkgsrc. Let's inspect how 2bwm installs:</p>
 
-<p>From 2bwm&rsquo;s Makefile:</p>
+<p>From 2bwm's Makefile:</p>
 
 <p><figure class="highlight"><pre><code class="language-make" data-lang="make"><span class="nl">install</span><span class="o">:</span> <span class="nf">$(TARGETS)</span>
         <span class="err">test</span> <span class="err">-d</span> <span class="err">$(DESTDIR)$(PREFIX)/bin</span> <span class="err">||</span> <span class="err">mkdir</span> <span class="err">-p</span> <span class="err">$(DESTDIR)$(PREFIX)/bin</span>
@@ -508,7 +483,7 @@ $ make
 
 <blockquote><p>MANPREFIX=${PKGMANDIR}</p></blockquote>
 
-<p>so pkgsrc can install the program&rsquo;s files in the right place. We have two ways of modifying this file, either patch the Makefile or use <code>sed</code> substitution which is a builtin pkgsrc feature that allows you to change lines in files with a sed command before building the port.</p>
+<p>so pkgsrc can install the program's files in the right place. We have two ways of modifying this file, either patch the Makefile or use <code>sed</code> substitution which is a builtin pkgsrc feature that allows you to change lines in files with a sed command before building the port.</p>
 
 <p>I will show how to do both ways so you can get an introduction on how to generate patch files for pkgsrc.</p>
 
@@ -523,7 +498,7 @@ $ make
 <p>  which should return:</p>
 
 <blockquote><p>pkgvi: File was modified. For a diff, type:
-pkgdiff &ldquo;/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile&rdquo;</p></blockquote>
+pkgdiff "/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile"</p></blockquote>
 
 <p>  and this returns our diff.</p></li>
 <li><p>create the patch with <code>mkpatches</code>, it should create a <code>patches</code> directory in the port containing the patch and an original file removed with <code>mkpatches -c</code>.</p>
@@ -531,7 +506,7 @@ pkgdiff &ldquo;/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile&rdquo;
 <pre><code>  $ find patches/*
   patches/patch-Makefile
 </code></pre></li>
-<li><p>now that the patch has been created, we need to add it&rsquo;s hash to distinfo otherwise pkgsrc won&rsquo;t pick it up:</p>
+<li><p>now that the patch has been created, we need to add it's hash to distinfo otherwise pkgsrc won't pick it up:</p>
 
 <pre><code>  $ make mdi
 </code></pre>
@@ -539,7 +514,7 @@ pkgdiff &ldquo;/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile&rdquo;
 <p>you should get this new line:</p>
 
 <blockquote><p>SHA1 (patch-Makefile) = 9f8cd00a37edbd3e4f65915aa666ebd0f3c04e04</p></blockquote></li>
-<li><p>you can now clean and <code>make patch</code> and <code>make stage-install CHECK_FILES=no</code> since we still haven&rsquo;t generated a proper PLIST. Let&rsquo;s see if 2wm files were installed in the right place this time:</p>
+<li><p>you can now clean and <code>make patch</code> and <code>make stage-install CHECK_FILES=no</code> since we still haven't generated a proper PLIST. Let's see if 2wm files were installed in the right place this time:</p>
 
 <pre><code>  $ find /pkgsrc/work/wm/2bwm/work/.destdir/
 
@@ -551,7 +526,7 @@ pkgdiff &ldquo;/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile&rdquo;
   /pkgsrc/work/wm/2bwm/work/.destdir//usr/pkg/bin/hidden
 </code></pre>
 
-<p>  It looks like it is alright ! Let&rsquo;s generate the PLIST:</p>
+<p>  It looks like it is alright ! Let's generate the PLIST:</p>
 
 <pre><code>  $ make print-PLIST &gt; PLIST
 </code></pre>
@@ -572,14 +547,14 @@ pkgdiff &ldquo;/Volumes/Backup/pkgsrc/work/wm/2bwm/work/2bwm-0.1/Makefile&rdquo;
 
 <h4>using the sed substitution framework</h4>
 
-<p>You should be able to fix the prefix error much quicker than with the patching explained above thanks to the sed substitution framework. Here&rsquo;s how it looks like in my port Makefile:</p>
+<p>You should be able to fix the prefix error much quicker than with the patching explained above thanks to the sed substitution framework. Here's how it looks like in my port Makefile:</p>
 
 <p><figure class="highlight"><pre><code class="language-make" data-lang="make"><span class="nv">SUBST_CLASSES</span><span class="o">+=</span>         makefile
 <span class="nv">SUBST_STAGE.makefile</span><span class="o">=</span>   pre-build
 <span class="nv">SUBST_MESSAGE.makefile</span><span class="o">=</span> Fixing makefile
 <span class="nv">SUBST_FILES.makefile</span><span class="o">=</span>   Makefile
-<span class="nv">SUBST_SED.makefile</span><span class="o">=</span>     -e <span class="s1">&rsquo;s,/usr/local,${PREFIX},g'</span>
-<span class="nv">SUBST_SED.makefile</span><span class="o">+=</span><span class="err">    -e &rsquo;s,share/man,${PKGMANDIR},g'</span></code></pre></figure></p>
+<span class="nv">SUBST_SED.makefile</span><span class="o">=</span>     -e <span class="s1">'s,/usr/local,${PREFIX},g'</span>
+<span class="nv">SUBST_SED.makefile</span><span class="o">+=</span><span class="err">    -e 's,share/man,${PKGMANDIR},g'</span></code></pre></figure></p>
 
 <p>As you can see, you can do multiple commands on multiple files, it is very useful for very small fixes like this.</p>
 
@@ -623,7 +598,7 @@ ERROR: patches/patch-Makefile:3: Comment expected.
 <span class="nv">PKG_SUPPORTED_OPTIONS</span><span class="o">=</span>   xinerama
 <span class="nv">PKG_SUGGESTED_OPTIONS</span><span class="o">=</span>   xinerama</p>
 
-<p><span class="err">.include</span> <span class="s2">&ldquo;../../mk/bsd.options.mk&rdquo;</span></p>
+<p><span class="err">.include</span> <span class="s2">"../../mk/bsd.options.mk"</span></p>
 
 <p><span class="c">#</p>
 
@@ -631,20 +606,20 @@ ERROR: patches/patch-Makefile:3: Comment expected.
 
 <p>#</p>
 
-<h1>If we don&rsquo;t want the Xinerama support we delete XINERAMALIBS and</h1>
+<h1>If we don't want the Xinerama support we delete XINERAMALIBS and</h1>
 
 <h1>XINERAMAFLAGS lines, otherwise the Xinerama support is the default.</h1>
 
 <p>#
 </span><span class="nl">.if !empty(PKG_OPTIONS</span><span class="o">:</span><span class="nf">Mxinerama)</span>
-<span class="err">.</span>  <span class="err">include</span> <span class="s2">&ldquo;../../x11/libXinerama/buildlink3.mk&rdquo;</span>
+<span class="err">.</span>  <span class="err">include</span> <span class="s2">"../../x11/libXinerama/buildlink3.mk"</span>
 <span class="err">.else</span>
 <span class="nv">SUBST_CLASSES</span><span class="o">+=</span>         options
 <span class="nv">SUBST_STAGE.options</span><span class="o">=</span>    pre-build
 <span class="nv">SUBST_MESSAGE.options</span><span class="o">=</span>  Toggle the Xinerama support
 <span class="nv">SUBST_FILES.options</span><span class="o">=</span>    config.mk
-<span class="nv">SUBST_SED.options</span><span class="o">+=</span>     -e <span class="s1">&lsquo;/^XINERAMA/d&rsquo;</span>
-<span class="err">.</span>  <span class="err">include</span> <span class="s2">&ldquo;../../x11/libX11/buildlink3.mk&rdquo;</span>
+<span class="nv">SUBST_SED.options</span><span class="o">+=</span>     -e <span class="s1">'/^XINERAMA/d'</span>
+<span class="err">.</span>  <span class="err">include</span> <span class="s2">"../../x11/libX11/buildlink3.mk"</span>
 <span class="err">.endif</span></code></pre></figure></p>
 
 <p>This file should be included in the Makefile:</p>
@@ -682,8 +657,8 @@ or PKG_OPTIONS.dwm.
 
 <h2>hosting a package repo</h2>
 
-<p>Now that you&rsquo;ve created a few ports, you might want to make
-precompiled packages available for testing. You will need pkgsrc&rsquo;s <code>pkg_install</code> on the host system. I host my <a href="http://pkgsrc.saveosx.org/">packages</a> on a FreeBSD server with a bootstrapped pkgsrc.</p>
+<p>Now that you've created a few ports, you might want to make
+precompiled packages available for testing. You will need pkgsrc's <code>pkg_install</code> on the host system. I host my <a href="http://pkgsrc.saveosx.org/">packages</a> on a FreeBSD server with a bootstrapped pkgsrc.</p>
 
 <ul>
 <li>upload a package</li>
@@ -721,13 +696,13 @@ precompiled packages available for testing. You will need pkgsrc&rsquo;s <code>p
 
 <h2>build all packages</h2>
 
-<p>Bulk building pkgsrc packages is a topic for another post, see jperkin&rsquo;s excellent blog <a href="http://www.perkin.org.uk/posts/distributed-chrooted-pkgsrc-bulk-builds.html">posts</a> about this.</p>
+<p>Bulk building pkgsrc packages is a topic for another post, see jperkin's excellent blog <a href="http://www.perkin.org.uk/posts/distributed-chrooted-pkgsrc-bulk-builds.html">posts</a> about this.</p>
 
 <h2>faq</h2>
 
-<h4>what if the port I&rsquo;m making is a dependency for another one?</h4>
+<h4>what if the port I'm making is a dependency for another one?</h4>
 
-<p>You should just generate the buildlink3.mk file we&rsquo;ve talked about earlier like this:</p>
+<p>You should just generate the buildlink3.mk file we've talked about earlier like this:</p>
 
 <pre><code>$ createbuildlink &gt; buildlink3.mk
 </code></pre>
@@ -746,9 +721,9 @@ precompiled packages available for testing. You will need pkgsrc&rsquo;s <code>p
 
 <p>You can then easily update the git commit and the distinfo with it to update the program.</p>
 
-<h4>what if the program doesn&rsquo;t have a Makefile</h4>
+<h4>what if the program doesn't have a Makefile</h4>
 
-<p>You can do all Makefile operations directly from the port&rsquo;s Makefile like this:</p>
+<p>You can do all Makefile operations directly from the port's Makefile like this:</p>
 
 <p><figure class="highlight"><pre><code class="language-make" data-lang="make"><span class="nl">post-extract</span><span class="o">:</span>
     <span class="k">${</span><span class="nv">CHMOD</span><span class="k">}</span> a-x <span class="k">${</span><span class="nv">WRKSRC</span><span class="k">}</span>/elementary/apps/48/internet-mail.svg</p>
@@ -794,7 +769,7 @@ precompiled packages available for testing. You will need pkgsrc&rsquo;s <code>p
 
 <h4>GNU Configure</h4>
 
-<p>If your program uses a GNU configure script <code>url2pkg</code> will see it and prefix / destdir related issues shouldn&rsquo;t be a problem. Such programs are relatively easy to work with in pkgsrc.</p>
+<p>If your program uses a GNU configure script <code>url2pkg</code> will see it and prefix / destdir related issues shouldn't be a problem. Such programs are relatively easy to work with in pkgsrc.</p>
 
 <h4>common errors</h4>
 
@@ -803,7 +778,7 @@ precompiled packages available for testing. You will need pkgsrc&rsquo;s <code>p
 </ul>
 
 
-<p>This means you&rsquo;re not using the right <code>make</code>. On most systems, the make installed from the pkgsrc bootstrap is called <code>bmake</code></p>
+<p>This means you're not using the right <code>make</code>. On most systems, the make installed from the pkgsrc bootstrap is called <code>bmake</code></p>
 
 <ul>
 <li><p>If you have a feeling a port is stuck in the building stage, disable make jobs in your mk.conf</p></li>
@@ -814,20 +789,10 @@ precompiled packages available for testing. You will need pkgsrc&rsquo;s <code>p
 <h2>links</h2>
 
 <ul>
-<li><a href="http://www.perkin.org.uk/">Jonathan Perkin&rsquo;s excellent blog</a></li>
-<li><a href="http://www.netbsd.org/docs/pkgsrc/">NetBSD&rsquo;s very extensive pkgsrc guide</a></li>
-<li><a href="http://wiki.netbsd.org/pkgsrc/">NetBSD&rsquo;s pkgsrc wiki</a></li>
+<li><a href="http://www.perkin.org.uk/">Jonathan Perkin's excellent blog</a></li>
+<li><a href="http://www.netbsd.org/docs/pkgsrc/">NetBSD's very extensive pkgsrc guide</a></li>
+<li><a href="http://wiki.netbsd.org/pkgsrc/">NetBSD's pkgsrc wiki</a></li>
 <li>Other blog posts here :)</li>
-</ul>
-
-
-<h2>where to find me</h2>
-
-<ul>
-<li>yrmt@edgebsd.org</li>
-<li><p>irc.oftc.net</p>
-
-<p>  <code>#saveosx</code></p></li>
 </ul>
 
 
@@ -849,7 +814,7 @@ data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
   <hr>
   <div id="disqus_thread"></div>
 <script type="text/javascript">
-  var disqus_shortname = 'saveosx';
+  var disqus_shortname = 'netbsd-news';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
@@ -877,7 +842,7 @@ data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
 <script type="text/javascript">
 
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_setAccount', 'UA-75092906-1']);
 _gaq.push(['_trackPageview']);
 
 (function() {
@@ -890,6 +855,6 @@ _gaq.push(['_trackPageview']);
 
 
      </body>
-     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
      <script src="/js/up.min.js"></script>
  </html>

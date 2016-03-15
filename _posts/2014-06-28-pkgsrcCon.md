@@ -1,5 +1,5 @@
 ---
-layout: pkgsrc-post
+layout: post
 title: pkgsrcCon 2014 London
 author: Youri Mouton
 ---

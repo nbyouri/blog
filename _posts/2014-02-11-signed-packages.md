@@ -1,6 +1,7 @@
 ---
-layout: pkgsrc-post
+layout: post
 title: Signed Packages
+tag: pkgsrc
 author: Youri Mouton
 ---
 

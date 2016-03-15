@@ -12,21 +12,13 @@
 
         <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
 
-        <link href="/css/up.css" rel="stylesheet">
-
-	{% if page && page.css %}
-	<link rel="stylesheet" href="/css/{{ page.css }}.css">
-	{% endif %}
+		<link href="/css/up.css" rel="stylesheet">
+		<link href="/css/orange.css" rel="stylesheet">
 
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-	<script type="text/javascript">
-		if (window.location.href == "http://netbsd-news.me") {
-		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
-		}
-	</script>
     </head>
     
      <body>
@@ -41,6 +33,6 @@
          {% include footer.html %}
          {% include analytics.html %}
      </body>
-     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
      <script src="/js/up.min.js"></script>
  </html>

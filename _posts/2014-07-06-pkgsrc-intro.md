@@ -1,5 +1,5 @@
 ---
-layout: pkgsrc-post
+layout: post
 title: An introduction to pkgsrc
 author: Youri Mouton
 tags: pkgsrc
@@ -704,10 +704,3 @@ This means you're not using the right `make`. On most systems, the make installe
 - [NetBSD's very extensive pkgsrc guide](http://www.netbsd.org/docs/pkgsrc/)
 - [NetBSD's pkgsrc wiki](http://wiki.netbsd.org/pkgsrc/)
 - Other blog posts here :)
-
-## where to find me
-
-- yrmt@edgebsd.org 
-- irc.oftc.net 
-	
-	`#saveosx`

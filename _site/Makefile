@@ -3,14 +3,14 @@ TARGETS: build serve git
 all:
 	${TARGETS}
 
-serve-local:
+serve:
 	jekyll serve&
 
 build:
 	jekyll build
 
-serve: 
-	rsync -avhz _site/* youri@saveosx.org:~/saveosx/blog/; 
+deploy: 
+	rsync -avhz _site/* youri@netbsd-news.me:~/netbsd-news/; 
 
 git:
 	git add -A;

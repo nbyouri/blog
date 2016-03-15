@@ -5,28 +5,20 @@
         <title>pkgsrc_2013Q3 packages available</title>
 
         <meta name="author" content="Youri Mouton" />
-        <meta name="description" content="A blog by Youri Mouton and Calum Macrae" />
+        <meta name="description" content="A blog by Youri Mouton" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
 
         <link rel="icon" href="http://misc.saveosx.org/favicon.png" type="image/x-icon" />
 
-        <link href="/css/up.css" rel="stylesheet">
-
-	
-	<link rel="stylesheet" href="/css/.css">
-	
+		<link href="/css/up.css" rel="stylesheet">
+		<link href="/css/orange.css" rel="stylesheet">
 
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-	<script type="text/javascript">
-		if (window.location.href == "http://netbsd-news.me") {
-		   window.location.replace("http://netbsd-news.me/NetBSD7/"); 
-		}
-	</script>
     </head>
     
      <body>
@@ -40,33 +32,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-	
-        <a class="navbar-brand" href="/">Save OS X</a>
-	
+	<a class="navbar-brand" href="/">NetBSD News</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/download-and-install">Download & Install</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/cmacrae/saveosx">GitHub</a></li>
+		<li><a href="http://www.netbsd.org/donations/#how-to-donate">Make a donation to the NetBSD Foundation</a></li>
         </ul>
     </div>
-    
 </div>
 </nav>
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script>
-    $(function(){
-       $("a").each(function(){
-               if ($(this).attr("href") == window.location.pathname){
-                       $(this).addClass("selected");
-               }
-        });
-    });
-</script>
 
 
          <div class="container">
@@ -95,7 +70,7 @@
 
 <p>The packages are compiled on Mac OS X 10.9.1 Mavericks and more specifically Darwin 13.0.2 for the x86_64 architecture.</p>
 
-<p>Here&rsquo;s the mk.conf I used:</p>
+<p>Here's the mk.conf I used:</p>
 
 <pre><code>    # Example /usr/pkg/etc/mk.conf file produced by bootstrap-pkgsrc
     # Tue Oct 15 21:21:46 CEST 2013
@@ -134,7 +109,7 @@
 
 <h2>More information:</h2>
 
-<p>XQuartz is still needed to run the X programs but they are linked against pkgsrc&rsquo;s libraries.</p>
+<p>XQuartz is still needed to run the X programs but they are linked against pkgsrc's libraries.</p>
 
 <p>The compiler used is the clang shipped with Mac OS X:</p>
 
@@ -143,7 +118,7 @@
     Thread model: posix
 </code></pre>
 
-<p>The packages don&rsquo;t use the built-in libraries like ncurses, libiconv, zlib for more portability.</p>
+<p>The packages don't use the built-in libraries like ncurses, libiconv, zlib for more portability.</p>
 
 <h2>Want to help contribute? </h2>
 
@@ -165,7 +140,7 @@
 
 <h2>Machine info</h2>
 
-<p>I used a late 2013 retina MacBook Pro with a quad core 2.5GHZ intel i5 CPU with 4GB ram. Here&rsquo;s a picture!</p>
+<p>I used a late 2013 retina MacBook Pro with a quad core 2.5GHZ intel i5 CPU with 4GB ram. Here's a picture!</p>
 
 <p><img src="http://i.imgur.com/0psYyaj.jpg?1" alt="pic" /></p>
 
@@ -187,7 +162,7 @@ data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
   <hr>
   <div id="disqus_thread"></div>
 <script type="text/javascript">
-  var disqus_shortname = 'saveosx';
+  var disqus_shortname = 'netbsd-news';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
@@ -215,7 +190,7 @@ data-via="YouriMouton" data-lang="en" data-size="large">Tweet</a>
 <script type="text/javascript">
 
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-44722172-1']);
+_gaq.push(['_setAccount', 'UA-75092906-1']);
 _gaq.push(['_trackPageview']);
 
 (function() {
@@ -228,6 +203,6 @@ _gaq.push(['_trackPageview']);
 
 
      </body>
-     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
      <script src="/js/up.min.js"></script>
  </html>

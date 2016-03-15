@@ -2,15 +2,15 @@ markdown: rdiscount
 highlighter: rouge
 permalink: :title
 rdiscount:
-  extensions: [smart]
-title :  Save OS X
-production_url : http://blog.saveosx.org
-local_url : http://localhost:4000
-description: "A blog by Youri Mouton and Calum Macrae"
-disqus_shortname: saveosx
-analytics: UA-44722172-1
+extensions: [smart]
+title :  NetBSD News
+production_url : http://netbsd-news.me
+local_url : http://localhost:4001
+description: "A blog by Youri Mouton"
+disqus_shortname: netbsd-news
+analytics: UA-75092906-1
 author :
   name : Youri Mouton
-  github : yrmt
+  github : nbyouri
   twitter : YouriMouton
   email: youri.mout@gmail.com
